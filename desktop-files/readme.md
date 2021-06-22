@@ -2,13 +2,9 @@
 
 These files are meant to be run on a host computer, not the PYNQ board.
 
-There are 2 main reasons to use these files, generating an overlay, and simulating a program. Basic instructions for both are listed below. Please note that both instructions assume that you have first generated the contents of  block_parts, this only needs to be done when cloning or updating the NEORV32 repo, and so these instructions are listed separately
+There are 2 main reasons to use these files, generating an overlay, and simulating a program. Basic instructions for both are listed below.
 
-## Generating block_parts
-<ol>
-<li>Clone/update the [NEORV32 repo](https://github.com/stnolting/neorv32) to get the latest RTL</li>
-<li>Run block_parts/repo_rtl_conversion.py to convert the NEORV32 rtl into block diagram friendly rtl, you may need to change the repo_path variable at the start of this script so it can find the NEORV32 rtl
-</ol>
+Additional there are instruction on regenerated the contents of block_parts, this only needs done if you are wish to update an overlay to be based on a more recent commit to the [NEORV32 repo](https://github.com/stnolting/neorv32) then 5db75c72b57b164d4a0c495fe8b69597bcc8563a. Please you update  block_parts on your own, as the new status the NEORV32 repo may introduce issues.
 
 ## Generating Overlay
 <ol>
@@ -32,4 +28,10 @@ Make sure they share the same filename, you might need to remove something like 
 <li>Make sure this wrapper is set as your top level module and start simulation</il>
 <li>Once the simulation view has started run simulation_rv32i_overlay_start.tcl using source, this handles setting up the clock and reset signals</li>
 <li> Your program should start to run after after about 25000 ns have passed</li>
+</ol>
+
+## Regenerating block_parts
+<ol>
+<li>Clone/update the [NEORV32 repo](https://github.com/stnolting/neorv32) to get the latest RTL</li>
+<li>Run block_parts/repo_rtl_conversion.py to convert the NEORV32 rtl into block diagram friendly rtl, you may need to change the repo_path variable at the start of this script so it can find the NEORV32 rtl
 </ol>
