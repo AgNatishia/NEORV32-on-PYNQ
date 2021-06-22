@@ -1,0 +1,2 @@
+*.vhd
+!BD_wishbon_axi4lite_bridge.vhd

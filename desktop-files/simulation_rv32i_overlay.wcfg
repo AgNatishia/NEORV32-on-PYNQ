@@ -1,0 +1,2020 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<wave_config>
+   <wave_state>
+   </wave_state>
+   <db_ref_list>
+      <db_ref path="simulation_rv32i_overlay_wrapper_behav.wdb" id="1">
+         <top_modules>
+            <top_module name="axi_bram_ctrl_funcs" />
+            <top_module name="bd_neorv32_package" />
+            <top_module name="glbl" />
+            <top_module name="ipif_pkg" />
+            <top_module name="simulation_rv32i_overlay_wrapper" />
+            <top_module name="vcomponents" />
+         </top_modules>
+      </db_ref>
+   </db_ref_list>
+   <zoom_setting>
+      <ZoomStartTime time="0fs"></ZoomStartTime>
+      <ZoomEndTime time="293895077fs"></ZoomEndTime>
+      <Cursor1Time time="1000000fs"></Cursor1Time>
+   </zoom_setting>
+   <column_width_setting>
+      <NameColumnWidth column_width="306"></NameColumnWidth>
+      <ValueColumnWidth column_width="121"></ValueColumnWidth>
+   </column_width_setting>
+   <WVObjectSize size="21" />
+   <wvobject fp_name="/simulation_rv32i_overlay_wrapper/simulation_rv32i_overlay_i/clock" type="logic">
+      <obj_property name="ElementShortName">clock</obj_property>
+      <obj_property name="ObjectShortName">clock</obj_property>
+   </wvobject>
+   <wvobject fp_name="/simulation_rv32i_overlay_wrapper/simulation_rv32i_overlay_i/smartconnect_reset" type="logic">
+      <obj_property name="ElementShortName">smartconnect_reset</obj_property>
+      <obj_property name="ObjectShortName">smartconnect_reset</obj_property>
+   </wvobject>
+   <wvobject fp_name="/simulation_rv32i_overlay_wrapper/simulation_rv32i_overlay_i/peripheral_reset" type="logic">
+      <obj_property name="ElementShortName">peripheral_reset</obj_property>
+      <obj_property name="ObjectShortName">peripheral_reset</obj_property>
+   </wvobject>
+   <wvobject fp_name="/simulation_rv32i_overlay_wrapper/simulation_rv32i_overlay_i/cpu_reset" type="logic">
+      <obj_property name="ElementShortName">cpu_reset</obj_property>
+      <obj_property name="ObjectShortName">cpu_reset</obj_property>
+   </wvobject>
+   <wvobject fp_name="group33" type="group">
+      <obj_property name="label">GPIO</obj_property>
+      <obj_property name="DisplayName">label</obj_property>
+      <wvobject fp_name="/simulation_rv32i_overlay_wrapper/simulation_rv32i_overlay_i/btns_4bits_tri_i" type="array">
+         <obj_property name="ElementShortName">btns_4bits_tri_i[3:0]</obj_property>
+         <obj_property name="ObjectShortName">btns_4bits_tri_i[3:0]</obj_property>
+      </wvobject>
+      <wvobject fp_name="/simulation_rv32i_overlay_wrapper/simulation_rv32i_overlay_i/leds_4bits_tri_i" type="array">
+         <obj_property name="ElementShortName">leds_4bits_tri_i[3:0]</obj_property>
+         <obj_property name="ObjectShortName">leds_4bits_tri_i[3:0]</obj_property>
+      </wvobject>
+      <wvobject fp_name="/simulation_rv32i_overlay_wrapper/simulation_rv32i_overlay_i/leds_4bits_tri_o" type="array">
+         <obj_property name="ElementShortName">leds_4bits_tri_o[3:0]</obj_property>
+         <obj_property name="ObjectShortName">leds_4bits_tri_o[3:0]</obj_property>
+      </wvobject>
+      <wvobject fp_name="/simulation_rv32i_overlay_wrapper/simulation_rv32i_overlay_i/leds_4bits_tri_t" type="array">
+         <obj_property name="ElementShortName">leds_4bits_tri_t[3:0]</obj_property>
+         <obj_property name="ObjectShortName">leds_4bits_tri_t[3:0]</obj_property>
+      </wvobject>
+   </wvobject>
+   <wvobject type="divider" fp_name="divider34">
+      <obj_property name="label">CPU</obj_property>
+      <obj_property name="DisplayName">label</obj_property>
+   </wvobject>
+   <wvobject fp_name="group68" type="group">
+      <obj_property name="label">CPU_control</obj_property>
+      <obj_property name="DisplayName">label</obj_property>
+      <wvobject fp_name="group1623" type="group">
+         <obj_property name="label">execute_engine</obj_property>
+         <obj_property name="DisplayName">label</obj_property>
+         <wvobject fp_name="/simulation_rv32i_overlay_wrapper/simulation_rv32i_overlay_i/cpu_control_unit/U0/execute_engine.state" type="other">
+            <obj_property name="ElementShortName">.state</obj_property>
+            <obj_property name="ObjectShortName">.state</obj_property>
+         </wvobject>
+         <wvobject fp_name="/simulation_rv32i_overlay_wrapper/simulation_rv32i_overlay_i/cpu_control_unit/U0/execute_engine.state_nxt" type="other">
+            <obj_property name="ElementShortName">.state_nxt</obj_property>
+            <obj_property name="ObjectShortName">.state_nxt</obj_property>
+         </wvobject>
+         <wvobject fp_name="/simulation_rv32i_overlay_wrapper/simulation_rv32i_overlay_i/cpu_control_unit/U0/execute_engine.state_prev" type="other">
+            <obj_property name="ElementShortName">.state_prev</obj_property>
+            <obj_property name="ObjectShortName">.state_prev</obj_property>
+         </wvobject>
+         <wvobject fp_name="/simulation_rv32i_overlay_wrapper/simulation_rv32i_overlay_i/cpu_control_unit/U0/execute_engine.i_reg" type="array">
+            <obj_property name="ElementShortName">.i_reg[31:0]</obj_property>
+            <obj_property name="ObjectShortName">.i_reg[31:0]</obj_property>
+         </wvobject>
+         <wvobject fp_name="/simulation_rv32i_overlay_wrapper/simulation_rv32i_overlay_i/cpu_control_unit/U0/execute_engine.i_reg_nxt" type="array">
+            <obj_property name="ElementShortName">.i_reg_nxt[31:0]</obj_property>
+            <obj_property name="ObjectShortName">.i_reg_nxt[31:0]</obj_property>
+         </wvobject>
+         <wvobject fp_name="/simulation_rv32i_overlay_wrapper/simulation_rv32i_overlay_i/cpu_control_unit/U0/execute_engine.i_reg_last" type="array">
+            <obj_property name="ElementShortName">.i_reg_last[31:0]</obj_property>
+            <obj_property name="ObjectShortName">.i_reg_last[31:0]</obj_property>
+         </wvobject>
+         <wvobject fp_name="/simulation_rv32i_overlay_wrapper/simulation_rv32i_overlay_i/cpu_control_unit/U0/execute_engine.is_ci" type="logic">
+            <obj_property name="ElementShortName">.is_ci</obj_property>
+            <obj_property name="ObjectShortName">.is_ci</obj_property>
+         </wvobject>
+         <wvobject fp_name="/simulation_rv32i_overlay_wrapper/simulation_rv32i_overlay_i/cpu_control_unit/U0/execute_engine.is_ci_nxt" type="logic">
+            <obj_property name="ElementShortName">.is_ci_nxt</obj_property>
+            <obj_property name="ObjectShortName">.is_ci_nxt</obj_property>
+         </wvobject>
+         <wvobject fp_name="/simulation_rv32i_overlay_wrapper/simulation_rv32i_overlay_i/cpu_control_unit/U0/execute_engine.is_cp_op" type="logic">
+            <obj_property name="ElementShortName">.is_cp_op</obj_property>
+            <obj_property name="ObjectShortName">.is_cp_op</obj_property>
+         </wvobject>
+         <wvobject fp_name="/simulation_rv32i_overlay_wrapper/simulation_rv32i_overlay_i/cpu_control_unit/U0/execute_engine.is_cp_op_nxt" type="logic">
+            <obj_property name="ElementShortName">.is_cp_op_nxt</obj_property>
+            <obj_property name="ObjectShortName">.is_cp_op_nxt</obj_property>
+         </wvobject>
+         <wvobject fp_name="/simulation_rv32i_overlay_wrapper/simulation_rv32i_overlay_i/cpu_control_unit/U0/execute_engine.branch_taken" type="logic">
+            <obj_property name="ElementShortName">.branch_taken</obj_property>
+            <obj_property name="ObjectShortName">.branch_taken</obj_property>
+         </wvobject>
+         <wvobject fp_name="/simulation_rv32i_overlay_wrapper/simulation_rv32i_overlay_i/cpu_control_unit/U0/execute_engine.pc" type="array">
+            <obj_property name="ElementShortName">.pc[31:0]</obj_property>
+            <obj_property name="ObjectShortName">.pc[31:0]</obj_property>
+         </wvobject>
+         <wvobject fp_name="/simulation_rv32i_overlay_wrapper/simulation_rv32i_overlay_i/cpu_control_unit/U0/execute_engine.pc_mux_sel" type="logic">
+            <obj_property name="ElementShortName">.pc_mux_sel</obj_property>
+            <obj_property name="ObjectShortName">.pc_mux_sel</obj_property>
+         </wvobject>
+         <wvobject fp_name="/simulation_rv32i_overlay_wrapper/simulation_rv32i_overlay_i/cpu_control_unit/U0/execute_engine.pc_we" type="logic">
+            <obj_property name="ElementShortName">.pc_we</obj_property>
+            <obj_property name="ObjectShortName">.pc_we</obj_property>
+         </wvobject>
+         <wvobject fp_name="/simulation_rv32i_overlay_wrapper/simulation_rv32i_overlay_i/cpu_control_unit/U0/execute_engine.next_pc" type="array">
+            <obj_property name="ElementShortName">.next_pc[31:0]</obj_property>
+            <obj_property name="ObjectShortName">.next_pc[31:0]</obj_property>
+         </wvobject>
+         <wvobject fp_name="/simulation_rv32i_overlay_wrapper/simulation_rv32i_overlay_i/cpu_control_unit/U0/execute_engine.next_pc_inc" type="array">
+            <obj_property name="ElementShortName">.next_pc_inc[31:0]</obj_property>
+            <obj_property name="ObjectShortName">.next_pc_inc[31:0]</obj_property>
+         </wvobject>
+         <wvobject fp_name="/simulation_rv32i_overlay_wrapper/simulation_rv32i_overlay_i/cpu_control_unit/U0/execute_engine.last_pc" type="array">
+            <obj_property name="ElementShortName">.last_pc[31:0]</obj_property>
+            <obj_property name="ObjectShortName">.last_pc[31:0]</obj_property>
+         </wvobject>
+         <wvobject fp_name="/simulation_rv32i_overlay_wrapper/simulation_rv32i_overlay_i/cpu_control_unit/U0/execute_engine.sleep" type="logic">
+            <obj_property name="ElementShortName">.sleep</obj_property>
+            <obj_property name="ObjectShortName">.sleep</obj_property>
+         </wvobject>
+         <wvobject fp_name="/simulation_rv32i_overlay_wrapper/simulation_rv32i_overlay_i/cpu_control_unit/U0/execute_engine.sleep_nxt" type="logic">
+            <obj_property name="ElementShortName">.sleep_nxt</obj_property>
+            <obj_property name="ObjectShortName">.sleep_nxt</obj_property>
+         </wvobject>
+         <wvobject fp_name="/simulation_rv32i_overlay_wrapper/simulation_rv32i_overlay_i/cpu_control_unit/U0/execute_engine.branched" type="logic">
+            <obj_property name="ElementShortName">.branched</obj_property>
+            <obj_property name="ObjectShortName">.branched</obj_property>
+         </wvobject>
+         <wvobject fp_name="/simulation_rv32i_overlay_wrapper/simulation_rv32i_overlay_i/cpu_control_unit/U0/execute_engine.branched_nxt" type="logic">
+            <obj_property name="ElementShortName">.branched_nxt</obj_property>
+            <obj_property name="ObjectShortName">.branched_nxt</obj_property>
+         </wvobject>
+      </wvobject>
+      <wvobject fp_name="group1645" type="group">
+         <obj_property name="label">csr</obj_property>
+         <obj_property name="DisplayName">label</obj_property>
+         <wvobject fp_name="/simulation_rv32i_overlay_wrapper/simulation_rv32i_overlay_i/cpu_control_unit/U0/csr.addr" type="array">
+            <obj_property name="ElementShortName">.addr[11:0]</obj_property>
+            <obj_property name="ObjectShortName">.addr[11:0]</obj_property>
+         </wvobject>
+         <wvobject fp_name="/simulation_rv32i_overlay_wrapper/simulation_rv32i_overlay_i/cpu_control_unit/U0/csr.we" type="logic">
+            <obj_property name="ElementShortName">.we</obj_property>
+            <obj_property name="ObjectShortName">.we</obj_property>
+         </wvobject>
+         <wvobject fp_name="/simulation_rv32i_overlay_wrapper/simulation_rv32i_overlay_i/cpu_control_unit/U0/csr.we_nxt" type="logic">
+            <obj_property name="ElementShortName">.we_nxt</obj_property>
+            <obj_property name="ObjectShortName">.we_nxt</obj_property>
+         </wvobject>
+         <wvobject fp_name="/simulation_rv32i_overlay_wrapper/simulation_rv32i_overlay_i/cpu_control_unit/U0/csr.re" type="logic">
+            <obj_property name="ElementShortName">.re</obj_property>
+            <obj_property name="ObjectShortName">.re</obj_property>
+         </wvobject>
+         <wvobject fp_name="/simulation_rv32i_overlay_wrapper/simulation_rv32i_overlay_i/cpu_control_unit/U0/csr.re_nxt" type="logic">
+            <obj_property name="ElementShortName">.re_nxt</obj_property>
+            <obj_property name="ObjectShortName">.re_nxt</obj_property>
+         </wvobject>
+         <wvobject fp_name="/simulation_rv32i_overlay_wrapper/simulation_rv32i_overlay_i/cpu_control_unit/U0/csr.wdata" type="array">
+            <obj_property name="ElementShortName">.wdata[31:0]</obj_property>
+            <obj_property name="ObjectShortName">.wdata[31:0]</obj_property>
+         </wvobject>
+         <wvobject fp_name="/simulation_rv32i_overlay_wrapper/simulation_rv32i_overlay_i/cpu_control_unit/U0/csr.rdata" type="array">
+            <obj_property name="ElementShortName">.rdata[31:0]</obj_property>
+            <obj_property name="ObjectShortName">.rdata[31:0]</obj_property>
+         </wvobject>
+         <wvobject fp_name="/simulation_rv32i_overlay_wrapper/simulation_rv32i_overlay_i/cpu_control_unit/U0/csr.mstatus_mie" type="logic">
+            <obj_property name="ElementShortName">.mstatus_mie</obj_property>
+            <obj_property name="ObjectShortName">.mstatus_mie</obj_property>
+         </wvobject>
+         <wvobject fp_name="/simulation_rv32i_overlay_wrapper/simulation_rv32i_overlay_i/cpu_control_unit/U0/csr.mstatus_mpie" type="logic">
+            <obj_property name="ElementShortName">.mstatus_mpie</obj_property>
+            <obj_property name="ObjectShortName">.mstatus_mpie</obj_property>
+         </wvobject>
+         <wvobject fp_name="/simulation_rv32i_overlay_wrapper/simulation_rv32i_overlay_i/cpu_control_unit/U0/csr.mstatus_mpp" type="array">
+            <obj_property name="ElementShortName">.mstatus_mpp[1:0]</obj_property>
+            <obj_property name="ObjectShortName">.mstatus_mpp[1:0]</obj_property>
+         </wvobject>
+         <wvobject fp_name="/simulation_rv32i_overlay_wrapper/simulation_rv32i_overlay_i/cpu_control_unit/U0/csr.mie_msie" type="logic">
+            <obj_property name="ElementShortName">.mie_msie</obj_property>
+            <obj_property name="ObjectShortName">.mie_msie</obj_property>
+         </wvobject>
+         <wvobject fp_name="/simulation_rv32i_overlay_wrapper/simulation_rv32i_overlay_i/cpu_control_unit/U0/csr.mie_meie" type="logic">
+            <obj_property name="ElementShortName">.mie_meie</obj_property>
+            <obj_property name="ObjectShortName">.mie_meie</obj_property>
+         </wvobject>
+         <wvobject fp_name="/simulation_rv32i_overlay_wrapper/simulation_rv32i_overlay_i/cpu_control_unit/U0/csr.mie_mtie" type="logic">
+            <obj_property name="ElementShortName">.mie_mtie</obj_property>
+            <obj_property name="ObjectShortName">.mie_mtie</obj_property>
+         </wvobject>
+         <wvobject fp_name="/simulation_rv32i_overlay_wrapper/simulation_rv32i_overlay_i/cpu_control_unit/U0/csr.mie_firqe" type="array">
+            <obj_property name="ElementShortName">.mie_firqe[15:0]</obj_property>
+            <obj_property name="ObjectShortName">.mie_firqe[15:0]</obj_property>
+         </wvobject>
+         <wvobject fp_name="/simulation_rv32i_overlay_wrapper/simulation_rv32i_overlay_i/cpu_control_unit/U0/csr.mcounteren_cy" type="logic">
+            <obj_property name="ElementShortName">.mcounteren_cy</obj_property>
+            <obj_property name="ObjectShortName">.mcounteren_cy</obj_property>
+         </wvobject>
+         <wvobject fp_name="/simulation_rv32i_overlay_wrapper/simulation_rv32i_overlay_i/cpu_control_unit/U0/csr.mcounteren_tm" type="logic">
+            <obj_property name="ElementShortName">.mcounteren_tm</obj_property>
+            <obj_property name="ObjectShortName">.mcounteren_tm</obj_property>
+         </wvobject>
+         <wvobject fp_name="/simulation_rv32i_overlay_wrapper/simulation_rv32i_overlay_i/cpu_control_unit/U0/csr.mcounteren_ir" type="logic">
+            <obj_property name="ElementShortName">.mcounteren_ir</obj_property>
+            <obj_property name="ObjectShortName">.mcounteren_ir</obj_property>
+         </wvobject>
+         <wvobject fp_name="/simulation_rv32i_overlay_wrapper/simulation_rv32i_overlay_i/cpu_control_unit/U0/csr.mcountinhibit_cy" type="logic">
+            <obj_property name="ElementShortName">.mcountinhibit_cy</obj_property>
+            <obj_property name="ObjectShortName">.mcountinhibit_cy</obj_property>
+         </wvobject>
+         <wvobject fp_name="/simulation_rv32i_overlay_wrapper/simulation_rv32i_overlay_i/cpu_control_unit/U0/csr.mcountinhibit_ir" type="logic">
+            <obj_property name="ElementShortName">.mcountinhibit_ir</obj_property>
+            <obj_property name="ObjectShortName">.mcountinhibit_ir</obj_property>
+         </wvobject>
+         <wvobject fp_name="/simulation_rv32i_overlay_wrapper/simulation_rv32i_overlay_i/cpu_control_unit/U0/csr.mcountinhibit_hpm" type="array">
+            <obj_property name="ElementShortName">.mcountinhibit_hpm[-1:0]</obj_property>
+            <obj_property name="ObjectShortName">.mcountinhibit_hpm[-1:0]</obj_property>
+         </wvobject>
+         <wvobject fp_name="/simulation_rv32i_overlay_wrapper/simulation_rv32i_overlay_i/cpu_control_unit/U0/csr.privilege" type="array">
+            <obj_property name="ElementShortName">.privilege[1:0]</obj_property>
+            <obj_property name="ObjectShortName">.privilege[1:0]</obj_property>
+         </wvobject>
+         <wvobject fp_name="/simulation_rv32i_overlay_wrapper/simulation_rv32i_overlay_i/cpu_control_unit/U0/csr.privilege_rd" type="array">
+            <obj_property name="ElementShortName">.privilege_rd[1:0]</obj_property>
+            <obj_property name="ObjectShortName">.privilege_rd[1:0]</obj_property>
+         </wvobject>
+         <wvobject fp_name="/simulation_rv32i_overlay_wrapper/simulation_rv32i_overlay_i/cpu_control_unit/U0/csr.priv_m_mode" type="logic">
+            <obj_property name="ElementShortName">.priv_m_mode</obj_property>
+            <obj_property name="ObjectShortName">.priv_m_mode</obj_property>
+         </wvobject>
+         <wvobject fp_name="/simulation_rv32i_overlay_wrapper/simulation_rv32i_overlay_i/cpu_control_unit/U0/csr.priv_u_mode" type="logic">
+            <obj_property name="ElementShortName">.priv_u_mode</obj_property>
+            <obj_property name="ObjectShortName">.priv_u_mode</obj_property>
+         </wvobject>
+         <wvobject fp_name="/simulation_rv32i_overlay_wrapper/simulation_rv32i_overlay_i/cpu_control_unit/U0/csr.mepc" type="array">
+            <obj_property name="ElementShortName">.mepc[31:0]</obj_property>
+            <obj_property name="ObjectShortName">.mepc[31:0]</obj_property>
+         </wvobject>
+         <wvobject fp_name="/simulation_rv32i_overlay_wrapper/simulation_rv32i_overlay_i/cpu_control_unit/U0/csr.mcause" type="array">
+            <obj_property name="ElementShortName">.mcause[5:0]</obj_property>
+            <obj_property name="ObjectShortName">.mcause[5:0]</obj_property>
+         </wvobject>
+         <wvobject fp_name="/simulation_rv32i_overlay_wrapper/simulation_rv32i_overlay_i/cpu_control_unit/U0/csr.mtvec" type="array">
+            <obj_property name="ElementShortName">.mtvec[31:0]</obj_property>
+            <obj_property name="ObjectShortName">.mtvec[31:0]</obj_property>
+         </wvobject>
+         <wvobject fp_name="/simulation_rv32i_overlay_wrapper/simulation_rv32i_overlay_i/cpu_control_unit/U0/csr.mtval" type="array">
+            <obj_property name="ElementShortName">.mtval[31:0]</obj_property>
+            <obj_property name="ObjectShortName">.mtval[31:0]</obj_property>
+         </wvobject>
+         <wvobject fp_name="/simulation_rv32i_overlay_wrapper/simulation_rv32i_overlay_i/cpu_control_unit/U0/csr.mscratch" type="array">
+            <obj_property name="ElementShortName">.mscratch[31:0]</obj_property>
+            <obj_property name="ObjectShortName">.mscratch[31:0]</obj_property>
+         </wvobject>
+         <wvobject fp_name="/simulation_rv32i_overlay_wrapper/simulation_rv32i_overlay_i/cpu_control_unit/U0/csr.mcycle" type="array">
+            <obj_property name="ElementShortName">.mcycle[31:0]</obj_property>
+            <obj_property name="ObjectShortName">.mcycle[31:0]</obj_property>
+         </wvobject>
+         <wvobject fp_name="/simulation_rv32i_overlay_wrapper/simulation_rv32i_overlay_i/cpu_control_unit/U0/csr.mcycle_nxt" type="array">
+            <obj_property name="ElementShortName">.mcycle_nxt[32:0]</obj_property>
+            <obj_property name="ObjectShortName">.mcycle_nxt[32:0]</obj_property>
+         </wvobject>
+         <wvobject fp_name="/simulation_rv32i_overlay_wrapper/simulation_rv32i_overlay_i/cpu_control_unit/U0/csr.mcycle_ovfl" type="array">
+            <obj_property name="ElementShortName">.mcycle_ovfl[0:0]</obj_property>
+            <obj_property name="ObjectShortName">.mcycle_ovfl[0:0]</obj_property>
+         </wvobject>
+         <wvobject fp_name="/simulation_rv32i_overlay_wrapper/simulation_rv32i_overlay_i/cpu_control_unit/U0/csr.mcycleh" type="array">
+            <obj_property name="ElementShortName">.mcycleh[31:0]</obj_property>
+            <obj_property name="ObjectShortName">.mcycleh[31:0]</obj_property>
+         </wvobject>
+         <wvobject fp_name="/simulation_rv32i_overlay_wrapper/simulation_rv32i_overlay_i/cpu_control_unit/U0/csr.minstret" type="array">
+            <obj_property name="ElementShortName">.minstret[31:0]</obj_property>
+            <obj_property name="ObjectShortName">.minstret[31:0]</obj_property>
+         </wvobject>
+         <wvobject fp_name="/simulation_rv32i_overlay_wrapper/simulation_rv32i_overlay_i/cpu_control_unit/U0/csr.minstret_nxt" type="array">
+            <obj_property name="ElementShortName">.minstret_nxt[32:0]</obj_property>
+            <obj_property name="ObjectShortName">.minstret_nxt[32:0]</obj_property>
+         </wvobject>
+         <wvobject fp_name="/simulation_rv32i_overlay_wrapper/simulation_rv32i_overlay_i/cpu_control_unit/U0/csr.minstret_ovfl" type="array">
+            <obj_property name="ElementShortName">.minstret_ovfl[0:0]</obj_property>
+            <obj_property name="ObjectShortName">.minstret_ovfl[0:0]</obj_property>
+         </wvobject>
+         <wvobject fp_name="/simulation_rv32i_overlay_wrapper/simulation_rv32i_overlay_i/cpu_control_unit/U0/csr.minstreth" type="array">
+            <obj_property name="ElementShortName">.minstreth[31:0]</obj_property>
+            <obj_property name="ObjectShortName">.minstreth[31:0]</obj_property>
+         </wvobject>
+         <wvobject fp_name="/simulation_rv32i_overlay_wrapper/simulation_rv32i_overlay_i/cpu_control_unit/U0/csr.mhpmcounter_rd" type="array">
+            <obj_property name="ElementShortName">.mhpmcounter_rd[0:29][31:0]</obj_property>
+            <obj_property name="ObjectShortName">.mhpmcounter_rd[0:29][31:0]</obj_property>
+         </wvobject>
+         <wvobject fp_name="/simulation_rv32i_overlay_wrapper/simulation_rv32i_overlay_i/cpu_control_unit/U0/csr.mhpmcounterh_rd" type="array">
+            <obj_property name="ElementShortName">.mhpmcounterh_rd[0:29][31:0]</obj_property>
+            <obj_property name="ObjectShortName">.mhpmcounterh_rd[0:29][31:0]</obj_property>
+         </wvobject>
+         <wvobject fp_name="/simulation_rv32i_overlay_wrapper/simulation_rv32i_overlay_i/cpu_control_unit/U0/csr.pmpcfg_rd" type="array">
+            <obj_property name="ElementShortName">.pmpcfg_rd[0:63][7:0]</obj_property>
+            <obj_property name="ObjectShortName">.pmpcfg_rd[0:63][7:0]</obj_property>
+         </wvobject>
+         <wvobject fp_name="/simulation_rv32i_overlay_wrapper/simulation_rv32i_overlay_i/cpu_control_unit/U0/csr.frm" type="array">
+            <obj_property name="ElementShortName">.frm[2:0]</obj_property>
+            <obj_property name="ObjectShortName">.frm[2:0]</obj_property>
+         </wvobject>
+         <wvobject fp_name="/simulation_rv32i_overlay_wrapper/simulation_rv32i_overlay_i/cpu_control_unit/U0/csr.fflags" type="array">
+            <obj_property name="ElementShortName">.fflags[4:0]</obj_property>
+            <obj_property name="ObjectShortName">.fflags[4:0]</obj_property>
+         </wvobject>
+         <wvobject fp_name="/simulation_rv32i_overlay_wrapper/simulation_rv32i_overlay_i/cpu_control_unit/U0/csr.dcsr_ebreakm" type="logic">
+            <obj_property name="ElementShortName">.dcsr_ebreakm</obj_property>
+            <obj_property name="ObjectShortName">.dcsr_ebreakm</obj_property>
+         </wvobject>
+         <wvobject fp_name="/simulation_rv32i_overlay_wrapper/simulation_rv32i_overlay_i/cpu_control_unit/U0/csr.dcsr_ebreaku" type="logic">
+            <obj_property name="ElementShortName">.dcsr_ebreaku</obj_property>
+            <obj_property name="ObjectShortName">.dcsr_ebreaku</obj_property>
+         </wvobject>
+         <wvobject fp_name="/simulation_rv32i_overlay_wrapper/simulation_rv32i_overlay_i/cpu_control_unit/U0/csr.dcsr_step" type="logic">
+            <obj_property name="ElementShortName">.dcsr_step</obj_property>
+            <obj_property name="ObjectShortName">.dcsr_step</obj_property>
+         </wvobject>
+         <wvobject fp_name="/simulation_rv32i_overlay_wrapper/simulation_rv32i_overlay_i/cpu_control_unit/U0/csr.dcsr_prv" type="array">
+            <obj_property name="ElementShortName">.dcsr_prv[1:0]</obj_property>
+            <obj_property name="ObjectShortName">.dcsr_prv[1:0]</obj_property>
+         </wvobject>
+         <wvobject fp_name="/simulation_rv32i_overlay_wrapper/simulation_rv32i_overlay_i/cpu_control_unit/U0/csr.dcsr_cause" type="array">
+            <obj_property name="ElementShortName">.dcsr_cause[2:0]</obj_property>
+            <obj_property name="ObjectShortName">.dcsr_cause[2:0]</obj_property>
+         </wvobject>
+         <wvobject fp_name="/simulation_rv32i_overlay_wrapper/simulation_rv32i_overlay_i/cpu_control_unit/U0/csr.dcsr_rd" type="array">
+            <obj_property name="ElementShortName">.dcsr_rd[31:0]</obj_property>
+            <obj_property name="ObjectShortName">.dcsr_rd[31:0]</obj_property>
+         </wvobject>
+         <wvobject fp_name="/simulation_rv32i_overlay_wrapper/simulation_rv32i_overlay_i/cpu_control_unit/U0/csr.dpc" type="array">
+            <obj_property name="ElementShortName">.dpc[31:0]</obj_property>
+            <obj_property name="ObjectShortName">.dpc[31:0]</obj_property>
+         </wvobject>
+         <wvobject fp_name="/simulation_rv32i_overlay_wrapper/simulation_rv32i_overlay_i/cpu_control_unit/U0/csr.dscratch0" type="array">
+            <obj_property name="ElementShortName">.dscratch0[31:0]</obj_property>
+            <obj_property name="ObjectShortName">.dscratch0[31:0]</obj_property>
+         </wvobject>
+      </wvobject>
+      <wvobject fp_name="/simulation_rv32i_overlay_wrapper/simulation_rv32i_overlay_i/cpu_control_unit/clk_i" type="logic">
+         <obj_property name="ElementShortName">clk_i</obj_property>
+         <obj_property name="ObjectShortName">clk_i</obj_property>
+      </wvobject>
+      <wvobject fp_name="/simulation_rv32i_overlay_wrapper/simulation_rv32i_overlay_i/cpu_control_unit/rstn_i" type="logic">
+         <obj_property name="ElementShortName">rstn_i</obj_property>
+         <obj_property name="ObjectShortName">rstn_i</obj_property>
+      </wvobject>
+      <wvobject fp_name="/simulation_rv32i_overlay_wrapper/simulation_rv32i_overlay_i/cpu_control_unit/ctrl_o" type="array">
+         <obj_property name="ElementShortName">ctrl_o[73:0]</obj_property>
+         <obj_property name="ObjectShortName">ctrl_o[73:0]</obj_property>
+      </wvobject>
+      <wvobject fp_name="/simulation_rv32i_overlay_wrapper/simulation_rv32i_overlay_i/cpu_control_unit/alu_wait_i" type="logic">
+         <obj_property name="ElementShortName">alu_wait_i</obj_property>
+         <obj_property name="ObjectShortName">alu_wait_i</obj_property>
+      </wvobject>
+      <wvobject fp_name="/simulation_rv32i_overlay_wrapper/simulation_rv32i_overlay_i/cpu_control_unit/bus_i_wait_i" type="logic">
+         <obj_property name="ElementShortName">bus_i_wait_i</obj_property>
+         <obj_property name="ObjectShortName">bus_i_wait_i</obj_property>
+      </wvobject>
+      <wvobject fp_name="/simulation_rv32i_overlay_wrapper/simulation_rv32i_overlay_i/cpu_control_unit/bus_d_wait_i" type="logic">
+         <obj_property name="ElementShortName">bus_d_wait_i</obj_property>
+         <obj_property name="ObjectShortName">bus_d_wait_i</obj_property>
+      </wvobject>
+      <wvobject fp_name="/simulation_rv32i_overlay_wrapper/simulation_rv32i_overlay_i/cpu_control_unit/excl_state_i" type="logic">
+         <obj_property name="ElementShortName">excl_state_i</obj_property>
+         <obj_property name="ObjectShortName">excl_state_i</obj_property>
+      </wvobject>
+      <wvobject fp_name="/simulation_rv32i_overlay_wrapper/simulation_rv32i_overlay_i/cpu_control_unit/instr_i" type="array">
+         <obj_property name="ElementShortName">instr_i[31:0]</obj_property>
+         <obj_property name="ObjectShortName">instr_i[31:0]</obj_property>
+      </wvobject>
+      <wvobject fp_name="/simulation_rv32i_overlay_wrapper/simulation_rv32i_overlay_i/cpu_control_unit/cmp_i" type="array">
+         <obj_property name="ElementShortName">cmp_i[1:0]</obj_property>
+         <obj_property name="ObjectShortName">cmp_i[1:0]</obj_property>
+      </wvobject>
+      <wvobject fp_name="/simulation_rv32i_overlay_wrapper/simulation_rv32i_overlay_i/cpu_control_unit/alu_add_i" type="array">
+         <obj_property name="ElementShortName">alu_add_i[31:0]</obj_property>
+         <obj_property name="ObjectShortName">alu_add_i[31:0]</obj_property>
+      </wvobject>
+      <wvobject fp_name="/simulation_rv32i_overlay_wrapper/simulation_rv32i_overlay_i/cpu_control_unit/rs1_i" type="array">
+         <obj_property name="ElementShortName">rs1_i[31:0]</obj_property>
+         <obj_property name="ObjectShortName">rs1_i[31:0]</obj_property>
+      </wvobject>
+      <wvobject fp_name="/simulation_rv32i_overlay_wrapper/simulation_rv32i_overlay_i/cpu_control_unit/imm_o" type="array">
+         <obj_property name="ElementShortName">imm_o[31:0]</obj_property>
+         <obj_property name="ObjectShortName">imm_o[31:0]</obj_property>
+      </wvobject>
+      <wvobject fp_name="/simulation_rv32i_overlay_wrapper/simulation_rv32i_overlay_i/cpu_control_unit/fetch_pc_o" type="array">
+         <obj_property name="ElementShortName">fetch_pc_o[31:0]</obj_property>
+         <obj_property name="ObjectShortName">fetch_pc_o[31:0]</obj_property>
+      </wvobject>
+      <wvobject fp_name="/simulation_rv32i_overlay_wrapper/simulation_rv32i_overlay_i/cpu_control_unit/curr_pc_o" type="array">
+         <obj_property name="ElementShortName">curr_pc_o[31:0]</obj_property>
+         <obj_property name="ObjectShortName">curr_pc_o[31:0]</obj_property>
+      </wvobject>
+      <wvobject fp_name="/simulation_rv32i_overlay_wrapper/simulation_rv32i_overlay_i/cpu_control_unit/csr_rdata_o" type="array">
+         <obj_property name="ElementShortName">csr_rdata_o[31:0]</obj_property>
+         <obj_property name="ObjectShortName">csr_rdata_o[31:0]</obj_property>
+      </wvobject>
+      <wvobject fp_name="/simulation_rv32i_overlay_wrapper/simulation_rv32i_overlay_i/cpu_control_unit/fpu_rm_o" type="array">
+         <obj_property name="ElementShortName">fpu_rm_o[2:0]</obj_property>
+         <obj_property name="ObjectShortName">fpu_rm_o[2:0]</obj_property>
+      </wvobject>
+      <wvobject fp_name="/simulation_rv32i_overlay_wrapper/simulation_rv32i_overlay_i/cpu_control_unit/fpu_flags_i" type="array">
+         <obj_property name="ElementShortName">fpu_flags_i[4:0]</obj_property>
+         <obj_property name="ObjectShortName">fpu_flags_i[4:0]</obj_property>
+      </wvobject>
+      <wvobject fp_name="/simulation_rv32i_overlay_wrapper/simulation_rv32i_overlay_i/cpu_control_unit/db_halt_req_i" type="logic">
+         <obj_property name="ElementShortName">db_halt_req_i</obj_property>
+         <obj_property name="ObjectShortName">db_halt_req_i</obj_property>
+      </wvobject>
+      <wvobject fp_name="/simulation_rv32i_overlay_wrapper/simulation_rv32i_overlay_i/cpu_control_unit/nm_irq_i" type="logic">
+         <obj_property name="ElementShortName">nm_irq_i</obj_property>
+         <obj_property name="ObjectShortName">nm_irq_i</obj_property>
+      </wvobject>
+      <wvobject fp_name="/simulation_rv32i_overlay_wrapper/simulation_rv32i_overlay_i/cpu_control_unit/msw_irq_i" type="logic">
+         <obj_property name="ElementShortName">msw_irq_i</obj_property>
+         <obj_property name="ObjectShortName">msw_irq_i</obj_property>
+      </wvobject>
+      <wvobject fp_name="/simulation_rv32i_overlay_wrapper/simulation_rv32i_overlay_i/cpu_control_unit/mext_irq_i" type="logic">
+         <obj_property name="ElementShortName">mext_irq_i</obj_property>
+         <obj_property name="ObjectShortName">mext_irq_i</obj_property>
+      </wvobject>
+      <wvobject fp_name="/simulation_rv32i_overlay_wrapper/simulation_rv32i_overlay_i/cpu_control_unit/mtime_irq_i" type="logic">
+         <obj_property name="ElementShortName">mtime_irq_i</obj_property>
+         <obj_property name="ObjectShortName">mtime_irq_i</obj_property>
+      </wvobject>
+      <wvobject fp_name="/simulation_rv32i_overlay_wrapper/simulation_rv32i_overlay_i/cpu_control_unit/firq_i" type="array">
+         <obj_property name="ElementShortName">firq_i[15:0]</obj_property>
+         <obj_property name="ObjectShortName">firq_i[15:0]</obj_property>
+      </wvobject>
+      <wvobject fp_name="/simulation_rv32i_overlay_wrapper/simulation_rv32i_overlay_i/cpu_control_unit/firq_ack_o" type="array">
+         <obj_property name="ElementShortName">firq_ack_o[15:0]</obj_property>
+         <obj_property name="ObjectShortName">firq_ack_o[15:0]</obj_property>
+      </wvobject>
+      <wvobject fp_name="/simulation_rv32i_overlay_wrapper/simulation_rv32i_overlay_i/cpu_control_unit/time_i" type="array">
+         <obj_property name="ElementShortName">time_i[63:0]</obj_property>
+         <obj_property name="ObjectShortName">time_i[63:0]</obj_property>
+      </wvobject>
+      <wvobject fp_name="/simulation_rv32i_overlay_wrapper/simulation_rv32i_overlay_i/cpu_control_unit/wrapped_pmp_addr_o" type="array">
+         <obj_property name="ElementShortName">wrapped_pmp_addr_o[2175:0]</obj_property>
+         <obj_property name="ObjectShortName">wrapped_pmp_addr_o[2175:0]</obj_property>
+      </wvobject>
+      <wvobject fp_name="/simulation_rv32i_overlay_wrapper/simulation_rv32i_overlay_i/cpu_control_unit/wrapped_pmp_ctrl_o" type="array">
+         <obj_property name="ElementShortName">wrapped_pmp_ctrl_o[511:0]</obj_property>
+         <obj_property name="ObjectShortName">wrapped_pmp_ctrl_o[511:0]</obj_property>
+      </wvobject>
+      <wvobject fp_name="/simulation_rv32i_overlay_wrapper/simulation_rv32i_overlay_i/cpu_control_unit/mar_i" type="array">
+         <obj_property name="ElementShortName">mar_i[31:0]</obj_property>
+         <obj_property name="ObjectShortName">mar_i[31:0]</obj_property>
+      </wvobject>
+      <wvobject fp_name="/simulation_rv32i_overlay_wrapper/simulation_rv32i_overlay_i/cpu_control_unit/ma_instr_i" type="logic">
+         <obj_property name="ElementShortName">ma_instr_i</obj_property>
+         <obj_property name="ObjectShortName">ma_instr_i</obj_property>
+      </wvobject>
+      <wvobject fp_name="/simulation_rv32i_overlay_wrapper/simulation_rv32i_overlay_i/cpu_control_unit/ma_load_i" type="logic">
+         <obj_property name="ElementShortName">ma_load_i</obj_property>
+         <obj_property name="ObjectShortName">ma_load_i</obj_property>
+      </wvobject>
+      <wvobject fp_name="/simulation_rv32i_overlay_wrapper/simulation_rv32i_overlay_i/cpu_control_unit/ma_store_i" type="logic">
+         <obj_property name="ElementShortName">ma_store_i</obj_property>
+         <obj_property name="ObjectShortName">ma_store_i</obj_property>
+      </wvobject>
+      <wvobject fp_name="/simulation_rv32i_overlay_wrapper/simulation_rv32i_overlay_i/cpu_control_unit/be_instr_i" type="logic">
+         <obj_property name="ElementShortName">be_instr_i</obj_property>
+         <obj_property name="ObjectShortName">be_instr_i</obj_property>
+      </wvobject>
+      <wvobject fp_name="/simulation_rv32i_overlay_wrapper/simulation_rv32i_overlay_i/cpu_control_unit/be_load_i" type="logic">
+         <obj_property name="ElementShortName">be_load_i</obj_property>
+         <obj_property name="ObjectShortName">be_load_i</obj_property>
+      </wvobject>
+      <wvobject fp_name="/simulation_rv32i_overlay_wrapper/simulation_rv32i_overlay_i/cpu_control_unit/be_store_i" type="logic">
+         <obj_property name="ElementShortName">be_store_i</obj_property>
+         <obj_property name="ObjectShortName">be_store_i</obj_property>
+      </wvobject>
+   </wvobject>
+   <wvobject fp_name="group76" type="group">
+      <obj_property name="label">CPU_regfile</obj_property>
+      <obj_property name="DisplayName">label</obj_property>
+      <wvobject fp_name="/simulation_rv32i_overlay_wrapper/simulation_rv32i_overlay_i/cpu_regfile/clk_i" type="logic">
+         <obj_property name="ElementShortName">clk_i</obj_property>
+         <obj_property name="ObjectShortName">clk_i</obj_property>
+      </wvobject>
+      <wvobject fp_name="/simulation_rv32i_overlay_wrapper/simulation_rv32i_overlay_i/cpu_regfile/ctrl_i" type="array">
+         <obj_property name="ElementShortName">ctrl_i[73:0]</obj_property>
+         <obj_property name="ObjectShortName">ctrl_i[73:0]</obj_property>
+      </wvobject>
+      <wvobject fp_name="/simulation_rv32i_overlay_wrapper/simulation_rv32i_overlay_i/cpu_regfile/mem_i" type="array">
+         <obj_property name="ElementShortName">mem_i[31:0]</obj_property>
+         <obj_property name="ObjectShortName">mem_i[31:0]</obj_property>
+      </wvobject>
+      <wvobject fp_name="/simulation_rv32i_overlay_wrapper/simulation_rv32i_overlay_i/cpu_regfile/alu_i" type="array">
+         <obj_property name="ElementShortName">alu_i[31:0]</obj_property>
+         <obj_property name="ObjectShortName">alu_i[31:0]</obj_property>
+      </wvobject>
+      <wvobject fp_name="/simulation_rv32i_overlay_wrapper/simulation_rv32i_overlay_i/cpu_regfile/rs1_o" type="array">
+         <obj_property name="ElementShortName">rs1_o[31:0]</obj_property>
+         <obj_property name="ObjectShortName">rs1_o[31:0]</obj_property>
+      </wvobject>
+      <wvobject fp_name="/simulation_rv32i_overlay_wrapper/simulation_rv32i_overlay_i/cpu_regfile/rs2_o" type="array">
+         <obj_property name="ElementShortName">rs2_o[31:0]</obj_property>
+         <obj_property name="ObjectShortName">rs2_o[31:0]</obj_property>
+      </wvobject>
+      <wvobject fp_name="/simulation_rv32i_overlay_wrapper/simulation_rv32i_overlay_i/cpu_regfile/cmp_o" type="array">
+         <obj_property name="ElementShortName">cmp_o[1:0]</obj_property>
+         <obj_property name="ObjectShortName">cmp_o[1:0]</obj_property>
+      </wvobject>
+      <wvobject fp_name="/simulation_rv32i_overlay_wrapper/simulation_rv32i_overlay_i/cpu_regfile/U0/reg_file" type="array">
+         <obj_property name="ElementShortName">reg_file[31:0][31:0]</obj_property>
+         <obj_property name="ObjectShortName">reg_file[31:0][31:0]</obj_property>
+      </wvobject>
+   </wvobject>
+   <wvobject fp_name="group131" type="group">
+      <obj_property name="label">CPU_ALU</obj_property>
+      <obj_property name="DisplayName">label</obj_property>
+      <wvobject fp_name="/simulation_rv32i_overlay_wrapper/simulation_rv32i_overlay_i/cpu_alu/clk_i" type="logic">
+         <obj_property name="ElementShortName">clk_i</obj_property>
+         <obj_property name="ObjectShortName">clk_i</obj_property>
+      </wvobject>
+      <wvobject fp_name="/simulation_rv32i_overlay_wrapper/simulation_rv32i_overlay_i/cpu_alu/rstn_i" type="logic">
+         <obj_property name="ElementShortName">rstn_i</obj_property>
+         <obj_property name="ObjectShortName">rstn_i</obj_property>
+      </wvobject>
+      <wvobject fp_name="/simulation_rv32i_overlay_wrapper/simulation_rv32i_overlay_i/cpu_alu/ctrl_i" type="array">
+         <obj_property name="ElementShortName">ctrl_i[73:0]</obj_property>
+         <obj_property name="ObjectShortName">ctrl_i[73:0]</obj_property>
+      </wvobject>
+      <wvobject fp_name="/simulation_rv32i_overlay_wrapper/simulation_rv32i_overlay_i/cpu_alu/rs1_i" type="array">
+         <obj_property name="ElementShortName">rs1_i[31:0]</obj_property>
+         <obj_property name="ObjectShortName">rs1_i[31:0]</obj_property>
+      </wvobject>
+      <wvobject fp_name="/simulation_rv32i_overlay_wrapper/simulation_rv32i_overlay_i/cpu_alu/rs2_i" type="array">
+         <obj_property name="ElementShortName">rs2_i[31:0]</obj_property>
+         <obj_property name="ObjectShortName">rs2_i[31:0]</obj_property>
+      </wvobject>
+      <wvobject fp_name="/simulation_rv32i_overlay_wrapper/simulation_rv32i_overlay_i/cpu_alu/pc2_i" type="array">
+         <obj_property name="ElementShortName">pc2_i[31:0]</obj_property>
+         <obj_property name="ObjectShortName">pc2_i[31:0]</obj_property>
+      </wvobject>
+      <wvobject fp_name="/simulation_rv32i_overlay_wrapper/simulation_rv32i_overlay_i/cpu_alu/imm_i" type="array">
+         <obj_property name="ElementShortName">imm_i[31:0]</obj_property>
+         <obj_property name="ObjectShortName">imm_i[31:0]</obj_property>
+      </wvobject>
+      <wvobject fp_name="/simulation_rv32i_overlay_wrapper/simulation_rv32i_overlay_i/cpu_alu/res_o" type="array">
+         <obj_property name="ElementShortName">res_o[31:0]</obj_property>
+         <obj_property name="ObjectShortName">res_o[31:0]</obj_property>
+      </wvobject>
+      <wvobject fp_name="/simulation_rv32i_overlay_wrapper/simulation_rv32i_overlay_i/cpu_alu/add_o" type="array">
+         <obj_property name="ElementShortName">add_o[31:0]</obj_property>
+         <obj_property name="ObjectShortName">add_o[31:0]</obj_property>
+      </wvobject>
+      <wvobject fp_name="/simulation_rv32i_overlay_wrapper/simulation_rv32i_overlay_i/cpu_alu/cp_start_o" type="array">
+         <obj_property name="ElementShortName">cp_start_o[7:0]</obj_property>
+         <obj_property name="ObjectShortName">cp_start_o[7:0]</obj_property>
+      </wvobject>
+      <wvobject fp_name="/simulation_rv32i_overlay_wrapper/simulation_rv32i_overlay_i/cpu_alu/cp_valid_i" type="array">
+         <obj_property name="ElementShortName">cp_valid_i[7:0]</obj_property>
+         <obj_property name="ObjectShortName">cp_valid_i[7:0]</obj_property>
+      </wvobject>
+      <wvobject fp_name="/simulation_rv32i_overlay_wrapper/simulation_rv32i_overlay_i/cpu_alu/wrapped_cp_result_i" type="array">
+         <obj_property name="ElementShortName">wrapped_cp_result_i[255:0]</obj_property>
+         <obj_property name="ObjectShortName">wrapped_cp_result_i[255:0]</obj_property>
+      </wvobject>
+      <wvobject fp_name="/simulation_rv32i_overlay_wrapper/simulation_rv32i_overlay_i/cpu_alu/wait_o" type="logic">
+         <obj_property name="ElementShortName">wait_o</obj_property>
+         <obj_property name="ObjectShortName">wait_o</obj_property>
+      </wvobject>
+   </wvobject>
+   <wvobject fp_name="group117" type="group">
+      <obj_property name="label">CPU_bus_control</obj_property>
+      <obj_property name="DisplayName">label</obj_property>
+      <wvobject fp_name="/simulation_rv32i_overlay_wrapper/simulation_rv32i_overlay_i/cpu_external_bus_control/clk_i" type="logic">
+         <obj_property name="ElementShortName">clk_i</obj_property>
+         <obj_property name="ObjectShortName">clk_i</obj_property>
+      </wvobject>
+      <wvobject fp_name="/simulation_rv32i_overlay_wrapper/simulation_rv32i_overlay_i/cpu_external_bus_control/rstn_i" type="logic">
+         <obj_property name="ElementShortName">rstn_i</obj_property>
+         <obj_property name="ObjectShortName">rstn_i</obj_property>
+      </wvobject>
+      <wvobject fp_name="/simulation_rv32i_overlay_wrapper/simulation_rv32i_overlay_i/cpu_external_bus_control/ctrl_i" type="array">
+         <obj_property name="ElementShortName">ctrl_i[73:0]</obj_property>
+         <obj_property name="ObjectShortName">ctrl_i[73:0]</obj_property>
+      </wvobject>
+      <wvobject fp_name="/simulation_rv32i_overlay_wrapper/simulation_rv32i_overlay_i/cpu_external_bus_control/fetch_pc_i" type="array">
+         <obj_property name="ElementShortName">fetch_pc_i[31:0]</obj_property>
+         <obj_property name="ObjectShortName">fetch_pc_i[31:0]</obj_property>
+      </wvobject>
+      <wvobject fp_name="/simulation_rv32i_overlay_wrapper/simulation_rv32i_overlay_i/cpu_external_bus_control/instr_o" type="array">
+         <obj_property name="ElementShortName">instr_o[31:0]</obj_property>
+         <obj_property name="ObjectShortName">instr_o[31:0]</obj_property>
+      </wvobject>
+      <wvobject fp_name="/simulation_rv32i_overlay_wrapper/simulation_rv32i_overlay_i/cpu_external_bus_control/i_wait_o" type="logic">
+         <obj_property name="ElementShortName">i_wait_o</obj_property>
+         <obj_property name="ObjectShortName">i_wait_o</obj_property>
+      </wvobject>
+      <wvobject fp_name="/simulation_rv32i_overlay_wrapper/simulation_rv32i_overlay_i/cpu_external_bus_control/ma_instr_o" type="logic">
+         <obj_property name="ElementShortName">ma_instr_o</obj_property>
+         <obj_property name="ObjectShortName">ma_instr_o</obj_property>
+      </wvobject>
+      <wvobject fp_name="/simulation_rv32i_overlay_wrapper/simulation_rv32i_overlay_i/cpu_external_bus_control/be_instr_o" type="logic">
+         <obj_property name="ElementShortName">be_instr_o</obj_property>
+         <obj_property name="ObjectShortName">be_instr_o</obj_property>
+      </wvobject>
+      <wvobject fp_name="/simulation_rv32i_overlay_wrapper/simulation_rv32i_overlay_i/cpu_external_bus_control/addr_i" type="array">
+         <obj_property name="ElementShortName">addr_i[31:0]</obj_property>
+         <obj_property name="ObjectShortName">addr_i[31:0]</obj_property>
+      </wvobject>
+      <wvobject fp_name="/simulation_rv32i_overlay_wrapper/simulation_rv32i_overlay_i/cpu_external_bus_control/wdata_i" type="array">
+         <obj_property name="ElementShortName">wdata_i[31:0]</obj_property>
+         <obj_property name="ObjectShortName">wdata_i[31:0]</obj_property>
+      </wvobject>
+      <wvobject fp_name="/simulation_rv32i_overlay_wrapper/simulation_rv32i_overlay_i/cpu_external_bus_control/rdata_o" type="array">
+         <obj_property name="ElementShortName">rdata_o[31:0]</obj_property>
+         <obj_property name="ObjectShortName">rdata_o[31:0]</obj_property>
+      </wvobject>
+      <wvobject fp_name="/simulation_rv32i_overlay_wrapper/simulation_rv32i_overlay_i/cpu_external_bus_control/mar_o" type="array">
+         <obj_property name="ElementShortName">mar_o[31:0]</obj_property>
+         <obj_property name="ObjectShortName">mar_o[31:0]</obj_property>
+      </wvobject>
+      <wvobject fp_name="/simulation_rv32i_overlay_wrapper/simulation_rv32i_overlay_i/cpu_external_bus_control/d_wait_o" type="logic">
+         <obj_property name="ElementShortName">d_wait_o</obj_property>
+         <obj_property name="ObjectShortName">d_wait_o</obj_property>
+      </wvobject>
+      <wvobject fp_name="/simulation_rv32i_overlay_wrapper/simulation_rv32i_overlay_i/cpu_external_bus_control/excl_state_o" type="logic">
+         <obj_property name="ElementShortName">excl_state_o</obj_property>
+         <obj_property name="ObjectShortName">excl_state_o</obj_property>
+      </wvobject>
+      <wvobject fp_name="/simulation_rv32i_overlay_wrapper/simulation_rv32i_overlay_i/cpu_external_bus_control/ma_load_o" type="logic">
+         <obj_property name="ElementShortName">ma_load_o</obj_property>
+         <obj_property name="ObjectShortName">ma_load_o</obj_property>
+      </wvobject>
+      <wvobject fp_name="/simulation_rv32i_overlay_wrapper/simulation_rv32i_overlay_i/cpu_external_bus_control/ma_store_o" type="logic">
+         <obj_property name="ElementShortName">ma_store_o</obj_property>
+         <obj_property name="ObjectShortName">ma_store_o</obj_property>
+      </wvobject>
+      <wvobject fp_name="/simulation_rv32i_overlay_wrapper/simulation_rv32i_overlay_i/cpu_external_bus_control/be_load_o" type="logic">
+         <obj_property name="ElementShortName">be_load_o</obj_property>
+         <obj_property name="ObjectShortName">be_load_o</obj_property>
+      </wvobject>
+      <wvobject fp_name="/simulation_rv32i_overlay_wrapper/simulation_rv32i_overlay_i/cpu_external_bus_control/be_store_o" type="logic">
+         <obj_property name="ElementShortName">be_store_o</obj_property>
+         <obj_property name="ObjectShortName">be_store_o</obj_property>
+      </wvobject>
+      <wvobject fp_name="/simulation_rv32i_overlay_wrapper/simulation_rv32i_overlay_i/cpu_external_bus_control/wrapped_pmp_addr_i" type="array">
+         <obj_property name="ElementShortName">wrapped_pmp_addr_i[2175:0]</obj_property>
+         <obj_property name="ObjectShortName">wrapped_pmp_addr_i[2175:0]</obj_property>
+      </wvobject>
+      <wvobject fp_name="/simulation_rv32i_overlay_wrapper/simulation_rv32i_overlay_i/cpu_external_bus_control/wrapped_pmp_ctrl_i" type="array">
+         <obj_property name="ElementShortName">wrapped_pmp_ctrl_i[511:0]</obj_property>
+         <obj_property name="ObjectShortName">wrapped_pmp_ctrl_i[511:0]</obj_property>
+      </wvobject>
+      <wvobject fp_name="group1162" type="group">
+         <obj_property name="label">instr fetch bus</obj_property>
+         <obj_property name="DisplayName">label</obj_property>
+         <wvobject fp_name="/simulation_rv32i_overlay_wrapper/simulation_rv32i_overlay_i/cpu_external_bus_control/i_bus_addr_o" type="array">
+            <obj_property name="ElementShortName">i_bus_addr_o[31:0]</obj_property>
+            <obj_property name="ObjectShortName">i_bus_addr_o[31:0]</obj_property>
+         </wvobject>
+         <wvobject fp_name="/simulation_rv32i_overlay_wrapper/simulation_rv32i_overlay_i/cpu_external_bus_control/i_bus_rdata_i" type="array">
+            <obj_property name="ElementShortName">i_bus_rdata_i[31:0]</obj_property>
+            <obj_property name="ObjectShortName">i_bus_rdata_i[31:0]</obj_property>
+         </wvobject>
+         <wvobject fp_name="/simulation_rv32i_overlay_wrapper/simulation_rv32i_overlay_i/cpu_external_bus_control/i_bus_wdata_o" type="array">
+            <obj_property name="ElementShortName">i_bus_wdata_o[31:0]</obj_property>
+            <obj_property name="ObjectShortName">i_bus_wdata_o[31:0]</obj_property>
+         </wvobject>
+         <wvobject fp_name="/simulation_rv32i_overlay_wrapper/simulation_rv32i_overlay_i/cpu_external_bus_control/i_bus_ben_o" type="array">
+            <obj_property name="ElementShortName">i_bus_ben_o[3:0]</obj_property>
+            <obj_property name="ObjectShortName">i_bus_ben_o[3:0]</obj_property>
+         </wvobject>
+         <wvobject fp_name="/simulation_rv32i_overlay_wrapper/simulation_rv32i_overlay_i/cpu_external_bus_control/i_bus_we_o" type="logic">
+            <obj_property name="ElementShortName">i_bus_we_o</obj_property>
+            <obj_property name="ObjectShortName">i_bus_we_o</obj_property>
+         </wvobject>
+         <wvobject fp_name="/simulation_rv32i_overlay_wrapper/simulation_rv32i_overlay_i/cpu_external_bus_control/i_bus_re_o" type="logic">
+            <obj_property name="ElementShortName">i_bus_re_o</obj_property>
+            <obj_property name="ObjectShortName">i_bus_re_o</obj_property>
+         </wvobject>
+         <wvobject fp_name="/simulation_rv32i_overlay_wrapper/simulation_rv32i_overlay_i/cpu_external_bus_control/i_bus_lock_o" type="logic">
+            <obj_property name="ElementShortName">i_bus_lock_o</obj_property>
+            <obj_property name="ObjectShortName">i_bus_lock_o</obj_property>
+         </wvobject>
+         <wvobject fp_name="/simulation_rv32i_overlay_wrapper/simulation_rv32i_overlay_i/cpu_external_bus_control/i_bus_ack_i" type="logic">
+            <obj_property name="ElementShortName">i_bus_ack_i</obj_property>
+            <obj_property name="ObjectShortName">i_bus_ack_i</obj_property>
+         </wvobject>
+         <wvobject fp_name="/simulation_rv32i_overlay_wrapper/simulation_rv32i_overlay_i/cpu_external_bus_control/i_bus_err_i" type="logic">
+            <obj_property name="ElementShortName">i_bus_err_i</obj_property>
+            <obj_property name="ObjectShortName">i_bus_err_i</obj_property>
+         </wvobject>
+         <wvobject fp_name="/simulation_rv32i_overlay_wrapper/simulation_rv32i_overlay_i/cpu_external_bus_control/i_bus_fence_o" type="logic">
+            <obj_property name="ElementShortName">i_bus_fence_o</obj_property>
+            <obj_property name="ObjectShortName">i_bus_fence_o</obj_property>
+         </wvobject>
+      </wvobject>
+      <wvobject fp_name="group1161" type="group">
+         <obj_property name="label">data bus</obj_property>
+         <obj_property name="DisplayName">label</obj_property>
+         <wvobject fp_name="/simulation_rv32i_overlay_wrapper/simulation_rv32i_overlay_i/cpu_external_bus_control/d_bus_addr_o" type="array">
+            <obj_property name="ElementShortName">d_bus_addr_o[31:0]</obj_property>
+            <obj_property name="ObjectShortName">d_bus_addr_o[31:0]</obj_property>
+         </wvobject>
+         <wvobject fp_name="/simulation_rv32i_overlay_wrapper/simulation_rv32i_overlay_i/cpu_external_bus_control/d_bus_rdata_i" type="array">
+            <obj_property name="ElementShortName">d_bus_rdata_i[31:0]</obj_property>
+            <obj_property name="ObjectShortName">d_bus_rdata_i[31:0]</obj_property>
+         </wvobject>
+         <wvobject fp_name="/simulation_rv32i_overlay_wrapper/simulation_rv32i_overlay_i/cpu_external_bus_control/d_bus_wdata_o" type="array">
+            <obj_property name="ElementShortName">d_bus_wdata_o[31:0]</obj_property>
+            <obj_property name="ObjectShortName">d_bus_wdata_o[31:0]</obj_property>
+         </wvobject>
+         <wvobject fp_name="/simulation_rv32i_overlay_wrapper/simulation_rv32i_overlay_i/cpu_external_bus_control/d_bus_ben_o" type="array">
+            <obj_property name="ElementShortName">d_bus_ben_o[3:0]</obj_property>
+            <obj_property name="ObjectShortName">d_bus_ben_o[3:0]</obj_property>
+         </wvobject>
+         <wvobject fp_name="/simulation_rv32i_overlay_wrapper/simulation_rv32i_overlay_i/cpu_external_bus_control/d_bus_we_o" type="logic">
+            <obj_property name="ElementShortName">d_bus_we_o</obj_property>
+            <obj_property name="ObjectShortName">d_bus_we_o</obj_property>
+         </wvobject>
+         <wvobject fp_name="/simulation_rv32i_overlay_wrapper/simulation_rv32i_overlay_i/cpu_external_bus_control/d_bus_re_o" type="logic">
+            <obj_property name="ElementShortName">d_bus_re_o</obj_property>
+            <obj_property name="ObjectShortName">d_bus_re_o</obj_property>
+         </wvobject>
+         <wvobject fp_name="/simulation_rv32i_overlay_wrapper/simulation_rv32i_overlay_i/cpu_external_bus_control/d_bus_lock_o" type="logic">
+            <obj_property name="ElementShortName">d_bus_lock_o</obj_property>
+            <obj_property name="ObjectShortName">d_bus_lock_o</obj_property>
+         </wvobject>
+         <wvobject fp_name="/simulation_rv32i_overlay_wrapper/simulation_rv32i_overlay_i/cpu_external_bus_control/d_bus_ack_i" type="logic">
+            <obj_property name="ElementShortName">d_bus_ack_i</obj_property>
+            <obj_property name="ObjectShortName">d_bus_ack_i</obj_property>
+         </wvobject>
+         <wvobject fp_name="/simulation_rv32i_overlay_wrapper/simulation_rv32i_overlay_i/cpu_external_bus_control/d_bus_err_i" type="logic">
+            <obj_property name="ElementShortName">d_bus_err_i</obj_property>
+            <obj_property name="ObjectShortName">d_bus_err_i</obj_property>
+         </wvobject>
+         <wvobject fp_name="/simulation_rv32i_overlay_wrapper/simulation_rv32i_overlay_i/cpu_external_bus_control/d_bus_fence_o" type="logic">
+            <obj_property name="ElementShortName">d_bus_fence_o</obj_property>
+            <obj_property name="ObjectShortName">d_bus_fence_o</obj_property>
+         </wvobject>
+      </wvobject>
+   </wvobject>
+   <wvobject type="divider" fp_name="divider132">
+      <obj_property name="label">CPU Interface</obj_property>
+      <obj_property name="DisplayName">label</obj_property>
+   </wvobject>
+   <wvobject fp_name="group1525" type="group">
+      <obj_property name="label">interface_bus_keeper</obj_property>
+      <obj_property name="DisplayName">label</obj_property>
+      <wvobject fp_name="/simulation_rv32i_overlay_wrapper/simulation_rv32i_overlay_i/interface_bus_keeper/clk_i" type="logic">
+         <obj_property name="ElementShortName">clk_i</obj_property>
+         <obj_property name="ObjectShortName">clk_i</obj_property>
+      </wvobject>
+      <wvobject fp_name="/simulation_rv32i_overlay_wrapper/simulation_rv32i_overlay_i/interface_bus_keeper/rstn_i" type="logic">
+         <obj_property name="ElementShortName">rstn_i</obj_property>
+         <obj_property name="ObjectShortName">rstn_i</obj_property>
+      </wvobject>
+      <wvobject fp_name="/simulation_rv32i_overlay_wrapper/simulation_rv32i_overlay_i/interface_bus_keeper/addr_i" type="array">
+         <obj_property name="ElementShortName">addr_i[31:0]</obj_property>
+         <obj_property name="ObjectShortName">addr_i[31:0]</obj_property>
+      </wvobject>
+      <wvobject fp_name="/simulation_rv32i_overlay_wrapper/simulation_rv32i_overlay_i/interface_bus_keeper/rden_i" type="logic">
+         <obj_property name="ElementShortName">rden_i</obj_property>
+         <obj_property name="ObjectShortName">rden_i</obj_property>
+      </wvobject>
+      <wvobject fp_name="/simulation_rv32i_overlay_wrapper/simulation_rv32i_overlay_i/interface_bus_keeper/wren_i" type="logic">
+         <obj_property name="ElementShortName">wren_i</obj_property>
+         <obj_property name="ObjectShortName">wren_i</obj_property>
+      </wvobject>
+      <wvobject fp_name="/simulation_rv32i_overlay_wrapper/simulation_rv32i_overlay_i/interface_bus_keeper/ack_i" type="logic">
+         <obj_property name="ElementShortName">ack_i</obj_property>
+         <obj_property name="ObjectShortName">ack_i</obj_property>
+      </wvobject>
+      <wvobject fp_name="/simulation_rv32i_overlay_wrapper/simulation_rv32i_overlay_i/interface_bus_keeper/err_i" type="logic">
+         <obj_property name="ElementShortName">err_i</obj_property>
+         <obj_property name="ObjectShortName">err_i</obj_property>
+      </wvobject>
+      <wvobject fp_name="/simulation_rv32i_overlay_wrapper/simulation_rv32i_overlay_i/interface_bus_keeper/err_o" type="logic">
+         <obj_property name="ElementShortName">err_o</obj_property>
+         <obj_property name="ObjectShortName">err_o</obj_property>
+      </wvobject>
+   </wvobject>
+   <wvobject fp_name="group163" type="group">
+      <obj_property name="label">interface_bus_switch</obj_property>
+      <obj_property name="DisplayName">label</obj_property>
+      <wvobject fp_name="/simulation_rv32i_overlay_wrapper/simulation_rv32i_overlay_i/interface_bus_switch/clk_i" type="logic">
+         <obj_property name="ElementShortName">clk_i</obj_property>
+         <obj_property name="ObjectShortName">clk_i</obj_property>
+      </wvobject>
+      <wvobject fp_name="/simulation_rv32i_overlay_wrapper/simulation_rv32i_overlay_i/interface_bus_switch/rstn_i" type="logic">
+         <obj_property name="ElementShortName">rstn_i</obj_property>
+         <obj_property name="ObjectShortName">rstn_i</obj_property>
+      </wvobject>
+      <wvobject fp_name="group1159" type="group">
+         <obj_property name="label">bus B</obj_property>
+         <obj_property name="DisplayName">label</obj_property>
+         <wvobject fp_name="/simulation_rv32i_overlay_wrapper/simulation_rv32i_overlay_i/interface_bus_switch/cb_bus_addr_i" type="array">
+            <obj_property name="ElementShortName">cb_bus_addr_i[31:0]</obj_property>
+            <obj_property name="ObjectShortName">cb_bus_addr_i[31:0]</obj_property>
+         </wvobject>
+         <wvobject fp_name="/simulation_rv32i_overlay_wrapper/simulation_rv32i_overlay_i/interface_bus_switch/cb_bus_rdata_o" type="array">
+            <obj_property name="ElementShortName">cb_bus_rdata_o[31:0]</obj_property>
+            <obj_property name="ObjectShortName">cb_bus_rdata_o[31:0]</obj_property>
+         </wvobject>
+         <wvobject fp_name="/simulation_rv32i_overlay_wrapper/simulation_rv32i_overlay_i/interface_bus_switch/cb_bus_wdata_i" type="array">
+            <obj_property name="ElementShortName">cb_bus_wdata_i[31:0]</obj_property>
+            <obj_property name="ObjectShortName">cb_bus_wdata_i[31:0]</obj_property>
+         </wvobject>
+         <wvobject fp_name="/simulation_rv32i_overlay_wrapper/simulation_rv32i_overlay_i/interface_bus_switch/cb_bus_ben_i" type="array">
+            <obj_property name="ElementShortName">cb_bus_ben_i[3:0]</obj_property>
+            <obj_property name="ObjectShortName">cb_bus_ben_i[3:0]</obj_property>
+         </wvobject>
+         <wvobject fp_name="/simulation_rv32i_overlay_wrapper/simulation_rv32i_overlay_i/interface_bus_switch/cb_bus_we_i" type="logic">
+            <obj_property name="ElementShortName">cb_bus_we_i</obj_property>
+            <obj_property name="ObjectShortName">cb_bus_we_i</obj_property>
+         </wvobject>
+         <wvobject fp_name="/simulation_rv32i_overlay_wrapper/simulation_rv32i_overlay_i/interface_bus_switch/cb_bus_re_i" type="logic">
+            <obj_property name="ElementShortName">cb_bus_re_i</obj_property>
+            <obj_property name="ObjectShortName">cb_bus_re_i</obj_property>
+         </wvobject>
+         <wvobject fp_name="/simulation_rv32i_overlay_wrapper/simulation_rv32i_overlay_i/interface_bus_switch/cb_bus_lock_i" type="logic">
+            <obj_property name="ElementShortName">cb_bus_lock_i</obj_property>
+            <obj_property name="ObjectShortName">cb_bus_lock_i</obj_property>
+         </wvobject>
+         <wvobject fp_name="/simulation_rv32i_overlay_wrapper/simulation_rv32i_overlay_i/interface_bus_switch/cb_bus_ack_o" type="logic">
+            <obj_property name="ElementShortName">cb_bus_ack_o</obj_property>
+            <obj_property name="ObjectShortName">cb_bus_ack_o</obj_property>
+         </wvobject>
+         <wvobject fp_name="/simulation_rv32i_overlay_wrapper/simulation_rv32i_overlay_i/interface_bus_switch/cb_bus_err_o" type="logic">
+            <obj_property name="ElementShortName">cb_bus_err_o</obj_property>
+            <obj_property name="ObjectShortName">cb_bus_err_o</obj_property>
+         </wvobject>
+      </wvobject>
+      <wvobject fp_name="group1158" type="group">
+         <obj_property name="label">instr fetch bus</obj_property>
+         <obj_property name="DisplayName">label</obj_property>
+         <wvobject fp_name="/simulation_rv32i_overlay_wrapper/simulation_rv32i_overlay_i/interface_bus_switch/ca_bus_addr_i" type="array">
+            <obj_property name="ElementShortName">ca_bus_addr_i[31:0]</obj_property>
+            <obj_property name="ObjectShortName">ca_bus_addr_i[31:0]</obj_property>
+         </wvobject>
+         <wvobject fp_name="/simulation_rv32i_overlay_wrapper/simulation_rv32i_overlay_i/interface_bus_switch/ca_bus_rdata_o" type="array">
+            <obj_property name="ElementShortName">ca_bus_rdata_o[31:0]</obj_property>
+            <obj_property name="ObjectShortName">ca_bus_rdata_o[31:0]</obj_property>
+         </wvobject>
+         <wvobject fp_name="/simulation_rv32i_overlay_wrapper/simulation_rv32i_overlay_i/interface_bus_switch/ca_bus_wdata_i" type="array">
+            <obj_property name="ElementShortName">ca_bus_wdata_i[31:0]</obj_property>
+            <obj_property name="ObjectShortName">ca_bus_wdata_i[31:0]</obj_property>
+         </wvobject>
+         <wvobject fp_name="/simulation_rv32i_overlay_wrapper/simulation_rv32i_overlay_i/interface_bus_switch/ca_bus_ben_i" type="array">
+            <obj_property name="ElementShortName">ca_bus_ben_i[3:0]</obj_property>
+            <obj_property name="ObjectShortName">ca_bus_ben_i[3:0]</obj_property>
+         </wvobject>
+         <wvobject fp_name="/simulation_rv32i_overlay_wrapper/simulation_rv32i_overlay_i/interface_bus_switch/ca_bus_we_i" type="logic">
+            <obj_property name="ElementShortName">ca_bus_we_i</obj_property>
+            <obj_property name="ObjectShortName">ca_bus_we_i</obj_property>
+         </wvobject>
+         <wvobject fp_name="/simulation_rv32i_overlay_wrapper/simulation_rv32i_overlay_i/interface_bus_switch/ca_bus_re_i" type="logic">
+            <obj_property name="ElementShortName">ca_bus_re_i</obj_property>
+            <obj_property name="ObjectShortName">ca_bus_re_i</obj_property>
+         </wvobject>
+         <wvobject fp_name="/simulation_rv32i_overlay_wrapper/simulation_rv32i_overlay_i/interface_bus_switch/ca_bus_lock_i" type="logic">
+            <obj_property name="ElementShortName">ca_bus_lock_i</obj_property>
+            <obj_property name="ObjectShortName">ca_bus_lock_i</obj_property>
+         </wvobject>
+         <wvobject fp_name="/simulation_rv32i_overlay_wrapper/simulation_rv32i_overlay_i/interface_bus_switch/ca_bus_ack_o" type="logic">
+            <obj_property name="ElementShortName">ca_bus_ack_o</obj_property>
+            <obj_property name="ObjectShortName">ca_bus_ack_o</obj_property>
+         </wvobject>
+         <wvobject fp_name="/simulation_rv32i_overlay_wrapper/simulation_rv32i_overlay_i/interface_bus_switch/ca_bus_err_o" type="logic">
+            <obj_property name="ElementShortName">ca_bus_err_o</obj_property>
+            <obj_property name="ObjectShortName">ca_bus_err_o</obj_property>
+         </wvobject>
+      </wvobject>
+      <wvobject fp_name="group1160" type="group">
+         <obj_property name="label">muxed bud</obj_property>
+         <obj_property name="DisplayName">label</obj_property>
+         <wvobject fp_name="/simulation_rv32i_overlay_wrapper/simulation_rv32i_overlay_i/interface_bus_switch/p_bus_src_o" type="logic">
+            <obj_property name="ElementShortName">p_bus_src_o</obj_property>
+            <obj_property name="ObjectShortName">p_bus_src_o</obj_property>
+         </wvobject>
+         <wvobject fp_name="/simulation_rv32i_overlay_wrapper/simulation_rv32i_overlay_i/interface_bus_switch/p_bus_addr_o" type="array">
+            <obj_property name="ElementShortName">p_bus_addr_o[31:0]</obj_property>
+            <obj_property name="ObjectShortName">p_bus_addr_o[31:0]</obj_property>
+         </wvobject>
+         <wvobject fp_name="/simulation_rv32i_overlay_wrapper/simulation_rv32i_overlay_i/interface_bus_switch/p_bus_rdata_i" type="array">
+            <obj_property name="ElementShortName">p_bus_rdata_i[31:0]</obj_property>
+            <obj_property name="ObjectShortName">p_bus_rdata_i[31:0]</obj_property>
+         </wvobject>
+         <wvobject fp_name="/simulation_rv32i_overlay_wrapper/simulation_rv32i_overlay_i/interface_bus_switch/p_bus_wdata_o" type="array">
+            <obj_property name="ElementShortName">p_bus_wdata_o[31:0]</obj_property>
+            <obj_property name="ObjectShortName">p_bus_wdata_o[31:0]</obj_property>
+         </wvobject>
+         <wvobject fp_name="/simulation_rv32i_overlay_wrapper/simulation_rv32i_overlay_i/interface_bus_switch/p_bus_ben_o" type="array">
+            <obj_property name="ElementShortName">p_bus_ben_o[3:0]</obj_property>
+            <obj_property name="ObjectShortName">p_bus_ben_o[3:0]</obj_property>
+         </wvobject>
+         <wvobject fp_name="/simulation_rv32i_overlay_wrapper/simulation_rv32i_overlay_i/interface_bus_switch/p_bus_we_o" type="logic">
+            <obj_property name="ElementShortName">p_bus_we_o</obj_property>
+            <obj_property name="ObjectShortName">p_bus_we_o</obj_property>
+         </wvobject>
+         <wvobject fp_name="/simulation_rv32i_overlay_wrapper/simulation_rv32i_overlay_i/interface_bus_switch/p_bus_re_o" type="logic">
+            <obj_property name="ElementShortName">p_bus_re_o</obj_property>
+            <obj_property name="ObjectShortName">p_bus_re_o</obj_property>
+         </wvobject>
+         <wvobject fp_name="/simulation_rv32i_overlay_wrapper/simulation_rv32i_overlay_i/interface_bus_switch/p_bus_lock_o" type="logic">
+            <obj_property name="ElementShortName">p_bus_lock_o</obj_property>
+            <obj_property name="ObjectShortName">p_bus_lock_o</obj_property>
+         </wvobject>
+         <wvobject fp_name="/simulation_rv32i_overlay_wrapper/simulation_rv32i_overlay_i/interface_bus_switch/p_bus_ack_i" type="logic">
+            <obj_property name="ElementShortName">p_bus_ack_i</obj_property>
+            <obj_property name="ObjectShortName">p_bus_ack_i</obj_property>
+         </wvobject>
+         <wvobject fp_name="/simulation_rv32i_overlay_wrapper/simulation_rv32i_overlay_i/interface_bus_switch/p_bus_err_i" type="logic">
+            <obj_property name="ElementShortName">p_bus_err_i</obj_property>
+            <obj_property name="ObjectShortName">p_bus_err_i</obj_property>
+         </wvobject>
+      </wvobject>
+   </wvobject>
+   <wvobject fp_name="group188" type="group">
+      <obj_property name="label">interface_bus_to_wb</obj_property>
+      <obj_property name="DisplayName">label</obj_property>
+      <wvobject fp_name="/simulation_rv32i_overlay_wrapper/simulation_rv32i_overlay_i/interface_bus_to_wishbone/clk_i" type="logic">
+         <obj_property name="ElementShortName">clk_i</obj_property>
+         <obj_property name="ObjectShortName">clk_i</obj_property>
+      </wvobject>
+      <wvobject fp_name="/simulation_rv32i_overlay_wrapper/simulation_rv32i_overlay_i/interface_bus_to_wishbone/rstn_i" type="logic">
+         <obj_property name="ElementShortName">rstn_i</obj_property>
+         <obj_property name="ObjectShortName">rstn_i</obj_property>
+      </wvobject>
+      <wvobject fp_name="/simulation_rv32i_overlay_wrapper/simulation_rv32i_overlay_i/interface_bus_to_wishbone/src_i" type="logic">
+         <obj_property name="ElementShortName">src_i</obj_property>
+         <obj_property name="ObjectShortName">src_i</obj_property>
+      </wvobject>
+      <wvobject fp_name="/simulation_rv32i_overlay_wrapper/simulation_rv32i_overlay_i/interface_bus_to_wishbone/addr_i" type="array">
+         <obj_property name="ElementShortName">addr_i[31:0]</obj_property>
+         <obj_property name="ObjectShortName">addr_i[31:0]</obj_property>
+      </wvobject>
+      <wvobject fp_name="/simulation_rv32i_overlay_wrapper/simulation_rv32i_overlay_i/interface_bus_to_wishbone/rden_i" type="logic">
+         <obj_property name="ElementShortName">rden_i</obj_property>
+         <obj_property name="ObjectShortName">rden_i</obj_property>
+      </wvobject>
+      <wvobject fp_name="/simulation_rv32i_overlay_wrapper/simulation_rv32i_overlay_i/interface_bus_to_wishbone/wren_i" type="logic">
+         <obj_property name="ElementShortName">wren_i</obj_property>
+         <obj_property name="ObjectShortName">wren_i</obj_property>
+      </wvobject>
+      <wvobject fp_name="/simulation_rv32i_overlay_wrapper/simulation_rv32i_overlay_i/interface_bus_to_wishbone/ben_i" type="array">
+         <obj_property name="ElementShortName">ben_i[3:0]</obj_property>
+         <obj_property name="ObjectShortName">ben_i[3:0]</obj_property>
+      </wvobject>
+      <wvobject fp_name="/simulation_rv32i_overlay_wrapper/simulation_rv32i_overlay_i/interface_bus_to_wishbone/data_i" type="array">
+         <obj_property name="ElementShortName">data_i[31:0]</obj_property>
+         <obj_property name="ObjectShortName">data_i[31:0]</obj_property>
+      </wvobject>
+      <wvobject fp_name="/simulation_rv32i_overlay_wrapper/simulation_rv32i_overlay_i/interface_bus_to_wishbone/data_o" type="array">
+         <obj_property name="ElementShortName">data_o[31:0]</obj_property>
+         <obj_property name="ObjectShortName">data_o[31:0]</obj_property>
+      </wvobject>
+      <wvobject fp_name="/simulation_rv32i_overlay_wrapper/simulation_rv32i_overlay_i/interface_bus_to_wishbone/lock_i" type="logic">
+         <obj_property name="ElementShortName">lock_i</obj_property>
+         <obj_property name="ObjectShortName">lock_i</obj_property>
+      </wvobject>
+      <wvobject fp_name="/simulation_rv32i_overlay_wrapper/simulation_rv32i_overlay_i/interface_bus_to_wishbone/ack_o" type="logic">
+         <obj_property name="ElementShortName">ack_o</obj_property>
+         <obj_property name="ObjectShortName">ack_o</obj_property>
+      </wvobject>
+      <wvobject fp_name="/simulation_rv32i_overlay_wrapper/simulation_rv32i_overlay_i/interface_bus_to_wishbone/err_o" type="logic">
+         <obj_property name="ElementShortName">err_o</obj_property>
+         <obj_property name="ObjectShortName">err_o</obj_property>
+      </wvobject>
+      <wvobject fp_name="/simulation_rv32i_overlay_wrapper/simulation_rv32i_overlay_i/interface_bus_to_wishbone/priv_i" type="array">
+         <obj_property name="ElementShortName">priv_i[1:0]</obj_property>
+         <obj_property name="ObjectShortName">priv_i[1:0]</obj_property>
+      </wvobject>
+      <wvobject fp_name="group1157" type="group">
+         <obj_property name="label">wishbone</obj_property>
+         <obj_property name="DisplayName">label</obj_property>
+         <wvobject fp_name="/simulation_rv32i_overlay_wrapper/simulation_rv32i_overlay_i/interface_bus_to_wishbone/wb_tag_o" type="array">
+            <obj_property name="ElementShortName">wb_tag_o[2:0]</obj_property>
+            <obj_property name="ObjectShortName">wb_tag_o[2:0]</obj_property>
+         </wvobject>
+         <wvobject fp_name="/simulation_rv32i_overlay_wrapper/simulation_rv32i_overlay_i/interface_bus_to_wishbone/wb_adr_o" type="array">
+            <obj_property name="ElementShortName">wb_adr_o[31:0]</obj_property>
+            <obj_property name="ObjectShortName">wb_adr_o[31:0]</obj_property>
+         </wvobject>
+         <wvobject fp_name="/simulation_rv32i_overlay_wrapper/simulation_rv32i_overlay_i/interface_bus_to_wishbone/wb_dat_i" type="array">
+            <obj_property name="ElementShortName">wb_dat_i[31:0]</obj_property>
+            <obj_property name="ObjectShortName">wb_dat_i[31:0]</obj_property>
+         </wvobject>
+         <wvobject fp_name="/simulation_rv32i_overlay_wrapper/simulation_rv32i_overlay_i/interface_bus_to_wishbone/wb_dat_o" type="array">
+            <obj_property name="ElementShortName">wb_dat_o[31:0]</obj_property>
+            <obj_property name="ObjectShortName">wb_dat_o[31:0]</obj_property>
+         </wvobject>
+         <wvobject fp_name="/simulation_rv32i_overlay_wrapper/simulation_rv32i_overlay_i/interface_bus_to_wishbone/wb_we_o" type="logic">
+            <obj_property name="ElementShortName">wb_we_o</obj_property>
+            <obj_property name="ObjectShortName">wb_we_o</obj_property>
+         </wvobject>
+         <wvobject fp_name="/simulation_rv32i_overlay_wrapper/simulation_rv32i_overlay_i/interface_bus_to_wishbone/wb_sel_o" type="array">
+            <obj_property name="ElementShortName">wb_sel_o[3:0]</obj_property>
+            <obj_property name="ObjectShortName">wb_sel_o[3:0]</obj_property>
+         </wvobject>
+         <wvobject fp_name="/simulation_rv32i_overlay_wrapper/simulation_rv32i_overlay_i/interface_bus_to_wishbone/wb_stb_o" type="logic">
+            <obj_property name="ElementShortName">wb_stb_o</obj_property>
+            <obj_property name="ObjectShortName">wb_stb_o</obj_property>
+         </wvobject>
+         <wvobject fp_name="/simulation_rv32i_overlay_wrapper/simulation_rv32i_overlay_i/interface_bus_to_wishbone/wb_cyc_o" type="logic">
+            <obj_property name="ElementShortName">wb_cyc_o</obj_property>
+            <obj_property name="ObjectShortName">wb_cyc_o</obj_property>
+         </wvobject>
+         <wvobject fp_name="/simulation_rv32i_overlay_wrapper/simulation_rv32i_overlay_i/interface_bus_to_wishbone/wb_lock_o" type="logic">
+            <obj_property name="ElementShortName">wb_lock_o</obj_property>
+            <obj_property name="ObjectShortName">wb_lock_o</obj_property>
+         </wvobject>
+         <wvobject fp_name="/simulation_rv32i_overlay_wrapper/simulation_rv32i_overlay_i/interface_bus_to_wishbone/wb_ack_i" type="logic">
+            <obj_property name="ElementShortName">wb_ack_i</obj_property>
+            <obj_property name="ObjectShortName">wb_ack_i</obj_property>
+         </wvobject>
+         <wvobject fp_name="/simulation_rv32i_overlay_wrapper/simulation_rv32i_overlay_i/interface_bus_to_wishbone/wb_err_i" type="logic">
+            <obj_property name="ElementShortName">wb_err_i</obj_property>
+            <obj_property name="ObjectShortName">wb_err_i</obj_property>
+         </wvobject>
+      </wvobject>
+   </wvobject>
+   <wvobject fp_name="group247" type="group">
+      <obj_property name="label">interface_wb_to_axi</obj_property>
+      <obj_property name="DisplayName">label</obj_property>
+      <wvobject fp_name="/simulation_rv32i_overlay_wrapper/simulation_rv32i_overlay_i/interface_wishbone_to_axi/m_axi_aclk" type="logic">
+         <obj_property name="ElementShortName">m_axi_aclk</obj_property>
+         <obj_property name="ObjectShortName">m_axi_aclk</obj_property>
+      </wvobject>
+      <wvobject fp_name="/simulation_rv32i_overlay_wrapper/simulation_rv32i_overlay_i/interface_wishbone_to_axi/m_axi_aresetn" type="logic">
+         <obj_property name="ElementShortName">m_axi_aresetn</obj_property>
+         <obj_property name="ObjectShortName">m_axi_aresetn</obj_property>
+      </wvobject>
+      <wvobject fp_name="group1151" type="group">
+         <obj_property name="label">axi</obj_property>
+         <obj_property name="DisplayName">label</obj_property>
+         <obj_property name="isExpanded"></obj_property>
+         <wvobject fp_name="/simulation_rv32i_overlay_wrapper/simulation_rv32i_overlay_i/interface_wishbone_to_axi/m_axi" type="protoinst">
+            <obj_property name="ElementShortName">m_axi</obj_property>
+            <obj_property name="ObjectShortName">m_axi</obj_property>
+         </wvobject>
+         <wvobject fp_name="group1152" type="group">
+            <obj_property name="label">Addr write</obj_property>
+            <obj_property name="DisplayName">label</obj_property>
+            <wvobject fp_name="/simulation_rv32i_overlay_wrapper/simulation_rv32i_overlay_i/interface_wishbone_to_axi/m_axi_awaddr" type="array">
+               <obj_property name="ElementShortName">m_axi_awaddr[31:0]</obj_property>
+               <obj_property name="ObjectShortName">m_axi_awaddr[31:0]</obj_property>
+            </wvobject>
+            <wvobject fp_name="/simulation_rv32i_overlay_wrapper/simulation_rv32i_overlay_i/interface_wishbone_to_axi/m_axi_awprot" type="array">
+               <obj_property name="ElementShortName">m_axi_awprot[2:0]</obj_property>
+               <obj_property name="ObjectShortName">m_axi_awprot[2:0]</obj_property>
+            </wvobject>
+            <wvobject fp_name="/simulation_rv32i_overlay_wrapper/simulation_rv32i_overlay_i/interface_wishbone_to_axi/m_axi_awvalid" type="logic">
+               <obj_property name="ElementShortName">m_axi_awvalid</obj_property>
+               <obj_property name="ObjectShortName">m_axi_awvalid</obj_property>
+            </wvobject>
+            <wvobject fp_name="/simulation_rv32i_overlay_wrapper/simulation_rv32i_overlay_i/interface_wishbone_to_axi/m_axi_awready" type="logic">
+               <obj_property name="ElementShortName">m_axi_awready</obj_property>
+               <obj_property name="ObjectShortName">m_axi_awready</obj_property>
+            </wvobject>
+         </wvobject>
+         <wvobject fp_name="group1153" type="group">
+            <obj_property name="label">write</obj_property>
+            <obj_property name="DisplayName">label</obj_property>
+            <wvobject fp_name="/simulation_rv32i_overlay_wrapper/simulation_rv32i_overlay_i/interface_wishbone_to_axi/m_axi_wdata" type="array">
+               <obj_property name="ElementShortName">m_axi_wdata[31:0]</obj_property>
+               <obj_property name="ObjectShortName">m_axi_wdata[31:0]</obj_property>
+            </wvobject>
+            <wvobject fp_name="/simulation_rv32i_overlay_wrapper/simulation_rv32i_overlay_i/interface_wishbone_to_axi/m_axi_wstrb" type="array">
+               <obj_property name="ElementShortName">m_axi_wstrb[3:0]</obj_property>
+               <obj_property name="ObjectShortName">m_axi_wstrb[3:0]</obj_property>
+            </wvobject>
+            <wvobject fp_name="/simulation_rv32i_overlay_wrapper/simulation_rv32i_overlay_i/interface_wishbone_to_axi/m_axi_wvalid" type="logic">
+               <obj_property name="ElementShortName">m_axi_wvalid</obj_property>
+               <obj_property name="ObjectShortName">m_axi_wvalid</obj_property>
+            </wvobject>
+            <wvobject fp_name="/simulation_rv32i_overlay_wrapper/simulation_rv32i_overlay_i/interface_wishbone_to_axi/m_axi_wready" type="logic">
+               <obj_property name="ElementShortName">m_axi_wready</obj_property>
+               <obj_property name="ObjectShortName">m_axi_wready</obj_property>
+            </wvobject>
+         </wvobject>
+         <wvobject fp_name="group1156" type="group">
+            <obj_property name="label">response</obj_property>
+            <obj_property name="DisplayName">label</obj_property>
+            <wvobject fp_name="/simulation_rv32i_overlay_wrapper/simulation_rv32i_overlay_i/interface_wishbone_to_axi/m_axi_bresp" type="array">
+               <obj_property name="ElementShortName">m_axi_bresp[1:0]</obj_property>
+               <obj_property name="ObjectShortName">m_axi_bresp[1:0]</obj_property>
+            </wvobject>
+            <wvobject fp_name="/simulation_rv32i_overlay_wrapper/simulation_rv32i_overlay_i/interface_wishbone_to_axi/m_axi_bvalid" type="logic">
+               <obj_property name="ElementShortName">m_axi_bvalid</obj_property>
+               <obj_property name="ObjectShortName">m_axi_bvalid</obj_property>
+            </wvobject>
+            <wvobject fp_name="/simulation_rv32i_overlay_wrapper/simulation_rv32i_overlay_i/interface_wishbone_to_axi/m_axi_bready" type="logic">
+               <obj_property name="ElementShortName">m_axi_bready</obj_property>
+               <obj_property name="ObjectShortName">m_axi_bready</obj_property>
+            </wvobject>
+         </wvobject>
+         <wvobject fp_name="group1154" type="group">
+            <obj_property name="label">addr read</obj_property>
+            <obj_property name="DisplayName">label</obj_property>
+            <wvobject fp_name="/simulation_rv32i_overlay_wrapper/simulation_rv32i_overlay_i/interface_wishbone_to_axi/m_axi_araddr" type="array">
+               <obj_property name="ElementShortName">m_axi_araddr[31:0]</obj_property>
+               <obj_property name="ObjectShortName">m_axi_araddr[31:0]</obj_property>
+            </wvobject>
+            <wvobject fp_name="/simulation_rv32i_overlay_wrapper/simulation_rv32i_overlay_i/interface_wishbone_to_axi/m_axi_arprot" type="array">
+               <obj_property name="ElementShortName">m_axi_arprot[2:0]</obj_property>
+               <obj_property name="ObjectShortName">m_axi_arprot[2:0]</obj_property>
+            </wvobject>
+            <wvobject fp_name="/simulation_rv32i_overlay_wrapper/simulation_rv32i_overlay_i/interface_wishbone_to_axi/m_axi_arvalid" type="logic">
+               <obj_property name="ElementShortName">m_axi_arvalid</obj_property>
+               <obj_property name="ObjectShortName">m_axi_arvalid</obj_property>
+            </wvobject>
+            <wvobject fp_name="/simulation_rv32i_overlay_wrapper/simulation_rv32i_overlay_i/interface_wishbone_to_axi/m_axi_arready" type="logic">
+               <obj_property name="ElementShortName">m_axi_arready</obj_property>
+               <obj_property name="ObjectShortName">m_axi_arready</obj_property>
+            </wvobject>
+         </wvobject>
+         <wvobject fp_name="group1155" type="group">
+            <obj_property name="label">read</obj_property>
+            <obj_property name="DisplayName">label</obj_property>
+            <wvobject fp_name="/simulation_rv32i_overlay_wrapper/simulation_rv32i_overlay_i/interface_wishbone_to_axi/m_axi_rdata" type="array">
+               <obj_property name="ElementShortName">m_axi_rdata[31:0]</obj_property>
+               <obj_property name="ObjectShortName">m_axi_rdata[31:0]</obj_property>
+            </wvobject>
+            <wvobject fp_name="/simulation_rv32i_overlay_wrapper/simulation_rv32i_overlay_i/interface_wishbone_to_axi/m_axi_rresp" type="array">
+               <obj_property name="ElementShortName">m_axi_rresp[1:0]</obj_property>
+               <obj_property name="ObjectShortName">m_axi_rresp[1:0]</obj_property>
+            </wvobject>
+            <wvobject fp_name="/simulation_rv32i_overlay_wrapper/simulation_rv32i_overlay_i/interface_wishbone_to_axi/m_axi_rvalid" type="logic">
+               <obj_property name="ElementShortName">m_axi_rvalid</obj_property>
+               <obj_property name="ObjectShortName">m_axi_rvalid</obj_property>
+            </wvobject>
+            <wvobject fp_name="/simulation_rv32i_overlay_wrapper/simulation_rv32i_overlay_i/interface_wishbone_to_axi/m_axi_rready" type="logic">
+               <obj_property name="ElementShortName">m_axi_rready</obj_property>
+               <obj_property name="ObjectShortName">m_axi_rready</obj_property>
+            </wvobject>
+         </wvobject>
+      </wvobject>
+      <wvobject fp_name="group1150" type="group">
+         <obj_property name="label">wishbone</obj_property>
+         <obj_property name="DisplayName">label</obj_property>
+         <wvobject fp_name="/simulation_rv32i_overlay_wrapper/simulation_rv32i_overlay_i/interface_wishbone_to_axi/wb_addr" type="array">
+            <obj_property name="ElementShortName">wb_addr[31:0]</obj_property>
+            <obj_property name="ObjectShortName">wb_addr[31:0]</obj_property>
+         </wvobject>
+         <wvobject fp_name="/simulation_rv32i_overlay_wrapper/simulation_rv32i_overlay_i/interface_wishbone_to_axi/wb_data_write" type="array">
+            <obj_property name="ElementShortName">wb_data_write[31:0]</obj_property>
+            <obj_property name="ObjectShortName">wb_data_write[31:0]</obj_property>
+         </wvobject>
+         <wvobject fp_name="/simulation_rv32i_overlay_wrapper/simulation_rv32i_overlay_i/interface_wishbone_to_axi/wb_we" type="logic">
+            <obj_property name="ElementShortName">wb_we</obj_property>
+            <obj_property name="ObjectShortName">wb_we</obj_property>
+         </wvobject>
+         <wvobject fp_name="/simulation_rv32i_overlay_wrapper/simulation_rv32i_overlay_i/interface_wishbone_to_axi/wb_sel" type="array">
+            <obj_property name="ElementShortName">wb_sel[3:0]</obj_property>
+            <obj_property name="ObjectShortName">wb_sel[3:0]</obj_property>
+         </wvobject>
+         <wvobject fp_name="/simulation_rv32i_overlay_wrapper/simulation_rv32i_overlay_i/interface_wishbone_to_axi/wb_tag" type="array">
+            <obj_property name="ElementShortName">wb_tag[2:0]</obj_property>
+            <obj_property name="ObjectShortName">wb_tag[2:0]</obj_property>
+         </wvobject>
+         <wvobject fp_name="/simulation_rv32i_overlay_wrapper/simulation_rv32i_overlay_i/interface_wishbone_to_axi/wb_cyc" type="logic">
+            <obj_property name="ElementShortName">wb_cyc</obj_property>
+            <obj_property name="ObjectShortName">wb_cyc</obj_property>
+         </wvobject>
+         <wvobject fp_name="/simulation_rv32i_overlay_wrapper/simulation_rv32i_overlay_i/interface_wishbone_to_axi/wb_stb" type="logic">
+            <obj_property name="ElementShortName">wb_stb</obj_property>
+            <obj_property name="ObjectShortName">wb_stb</obj_property>
+         </wvobject>
+         <wvobject fp_name="/simulation_rv32i_overlay_wrapper/simulation_rv32i_overlay_i/interface_wishbone_to_axi/wb_lock" type="logic">
+            <obj_property name="ElementShortName">wb_lock</obj_property>
+            <obj_property name="ObjectShortName">wb_lock</obj_property>
+         </wvobject>
+         <wvobject fp_name="/simulation_rv32i_overlay_wrapper/simulation_rv32i_overlay_i/interface_wishbone_to_axi/wb_data_read" type="array">
+            <obj_property name="ElementShortName">wb_data_read[31:0]</obj_property>
+            <obj_property name="ObjectShortName">wb_data_read[31:0]</obj_property>
+         </wvobject>
+         <wvobject fp_name="/simulation_rv32i_overlay_wrapper/simulation_rv32i_overlay_i/interface_wishbone_to_axi/wb_ack" type="logic">
+            <obj_property name="ElementShortName">wb_ack</obj_property>
+            <obj_property name="ObjectShortName">wb_ack</obj_property>
+         </wvobject>
+         <wvobject fp_name="/simulation_rv32i_overlay_wrapper/simulation_rv32i_overlay_i/interface_wishbone_to_axi/wb_err" type="logic">
+            <obj_property name="ElementShortName">wb_err</obj_property>
+            <obj_property name="ObjectShortName">wb_err</obj_property>
+         </wvobject>
+      </wvobject>
+   </wvobject>
+   <wvobject type="divider" fp_name="divider248">
+      <obj_property name="label">Perpharals</obj_property>
+      <obj_property name="DisplayName">label</obj_property>
+   </wvobject>
+   <wvobject fp_name="group447" type="group">
+      <obj_property name="label">smartconnect</obj_property>
+      <obj_property name="DisplayName">label</obj_property>
+      <wvobject fp_name="/simulation_rv32i_overlay_wrapper/simulation_rv32i_overlay_i/neo_smartconnect/aclk" type="logic">
+         <obj_property name="ElementShortName">aclk</obj_property>
+         <obj_property name="ObjectShortName">aclk</obj_property>
+      </wvobject>
+      <wvobject fp_name="/simulation_rv32i_overlay_wrapper/simulation_rv32i_overlay_i/neo_smartconnect/aresetn" type="logic">
+         <obj_property name="ElementShortName">aresetn</obj_property>
+         <obj_property name="ObjectShortName">aresetn</obj_property>
+      </wvobject>
+      <wvobject fp_name="group1163" type="group">
+         <obj_property name="label">From NEO</obj_property>
+         <obj_property name="DisplayName">label</obj_property>
+         <wvobject fp_name="/simulation_rv32i_overlay_wrapper/simulation_rv32i_overlay_i/neo_smartconnect/S00_AXI" type="protoinst">
+            <obj_property name="ElementShortName">S00_AXI</obj_property>
+            <obj_property name="ObjectShortName">S00_AXI</obj_property>
+         </wvobject>
+         <wvobject fp_name="/simulation_rv32i_overlay_wrapper/simulation_rv32i_overlay_i/neo_smartconnect/S00_AXI_awaddr" type="array">
+            <obj_property name="ElementShortName">S00_AXI_awaddr[31:0]</obj_property>
+            <obj_property name="ObjectShortName">S00_AXI_awaddr[31:0]</obj_property>
+         </wvobject>
+         <wvobject fp_name="/simulation_rv32i_overlay_wrapper/simulation_rv32i_overlay_i/neo_smartconnect/S00_AXI_awprot" type="array">
+            <obj_property name="ElementShortName">S00_AXI_awprot[2:0]</obj_property>
+            <obj_property name="ObjectShortName">S00_AXI_awprot[2:0]</obj_property>
+         </wvobject>
+         <wvobject fp_name="/simulation_rv32i_overlay_wrapper/simulation_rv32i_overlay_i/neo_smartconnect/S00_AXI_awvalid" type="logic">
+            <obj_property name="ElementShortName">S00_AXI_awvalid</obj_property>
+            <obj_property name="ObjectShortName">S00_AXI_awvalid</obj_property>
+         </wvobject>
+         <wvobject fp_name="/simulation_rv32i_overlay_wrapper/simulation_rv32i_overlay_i/neo_smartconnect/S00_AXI_awready" type="logic">
+            <obj_property name="ElementShortName">S00_AXI_awready</obj_property>
+            <obj_property name="ObjectShortName">S00_AXI_awready</obj_property>
+         </wvobject>
+         <wvobject fp_name="/simulation_rv32i_overlay_wrapper/simulation_rv32i_overlay_i/neo_smartconnect/S00_AXI_wdata" type="array">
+            <obj_property name="ElementShortName">S00_AXI_wdata[31:0]</obj_property>
+            <obj_property name="ObjectShortName">S00_AXI_wdata[31:0]</obj_property>
+         </wvobject>
+         <wvobject fp_name="/simulation_rv32i_overlay_wrapper/simulation_rv32i_overlay_i/neo_smartconnect/S00_AXI_wstrb" type="array">
+            <obj_property name="ElementShortName">S00_AXI_wstrb[3:0]</obj_property>
+            <obj_property name="ObjectShortName">S00_AXI_wstrb[3:0]</obj_property>
+         </wvobject>
+         <wvobject fp_name="/simulation_rv32i_overlay_wrapper/simulation_rv32i_overlay_i/neo_smartconnect/S00_AXI_wvalid" type="logic">
+            <obj_property name="ElementShortName">S00_AXI_wvalid</obj_property>
+            <obj_property name="ObjectShortName">S00_AXI_wvalid</obj_property>
+         </wvobject>
+         <wvobject fp_name="/simulation_rv32i_overlay_wrapper/simulation_rv32i_overlay_i/neo_smartconnect/S00_AXI_wready" type="logic">
+            <obj_property name="ElementShortName">S00_AXI_wready</obj_property>
+            <obj_property name="ObjectShortName">S00_AXI_wready</obj_property>
+         </wvobject>
+         <wvobject fp_name="/simulation_rv32i_overlay_wrapper/simulation_rv32i_overlay_i/neo_smartconnect/S00_AXI_bresp" type="array">
+            <obj_property name="ElementShortName">S00_AXI_bresp[1:0]</obj_property>
+            <obj_property name="ObjectShortName">S00_AXI_bresp[1:0]</obj_property>
+         </wvobject>
+         <wvobject fp_name="/simulation_rv32i_overlay_wrapper/simulation_rv32i_overlay_i/neo_smartconnect/S00_AXI_bvalid" type="logic">
+            <obj_property name="ElementShortName">S00_AXI_bvalid</obj_property>
+            <obj_property name="ObjectShortName">S00_AXI_bvalid</obj_property>
+         </wvobject>
+         <wvobject fp_name="/simulation_rv32i_overlay_wrapper/simulation_rv32i_overlay_i/neo_smartconnect/S00_AXI_bready" type="logic">
+            <obj_property name="ElementShortName">S00_AXI_bready</obj_property>
+            <obj_property name="ObjectShortName">S00_AXI_bready</obj_property>
+         </wvobject>
+         <wvobject fp_name="/simulation_rv32i_overlay_wrapper/simulation_rv32i_overlay_i/neo_smartconnect/S00_AXI_araddr" type="array">
+            <obj_property name="ElementShortName">S00_AXI_araddr[31:0]</obj_property>
+            <obj_property name="ObjectShortName">S00_AXI_araddr[31:0]</obj_property>
+         </wvobject>
+         <wvobject fp_name="/simulation_rv32i_overlay_wrapper/simulation_rv32i_overlay_i/neo_smartconnect/S00_AXI_arprot" type="array">
+            <obj_property name="ElementShortName">S00_AXI_arprot[2:0]</obj_property>
+            <obj_property name="ObjectShortName">S00_AXI_arprot[2:0]</obj_property>
+         </wvobject>
+         <wvobject fp_name="/simulation_rv32i_overlay_wrapper/simulation_rv32i_overlay_i/neo_smartconnect/S00_AXI_arvalid" type="logic">
+            <obj_property name="ElementShortName">S00_AXI_arvalid</obj_property>
+            <obj_property name="ObjectShortName">S00_AXI_arvalid</obj_property>
+         </wvobject>
+         <wvobject fp_name="/simulation_rv32i_overlay_wrapper/simulation_rv32i_overlay_i/neo_smartconnect/S00_AXI_arready" type="logic">
+            <obj_property name="ElementShortName">S00_AXI_arready</obj_property>
+            <obj_property name="ObjectShortName">S00_AXI_arready</obj_property>
+         </wvobject>
+         <wvobject fp_name="/simulation_rv32i_overlay_wrapper/simulation_rv32i_overlay_i/neo_smartconnect/S00_AXI_rdata" type="array">
+            <obj_property name="ElementShortName">S00_AXI_rdata[31:0]</obj_property>
+            <obj_property name="ObjectShortName">S00_AXI_rdata[31:0]</obj_property>
+         </wvobject>
+         <wvobject fp_name="/simulation_rv32i_overlay_wrapper/simulation_rv32i_overlay_i/neo_smartconnect/S00_AXI_rresp" type="array">
+            <obj_property name="ElementShortName">S00_AXI_rresp[1:0]</obj_property>
+            <obj_property name="ObjectShortName">S00_AXI_rresp[1:0]</obj_property>
+         </wvobject>
+         <wvobject fp_name="/simulation_rv32i_overlay_wrapper/simulation_rv32i_overlay_i/neo_smartconnect/S00_AXI_rvalid" type="logic">
+            <obj_property name="ElementShortName">S00_AXI_rvalid</obj_property>
+            <obj_property name="ObjectShortName">S00_AXI_rvalid</obj_property>
+         </wvobject>
+         <wvobject fp_name="/simulation_rv32i_overlay_wrapper/simulation_rv32i_overlay_i/neo_smartconnect/S00_AXI_rready" type="logic">
+            <obj_property name="ElementShortName">S00_AXI_rready</obj_property>
+            <obj_property name="ObjectShortName">S00_AXI_rready</obj_property>
+         </wvobject>
+      </wvobject>
+      <wvobject fp_name="group1164" type="group">
+         <obj_property name="label">To BRAM</obj_property>
+         <obj_property name="DisplayName">label</obj_property>
+         <wvobject fp_name="/simulation_rv32i_overlay_wrapper/simulation_rv32i_overlay_i/neo_smartconnect/M00_AXI" type="protoinst">
+            <obj_property name="ElementShortName">M00_AXI</obj_property>
+            <obj_property name="ObjectShortName">M00_AXI</obj_property>
+         </wvobject>
+         <wvobject fp_name="/simulation_rv32i_overlay_wrapper/simulation_rv32i_overlay_i/neo_smartconnect/M00_AXI_awaddr" type="array">
+            <obj_property name="ElementShortName">M00_AXI_awaddr[15:0]</obj_property>
+            <obj_property name="ObjectShortName">M00_AXI_awaddr[15:0]</obj_property>
+         </wvobject>
+         <wvobject fp_name="/simulation_rv32i_overlay_wrapper/simulation_rv32i_overlay_i/neo_smartconnect/M00_AXI_awlen" type="array">
+            <obj_property name="ElementShortName">M00_AXI_awlen[7:0]</obj_property>
+            <obj_property name="ObjectShortName">M00_AXI_awlen[7:0]</obj_property>
+         </wvobject>
+         <wvobject fp_name="/simulation_rv32i_overlay_wrapper/simulation_rv32i_overlay_i/neo_smartconnect/M00_AXI_awsize" type="array">
+            <obj_property name="ElementShortName">M00_AXI_awsize[2:0]</obj_property>
+            <obj_property name="ObjectShortName">M00_AXI_awsize[2:0]</obj_property>
+         </wvobject>
+         <wvobject fp_name="/simulation_rv32i_overlay_wrapper/simulation_rv32i_overlay_i/neo_smartconnect/M00_AXI_awburst" type="array">
+            <obj_property name="ElementShortName">M00_AXI_awburst[1:0]</obj_property>
+            <obj_property name="ObjectShortName">M00_AXI_awburst[1:0]</obj_property>
+         </wvobject>
+         <wvobject fp_name="/simulation_rv32i_overlay_wrapper/simulation_rv32i_overlay_i/neo_smartconnect/M00_AXI_awlock" type="array">
+            <obj_property name="ElementShortName">M00_AXI_awlock[0:0]</obj_property>
+            <obj_property name="ObjectShortName">M00_AXI_awlock[0:0]</obj_property>
+         </wvobject>
+         <wvobject fp_name="/simulation_rv32i_overlay_wrapper/simulation_rv32i_overlay_i/neo_smartconnect/M00_AXI_awcache" type="array">
+            <obj_property name="ElementShortName">M00_AXI_awcache[3:0]</obj_property>
+            <obj_property name="ObjectShortName">M00_AXI_awcache[3:0]</obj_property>
+         </wvobject>
+         <wvobject fp_name="/simulation_rv32i_overlay_wrapper/simulation_rv32i_overlay_i/neo_smartconnect/M00_AXI_awprot" type="array">
+            <obj_property name="ElementShortName">M00_AXI_awprot[2:0]</obj_property>
+            <obj_property name="ObjectShortName">M00_AXI_awprot[2:0]</obj_property>
+         </wvobject>
+         <wvobject fp_name="/simulation_rv32i_overlay_wrapper/simulation_rv32i_overlay_i/neo_smartconnect/M00_AXI_awqos" type="array">
+            <obj_property name="ElementShortName">M00_AXI_awqos[3:0]</obj_property>
+            <obj_property name="ObjectShortName">M00_AXI_awqos[3:0]</obj_property>
+         </wvobject>
+         <wvobject fp_name="/simulation_rv32i_overlay_wrapper/simulation_rv32i_overlay_i/neo_smartconnect/M00_AXI_awvalid" type="logic">
+            <obj_property name="ElementShortName">M00_AXI_awvalid</obj_property>
+            <obj_property name="ObjectShortName">M00_AXI_awvalid</obj_property>
+         </wvobject>
+         <wvobject fp_name="/simulation_rv32i_overlay_wrapper/simulation_rv32i_overlay_i/neo_smartconnect/M00_AXI_awready" type="logic">
+            <obj_property name="ElementShortName">M00_AXI_awready</obj_property>
+            <obj_property name="ObjectShortName">M00_AXI_awready</obj_property>
+         </wvobject>
+         <wvobject fp_name="/simulation_rv32i_overlay_wrapper/simulation_rv32i_overlay_i/neo_smartconnect/M00_AXI_wdata" type="array">
+            <obj_property name="ElementShortName">M00_AXI_wdata[31:0]</obj_property>
+            <obj_property name="ObjectShortName">M00_AXI_wdata[31:0]</obj_property>
+         </wvobject>
+         <wvobject fp_name="/simulation_rv32i_overlay_wrapper/simulation_rv32i_overlay_i/neo_smartconnect/M00_AXI_wstrb" type="array">
+            <obj_property name="ElementShortName">M00_AXI_wstrb[3:0]</obj_property>
+            <obj_property name="ObjectShortName">M00_AXI_wstrb[3:0]</obj_property>
+         </wvobject>
+         <wvobject fp_name="/simulation_rv32i_overlay_wrapper/simulation_rv32i_overlay_i/neo_smartconnect/M00_AXI_wlast" type="logic">
+            <obj_property name="ElementShortName">M00_AXI_wlast</obj_property>
+            <obj_property name="ObjectShortName">M00_AXI_wlast</obj_property>
+         </wvobject>
+         <wvobject fp_name="/simulation_rv32i_overlay_wrapper/simulation_rv32i_overlay_i/neo_smartconnect/M00_AXI_wvalid" type="logic">
+            <obj_property name="ElementShortName">M00_AXI_wvalid</obj_property>
+            <obj_property name="ObjectShortName">M00_AXI_wvalid</obj_property>
+         </wvobject>
+         <wvobject fp_name="/simulation_rv32i_overlay_wrapper/simulation_rv32i_overlay_i/neo_smartconnect/M00_AXI_wready" type="logic">
+            <obj_property name="ElementShortName">M00_AXI_wready</obj_property>
+            <obj_property name="ObjectShortName">M00_AXI_wready</obj_property>
+         </wvobject>
+         <wvobject fp_name="/simulation_rv32i_overlay_wrapper/simulation_rv32i_overlay_i/neo_smartconnect/M00_AXI_bresp" type="array">
+            <obj_property name="ElementShortName">M00_AXI_bresp[1:0]</obj_property>
+            <obj_property name="ObjectShortName">M00_AXI_bresp[1:0]</obj_property>
+         </wvobject>
+         <wvobject fp_name="/simulation_rv32i_overlay_wrapper/simulation_rv32i_overlay_i/neo_smartconnect/M00_AXI_bvalid" type="logic">
+            <obj_property name="ElementShortName">M00_AXI_bvalid</obj_property>
+            <obj_property name="ObjectShortName">M00_AXI_bvalid</obj_property>
+         </wvobject>
+         <wvobject fp_name="/simulation_rv32i_overlay_wrapper/simulation_rv32i_overlay_i/neo_smartconnect/M00_AXI_bready" type="logic">
+            <obj_property name="ElementShortName">M00_AXI_bready</obj_property>
+            <obj_property name="ObjectShortName">M00_AXI_bready</obj_property>
+         </wvobject>
+         <wvobject fp_name="/simulation_rv32i_overlay_wrapper/simulation_rv32i_overlay_i/neo_smartconnect/M00_AXI_araddr" type="array">
+            <obj_property name="ElementShortName">M00_AXI_araddr[15:0]</obj_property>
+            <obj_property name="ObjectShortName">M00_AXI_araddr[15:0]</obj_property>
+         </wvobject>
+         <wvobject fp_name="/simulation_rv32i_overlay_wrapper/simulation_rv32i_overlay_i/neo_smartconnect/M00_AXI_arlen" type="array">
+            <obj_property name="ElementShortName">M00_AXI_arlen[7:0]</obj_property>
+            <obj_property name="ObjectShortName">M00_AXI_arlen[7:0]</obj_property>
+         </wvobject>
+         <wvobject fp_name="/simulation_rv32i_overlay_wrapper/simulation_rv32i_overlay_i/neo_smartconnect/M00_AXI_arsize" type="array">
+            <obj_property name="ElementShortName">M00_AXI_arsize[2:0]</obj_property>
+            <obj_property name="ObjectShortName">M00_AXI_arsize[2:0]</obj_property>
+         </wvobject>
+         <wvobject fp_name="/simulation_rv32i_overlay_wrapper/simulation_rv32i_overlay_i/neo_smartconnect/M00_AXI_arburst" type="array">
+            <obj_property name="ElementShortName">M00_AXI_arburst[1:0]</obj_property>
+            <obj_property name="ObjectShortName">M00_AXI_arburst[1:0]</obj_property>
+         </wvobject>
+         <wvobject fp_name="/simulation_rv32i_overlay_wrapper/simulation_rv32i_overlay_i/neo_smartconnect/M00_AXI_arlock" type="array">
+            <obj_property name="ElementShortName">M00_AXI_arlock[0:0]</obj_property>
+            <obj_property name="ObjectShortName">M00_AXI_arlock[0:0]</obj_property>
+         </wvobject>
+         <wvobject fp_name="/simulation_rv32i_overlay_wrapper/simulation_rv32i_overlay_i/neo_smartconnect/M00_AXI_arcache" type="array">
+            <obj_property name="ElementShortName">M00_AXI_arcache[3:0]</obj_property>
+            <obj_property name="ObjectShortName">M00_AXI_arcache[3:0]</obj_property>
+         </wvobject>
+         <wvobject fp_name="/simulation_rv32i_overlay_wrapper/simulation_rv32i_overlay_i/neo_smartconnect/M00_AXI_arprot" type="array">
+            <obj_property name="ElementShortName">M00_AXI_arprot[2:0]</obj_property>
+            <obj_property name="ObjectShortName">M00_AXI_arprot[2:0]</obj_property>
+         </wvobject>
+         <wvobject fp_name="/simulation_rv32i_overlay_wrapper/simulation_rv32i_overlay_i/neo_smartconnect/M00_AXI_arqos" type="array">
+            <obj_property name="ElementShortName">M00_AXI_arqos[3:0]</obj_property>
+            <obj_property name="ObjectShortName">M00_AXI_arqos[3:0]</obj_property>
+         </wvobject>
+         <wvobject fp_name="/simulation_rv32i_overlay_wrapper/simulation_rv32i_overlay_i/neo_smartconnect/M00_AXI_arvalid" type="logic">
+            <obj_property name="ElementShortName">M00_AXI_arvalid</obj_property>
+            <obj_property name="ObjectShortName">M00_AXI_arvalid</obj_property>
+         </wvobject>
+         <wvobject fp_name="/simulation_rv32i_overlay_wrapper/simulation_rv32i_overlay_i/neo_smartconnect/M00_AXI_arready" type="logic">
+            <obj_property name="ElementShortName">M00_AXI_arready</obj_property>
+            <obj_property name="ObjectShortName">M00_AXI_arready</obj_property>
+         </wvobject>
+         <wvobject fp_name="/simulation_rv32i_overlay_wrapper/simulation_rv32i_overlay_i/neo_smartconnect/M00_AXI_rdata" type="array">
+            <obj_property name="ElementShortName">M00_AXI_rdata[31:0]</obj_property>
+            <obj_property name="ObjectShortName">M00_AXI_rdata[31:0]</obj_property>
+         </wvobject>
+         <wvobject fp_name="/simulation_rv32i_overlay_wrapper/simulation_rv32i_overlay_i/neo_smartconnect/M00_AXI_rresp" type="array">
+            <obj_property name="ElementShortName">M00_AXI_rresp[1:0]</obj_property>
+            <obj_property name="ObjectShortName">M00_AXI_rresp[1:0]</obj_property>
+         </wvobject>
+         <wvobject fp_name="/simulation_rv32i_overlay_wrapper/simulation_rv32i_overlay_i/neo_smartconnect/M00_AXI_rlast" type="logic">
+            <obj_property name="ElementShortName">M00_AXI_rlast</obj_property>
+            <obj_property name="ObjectShortName">M00_AXI_rlast</obj_property>
+         </wvobject>
+         <wvobject fp_name="/simulation_rv32i_overlay_wrapper/simulation_rv32i_overlay_i/neo_smartconnect/M00_AXI_rvalid" type="logic">
+            <obj_property name="ElementShortName">M00_AXI_rvalid</obj_property>
+            <obj_property name="ObjectShortName">M00_AXI_rvalid</obj_property>
+         </wvobject>
+         <wvobject fp_name="/simulation_rv32i_overlay_wrapper/simulation_rv32i_overlay_i/neo_smartconnect/M00_AXI_rready" type="logic">
+            <obj_property name="ElementShortName">M00_AXI_rready</obj_property>
+            <obj_property name="ObjectShortName">M00_AXI_rready</obj_property>
+         </wvobject>
+      </wvobject>
+      <wvobject fp_name="group1165" type="group">
+         <obj_property name="label">To Buttons</obj_property>
+         <obj_property name="DisplayName">label</obj_property>
+         <wvobject fp_name="/simulation_rv32i_overlay_wrapper/simulation_rv32i_overlay_i/neo_smartconnect/M01_AXI" type="protoinst">
+            <obj_property name="ElementShortName">M01_AXI</obj_property>
+            <obj_property name="ObjectShortName">M01_AXI</obj_property>
+         </wvobject>
+         <wvobject fp_name="/simulation_rv32i_overlay_wrapper/simulation_rv32i_overlay_i/neo_smartconnect/M01_AXI_awaddr" type="array">
+            <obj_property name="ElementShortName">M01_AXI_awaddr[8:0]</obj_property>
+            <obj_property name="ObjectShortName">M01_AXI_awaddr[8:0]</obj_property>
+         </wvobject>
+         <wvobject fp_name="/simulation_rv32i_overlay_wrapper/simulation_rv32i_overlay_i/neo_smartconnect/M01_AXI_awprot" type="array">
+            <obj_property name="ElementShortName">M01_AXI_awprot[2:0]</obj_property>
+            <obj_property name="ObjectShortName">M01_AXI_awprot[2:0]</obj_property>
+         </wvobject>
+         <wvobject fp_name="/simulation_rv32i_overlay_wrapper/simulation_rv32i_overlay_i/neo_smartconnect/M01_AXI_awvalid" type="logic">
+            <obj_property name="ElementShortName">M01_AXI_awvalid</obj_property>
+            <obj_property name="ObjectShortName">M01_AXI_awvalid</obj_property>
+         </wvobject>
+         <wvobject fp_name="/simulation_rv32i_overlay_wrapper/simulation_rv32i_overlay_i/neo_smartconnect/M01_AXI_awready" type="logic">
+            <obj_property name="ElementShortName">M01_AXI_awready</obj_property>
+            <obj_property name="ObjectShortName">M01_AXI_awready</obj_property>
+         </wvobject>
+         <wvobject fp_name="/simulation_rv32i_overlay_wrapper/simulation_rv32i_overlay_i/neo_smartconnect/M01_AXI_wdata" type="array">
+            <obj_property name="ElementShortName">M01_AXI_wdata[31:0]</obj_property>
+            <obj_property name="ObjectShortName">M01_AXI_wdata[31:0]</obj_property>
+         </wvobject>
+         <wvobject fp_name="/simulation_rv32i_overlay_wrapper/simulation_rv32i_overlay_i/neo_smartconnect/M01_AXI_wstrb" type="array">
+            <obj_property name="ElementShortName">M01_AXI_wstrb[3:0]</obj_property>
+            <obj_property name="ObjectShortName">M01_AXI_wstrb[3:0]</obj_property>
+         </wvobject>
+         <wvobject fp_name="/simulation_rv32i_overlay_wrapper/simulation_rv32i_overlay_i/neo_smartconnect/M01_AXI_wvalid" type="logic">
+            <obj_property name="ElementShortName">M01_AXI_wvalid</obj_property>
+            <obj_property name="ObjectShortName">M01_AXI_wvalid</obj_property>
+         </wvobject>
+         <wvobject fp_name="/simulation_rv32i_overlay_wrapper/simulation_rv32i_overlay_i/neo_smartconnect/M01_AXI_wready" type="logic">
+            <obj_property name="ElementShortName">M01_AXI_wready</obj_property>
+            <obj_property name="ObjectShortName">M01_AXI_wready</obj_property>
+         </wvobject>
+         <wvobject fp_name="/simulation_rv32i_overlay_wrapper/simulation_rv32i_overlay_i/neo_smartconnect/M01_AXI_bresp" type="array">
+            <obj_property name="ElementShortName">M01_AXI_bresp[1:0]</obj_property>
+            <obj_property name="ObjectShortName">M01_AXI_bresp[1:0]</obj_property>
+         </wvobject>
+         <wvobject fp_name="/simulation_rv32i_overlay_wrapper/simulation_rv32i_overlay_i/neo_smartconnect/M01_AXI_bvalid" type="logic">
+            <obj_property name="ElementShortName">M01_AXI_bvalid</obj_property>
+            <obj_property name="ObjectShortName">M01_AXI_bvalid</obj_property>
+         </wvobject>
+         <wvobject fp_name="/simulation_rv32i_overlay_wrapper/simulation_rv32i_overlay_i/neo_smartconnect/M01_AXI_bready" type="logic">
+            <obj_property name="ElementShortName">M01_AXI_bready</obj_property>
+            <obj_property name="ObjectShortName">M01_AXI_bready</obj_property>
+         </wvobject>
+         <wvobject fp_name="/simulation_rv32i_overlay_wrapper/simulation_rv32i_overlay_i/neo_smartconnect/M01_AXI_araddr" type="array">
+            <obj_property name="ElementShortName">M01_AXI_araddr[8:0]</obj_property>
+            <obj_property name="ObjectShortName">M01_AXI_araddr[8:0]</obj_property>
+         </wvobject>
+         <wvobject fp_name="/simulation_rv32i_overlay_wrapper/simulation_rv32i_overlay_i/neo_smartconnect/M01_AXI_arprot" type="array">
+            <obj_property name="ElementShortName">M01_AXI_arprot[2:0]</obj_property>
+            <obj_property name="ObjectShortName">M01_AXI_arprot[2:0]</obj_property>
+         </wvobject>
+         <wvobject fp_name="/simulation_rv32i_overlay_wrapper/simulation_rv32i_overlay_i/neo_smartconnect/M01_AXI_arvalid" type="logic">
+            <obj_property name="ElementShortName">M01_AXI_arvalid</obj_property>
+            <obj_property name="ObjectShortName">M01_AXI_arvalid</obj_property>
+         </wvobject>
+         <wvobject fp_name="/simulation_rv32i_overlay_wrapper/simulation_rv32i_overlay_i/neo_smartconnect/M01_AXI_arready" type="logic">
+            <obj_property name="ElementShortName">M01_AXI_arready</obj_property>
+            <obj_property name="ObjectShortName">M01_AXI_arready</obj_property>
+         </wvobject>
+         <wvobject fp_name="/simulation_rv32i_overlay_wrapper/simulation_rv32i_overlay_i/neo_smartconnect/M01_AXI_rdata" type="array">
+            <obj_property name="ElementShortName">M01_AXI_rdata[31:0]</obj_property>
+            <obj_property name="ObjectShortName">M01_AXI_rdata[31:0]</obj_property>
+         </wvobject>
+         <wvobject fp_name="/simulation_rv32i_overlay_wrapper/simulation_rv32i_overlay_i/neo_smartconnect/M01_AXI_rresp" type="array">
+            <obj_property name="ElementShortName">M01_AXI_rresp[1:0]</obj_property>
+            <obj_property name="ObjectShortName">M01_AXI_rresp[1:0]</obj_property>
+         </wvobject>
+         <wvobject fp_name="/simulation_rv32i_overlay_wrapper/simulation_rv32i_overlay_i/neo_smartconnect/M01_AXI_rvalid" type="logic">
+            <obj_property name="ElementShortName">M01_AXI_rvalid</obj_property>
+            <obj_property name="ObjectShortName">M01_AXI_rvalid</obj_property>
+         </wvobject>
+         <wvobject fp_name="/simulation_rv32i_overlay_wrapper/simulation_rv32i_overlay_i/neo_smartconnect/M01_AXI_rready" type="logic">
+            <obj_property name="ElementShortName">M01_AXI_rready</obj_property>
+            <obj_property name="ObjectShortName">M01_AXI_rready</obj_property>
+         </wvobject>
+      </wvobject>
+      <wvobject fp_name="group1166" type="group">
+         <obj_property name="label">To LEDs</obj_property>
+         <obj_property name="DisplayName">label</obj_property>
+         <wvobject fp_name="/simulation_rv32i_overlay_wrapper/simulation_rv32i_overlay_i/neo_smartconnect/M02_AXI" type="protoinst">
+            <obj_property name="ElementShortName">M02_AXI</obj_property>
+            <obj_property name="ObjectShortName">M02_AXI</obj_property>
+         </wvobject>
+         <wvobject fp_name="/simulation_rv32i_overlay_wrapper/simulation_rv32i_overlay_i/neo_smartconnect/M02_AXI_awaddr" type="array">
+            <obj_property name="ElementShortName">M02_AXI_awaddr[8:0]</obj_property>
+            <obj_property name="ObjectShortName">M02_AXI_awaddr[8:0]</obj_property>
+         </wvobject>
+         <wvobject fp_name="/simulation_rv32i_overlay_wrapper/simulation_rv32i_overlay_i/neo_smartconnect/M02_AXI_awprot" type="array">
+            <obj_property name="ElementShortName">M02_AXI_awprot[2:0]</obj_property>
+            <obj_property name="ObjectShortName">M02_AXI_awprot[2:0]</obj_property>
+         </wvobject>
+         <wvobject fp_name="/simulation_rv32i_overlay_wrapper/simulation_rv32i_overlay_i/neo_smartconnect/M02_AXI_awvalid" type="logic">
+            <obj_property name="ElementShortName">M02_AXI_awvalid</obj_property>
+            <obj_property name="ObjectShortName">M02_AXI_awvalid</obj_property>
+         </wvobject>
+         <wvobject fp_name="/simulation_rv32i_overlay_wrapper/simulation_rv32i_overlay_i/neo_smartconnect/M02_AXI_awready" type="logic">
+            <obj_property name="ElementShortName">M02_AXI_awready</obj_property>
+            <obj_property name="ObjectShortName">M02_AXI_awready</obj_property>
+         </wvobject>
+         <wvobject fp_name="/simulation_rv32i_overlay_wrapper/simulation_rv32i_overlay_i/neo_smartconnect/M02_AXI_wdata" type="array">
+            <obj_property name="ElementShortName">M02_AXI_wdata[31:0]</obj_property>
+            <obj_property name="ObjectShortName">M02_AXI_wdata[31:0]</obj_property>
+         </wvobject>
+         <wvobject fp_name="/simulation_rv32i_overlay_wrapper/simulation_rv32i_overlay_i/neo_smartconnect/M02_AXI_wstrb" type="array">
+            <obj_property name="ElementShortName">M02_AXI_wstrb[3:0]</obj_property>
+            <obj_property name="ObjectShortName">M02_AXI_wstrb[3:0]</obj_property>
+         </wvobject>
+         <wvobject fp_name="/simulation_rv32i_overlay_wrapper/simulation_rv32i_overlay_i/neo_smartconnect/M02_AXI_wvalid" type="logic">
+            <obj_property name="ElementShortName">M02_AXI_wvalid</obj_property>
+            <obj_property name="ObjectShortName">M02_AXI_wvalid</obj_property>
+         </wvobject>
+         <wvobject fp_name="/simulation_rv32i_overlay_wrapper/simulation_rv32i_overlay_i/neo_smartconnect/M02_AXI_wready" type="logic">
+            <obj_property name="ElementShortName">M02_AXI_wready</obj_property>
+            <obj_property name="ObjectShortName">M02_AXI_wready</obj_property>
+         </wvobject>
+         <wvobject fp_name="/simulation_rv32i_overlay_wrapper/simulation_rv32i_overlay_i/neo_smartconnect/M02_AXI_bresp" type="array">
+            <obj_property name="ElementShortName">M02_AXI_bresp[1:0]</obj_property>
+            <obj_property name="ObjectShortName">M02_AXI_bresp[1:0]</obj_property>
+         </wvobject>
+         <wvobject fp_name="/simulation_rv32i_overlay_wrapper/simulation_rv32i_overlay_i/neo_smartconnect/M02_AXI_bvalid" type="logic">
+            <obj_property name="ElementShortName">M02_AXI_bvalid</obj_property>
+            <obj_property name="ObjectShortName">M02_AXI_bvalid</obj_property>
+         </wvobject>
+         <wvobject fp_name="/simulation_rv32i_overlay_wrapper/simulation_rv32i_overlay_i/neo_smartconnect/M02_AXI_bready" type="logic">
+            <obj_property name="ElementShortName">M02_AXI_bready</obj_property>
+            <obj_property name="ObjectShortName">M02_AXI_bready</obj_property>
+         </wvobject>
+         <wvobject fp_name="/simulation_rv32i_overlay_wrapper/simulation_rv32i_overlay_i/neo_smartconnect/M02_AXI_araddr" type="array">
+            <obj_property name="ElementShortName">M02_AXI_araddr[8:0]</obj_property>
+            <obj_property name="ObjectShortName">M02_AXI_araddr[8:0]</obj_property>
+         </wvobject>
+         <wvobject fp_name="/simulation_rv32i_overlay_wrapper/simulation_rv32i_overlay_i/neo_smartconnect/M02_AXI_arprot" type="array">
+            <obj_property name="ElementShortName">M02_AXI_arprot[2:0]</obj_property>
+            <obj_property name="ObjectShortName">M02_AXI_arprot[2:0]</obj_property>
+         </wvobject>
+         <wvobject fp_name="/simulation_rv32i_overlay_wrapper/simulation_rv32i_overlay_i/neo_smartconnect/M02_AXI_arvalid" type="logic">
+            <obj_property name="ElementShortName">M02_AXI_arvalid</obj_property>
+            <obj_property name="ObjectShortName">M02_AXI_arvalid</obj_property>
+         </wvobject>
+         <wvobject fp_name="/simulation_rv32i_overlay_wrapper/simulation_rv32i_overlay_i/neo_smartconnect/M02_AXI_arready" type="logic">
+            <obj_property name="ElementShortName">M02_AXI_arready</obj_property>
+            <obj_property name="ObjectShortName">M02_AXI_arready</obj_property>
+         </wvobject>
+         <wvobject fp_name="/simulation_rv32i_overlay_wrapper/simulation_rv32i_overlay_i/neo_smartconnect/M02_AXI_rdata" type="array">
+            <obj_property name="ElementShortName">M02_AXI_rdata[31:0]</obj_property>
+            <obj_property name="ObjectShortName">M02_AXI_rdata[31:0]</obj_property>
+         </wvobject>
+         <wvobject fp_name="/simulation_rv32i_overlay_wrapper/simulation_rv32i_overlay_i/neo_smartconnect/M02_AXI_rresp" type="array">
+            <obj_property name="ElementShortName">M02_AXI_rresp[1:0]</obj_property>
+            <obj_property name="ObjectShortName">M02_AXI_rresp[1:0]</obj_property>
+         </wvobject>
+         <wvobject fp_name="/simulation_rv32i_overlay_wrapper/simulation_rv32i_overlay_i/neo_smartconnect/M02_AXI_rvalid" type="logic">
+            <obj_property name="ElementShortName">M02_AXI_rvalid</obj_property>
+            <obj_property name="ObjectShortName">M02_AXI_rvalid</obj_property>
+         </wvobject>
+         <wvobject fp_name="/simulation_rv32i_overlay_wrapper/simulation_rv32i_overlay_i/neo_smartconnect/M02_AXI_rready" type="logic">
+            <obj_property name="ElementShortName">M02_AXI_rready</obj_property>
+            <obj_property name="ObjectShortName">M02_AXI_rready</obj_property>
+         </wvobject>
+      </wvobject>
+   </wvobject>
+   <wvobject fp_name="group523" type="group">
+      <obj_property name="label">BRAM controller</obj_property>
+      <obj_property name="DisplayName">label</obj_property>
+      <wvobject fp_name="/simulation_rv32i_overlay_wrapper/simulation_rv32i_overlay_i/cpu_BRAM_controller/s_axi_aclk" type="logic">
+         <obj_property name="ElementShortName">s_axi_aclk</obj_property>
+         <obj_property name="ObjectShortName">s_axi_aclk</obj_property>
+      </wvobject>
+      <wvobject fp_name="/simulation_rv32i_overlay_wrapper/simulation_rv32i_overlay_i/cpu_BRAM_controller/s_axi_aresetn" type="logic">
+         <obj_property name="ElementShortName">s_axi_aresetn</obj_property>
+         <obj_property name="ObjectShortName">s_axi_aresetn</obj_property>
+      </wvobject>
+      <wvobject fp_name="/simulation_rv32i_overlay_wrapper/simulation_rv32i_overlay_i/cpu_BRAM_controller/s_axi_awaddr" type="array">
+         <obj_property name="ElementShortName">s_axi_awaddr[15:0]</obj_property>
+         <obj_property name="ObjectShortName">s_axi_awaddr[15:0]</obj_property>
+      </wvobject>
+      <wvobject fp_name="/simulation_rv32i_overlay_wrapper/simulation_rv32i_overlay_i/cpu_BRAM_controller/s_axi_awlen" type="array">
+         <obj_property name="ElementShortName">s_axi_awlen[7:0]</obj_property>
+         <obj_property name="ObjectShortName">s_axi_awlen[7:0]</obj_property>
+      </wvobject>
+      <wvobject fp_name="/simulation_rv32i_overlay_wrapper/simulation_rv32i_overlay_i/cpu_BRAM_controller/s_axi_awsize" type="array">
+         <obj_property name="ElementShortName">s_axi_awsize[2:0]</obj_property>
+         <obj_property name="ObjectShortName">s_axi_awsize[2:0]</obj_property>
+      </wvobject>
+      <wvobject fp_name="/simulation_rv32i_overlay_wrapper/simulation_rv32i_overlay_i/cpu_BRAM_controller/s_axi_awburst" type="array">
+         <obj_property name="ElementShortName">s_axi_awburst[1:0]</obj_property>
+         <obj_property name="ObjectShortName">s_axi_awburst[1:0]</obj_property>
+      </wvobject>
+      <wvobject fp_name="/simulation_rv32i_overlay_wrapper/simulation_rv32i_overlay_i/cpu_BRAM_controller/s_axi_awlock" type="logic">
+         <obj_property name="ElementShortName">s_axi_awlock</obj_property>
+         <obj_property name="ObjectShortName">s_axi_awlock</obj_property>
+      </wvobject>
+      <wvobject fp_name="/simulation_rv32i_overlay_wrapper/simulation_rv32i_overlay_i/cpu_BRAM_controller/s_axi_awcache" type="array">
+         <obj_property name="ElementShortName">s_axi_awcache[3:0]</obj_property>
+         <obj_property name="ObjectShortName">s_axi_awcache[3:0]</obj_property>
+      </wvobject>
+      <wvobject fp_name="/simulation_rv32i_overlay_wrapper/simulation_rv32i_overlay_i/cpu_BRAM_controller/s_axi_awprot" type="array">
+         <obj_property name="ElementShortName">s_axi_awprot[2:0]</obj_property>
+         <obj_property name="ObjectShortName">s_axi_awprot[2:0]</obj_property>
+      </wvobject>
+      <wvobject fp_name="/simulation_rv32i_overlay_wrapper/simulation_rv32i_overlay_i/cpu_BRAM_controller/s_axi_awvalid" type="logic">
+         <obj_property name="ElementShortName">s_axi_awvalid</obj_property>
+         <obj_property name="ObjectShortName">s_axi_awvalid</obj_property>
+      </wvobject>
+      <wvobject fp_name="/simulation_rv32i_overlay_wrapper/simulation_rv32i_overlay_i/cpu_BRAM_controller/s_axi_awready" type="logic">
+         <obj_property name="ElementShortName">s_axi_awready</obj_property>
+         <obj_property name="ObjectShortName">s_axi_awready</obj_property>
+      </wvobject>
+      <wvobject fp_name="/simulation_rv32i_overlay_wrapper/simulation_rv32i_overlay_i/cpu_BRAM_controller/s_axi_wdata" type="array">
+         <obj_property name="ElementShortName">s_axi_wdata[31:0]</obj_property>
+         <obj_property name="ObjectShortName">s_axi_wdata[31:0]</obj_property>
+      </wvobject>
+      <wvobject fp_name="/simulation_rv32i_overlay_wrapper/simulation_rv32i_overlay_i/cpu_BRAM_controller/s_axi_wstrb" type="array">
+         <obj_property name="ElementShortName">s_axi_wstrb[3:0]</obj_property>
+         <obj_property name="ObjectShortName">s_axi_wstrb[3:0]</obj_property>
+      </wvobject>
+      <wvobject fp_name="/simulation_rv32i_overlay_wrapper/simulation_rv32i_overlay_i/cpu_BRAM_controller/s_axi_wlast" type="logic">
+         <obj_property name="ElementShortName">s_axi_wlast</obj_property>
+         <obj_property name="ObjectShortName">s_axi_wlast</obj_property>
+      </wvobject>
+      <wvobject fp_name="/simulation_rv32i_overlay_wrapper/simulation_rv32i_overlay_i/cpu_BRAM_controller/s_axi_wvalid" type="logic">
+         <obj_property name="ElementShortName">s_axi_wvalid</obj_property>
+         <obj_property name="ObjectShortName">s_axi_wvalid</obj_property>
+      </wvobject>
+      <wvobject fp_name="/simulation_rv32i_overlay_wrapper/simulation_rv32i_overlay_i/cpu_BRAM_controller/s_axi_wready" type="logic">
+         <obj_property name="ElementShortName">s_axi_wready</obj_property>
+         <obj_property name="ObjectShortName">s_axi_wready</obj_property>
+      </wvobject>
+      <wvobject fp_name="/simulation_rv32i_overlay_wrapper/simulation_rv32i_overlay_i/cpu_BRAM_controller/s_axi_bresp" type="array">
+         <obj_property name="ElementShortName">s_axi_bresp[1:0]</obj_property>
+         <obj_property name="ObjectShortName">s_axi_bresp[1:0]</obj_property>
+      </wvobject>
+      <wvobject fp_name="/simulation_rv32i_overlay_wrapper/simulation_rv32i_overlay_i/cpu_BRAM_controller/s_axi_bvalid" type="logic">
+         <obj_property name="ElementShortName">s_axi_bvalid</obj_property>
+         <obj_property name="ObjectShortName">s_axi_bvalid</obj_property>
+      </wvobject>
+      <wvobject fp_name="/simulation_rv32i_overlay_wrapper/simulation_rv32i_overlay_i/cpu_BRAM_controller/s_axi_bready" type="logic">
+         <obj_property name="ElementShortName">s_axi_bready</obj_property>
+         <obj_property name="ObjectShortName">s_axi_bready</obj_property>
+      </wvobject>
+      <wvobject fp_name="/simulation_rv32i_overlay_wrapper/simulation_rv32i_overlay_i/cpu_BRAM_controller/s_axi_araddr" type="array">
+         <obj_property name="ElementShortName">s_axi_araddr[15:0]</obj_property>
+         <obj_property name="ObjectShortName">s_axi_araddr[15:0]</obj_property>
+      </wvobject>
+      <wvobject fp_name="/simulation_rv32i_overlay_wrapper/simulation_rv32i_overlay_i/cpu_BRAM_controller/s_axi_arlen" type="array">
+         <obj_property name="ElementShortName">s_axi_arlen[7:0]</obj_property>
+         <obj_property name="ObjectShortName">s_axi_arlen[7:0]</obj_property>
+      </wvobject>
+      <wvobject fp_name="/simulation_rv32i_overlay_wrapper/simulation_rv32i_overlay_i/cpu_BRAM_controller/s_axi_arsize" type="array">
+         <obj_property name="ElementShortName">s_axi_arsize[2:0]</obj_property>
+         <obj_property name="ObjectShortName">s_axi_arsize[2:0]</obj_property>
+      </wvobject>
+      <wvobject fp_name="/simulation_rv32i_overlay_wrapper/simulation_rv32i_overlay_i/cpu_BRAM_controller/s_axi_arburst" type="array">
+         <obj_property name="ElementShortName">s_axi_arburst[1:0]</obj_property>
+         <obj_property name="ObjectShortName">s_axi_arburst[1:0]</obj_property>
+      </wvobject>
+      <wvobject fp_name="/simulation_rv32i_overlay_wrapper/simulation_rv32i_overlay_i/cpu_BRAM_controller/s_axi_arlock" type="logic">
+         <obj_property name="ElementShortName">s_axi_arlock</obj_property>
+         <obj_property name="ObjectShortName">s_axi_arlock</obj_property>
+      </wvobject>
+      <wvobject fp_name="/simulation_rv32i_overlay_wrapper/simulation_rv32i_overlay_i/cpu_BRAM_controller/s_axi_arcache" type="array">
+         <obj_property name="ElementShortName">s_axi_arcache[3:0]</obj_property>
+         <obj_property name="ObjectShortName">s_axi_arcache[3:0]</obj_property>
+      </wvobject>
+      <wvobject fp_name="/simulation_rv32i_overlay_wrapper/simulation_rv32i_overlay_i/cpu_BRAM_controller/s_axi_arprot" type="array">
+         <obj_property name="ElementShortName">s_axi_arprot[2:0]</obj_property>
+         <obj_property name="ObjectShortName">s_axi_arprot[2:0]</obj_property>
+      </wvobject>
+      <wvobject fp_name="/simulation_rv32i_overlay_wrapper/simulation_rv32i_overlay_i/cpu_BRAM_controller/s_axi_arvalid" type="logic">
+         <obj_property name="ElementShortName">s_axi_arvalid</obj_property>
+         <obj_property name="ObjectShortName">s_axi_arvalid</obj_property>
+      </wvobject>
+      <wvobject fp_name="/simulation_rv32i_overlay_wrapper/simulation_rv32i_overlay_i/cpu_BRAM_controller/s_axi_arready" type="logic">
+         <obj_property name="ElementShortName">s_axi_arready</obj_property>
+         <obj_property name="ObjectShortName">s_axi_arready</obj_property>
+      </wvobject>
+      <wvobject fp_name="/simulation_rv32i_overlay_wrapper/simulation_rv32i_overlay_i/cpu_BRAM_controller/s_axi_rdata" type="array">
+         <obj_property name="ElementShortName">s_axi_rdata[31:0]</obj_property>
+         <obj_property name="ObjectShortName">s_axi_rdata[31:0]</obj_property>
+      </wvobject>
+      <wvobject fp_name="/simulation_rv32i_overlay_wrapper/simulation_rv32i_overlay_i/cpu_BRAM_controller/s_axi_rresp" type="array">
+         <obj_property name="ElementShortName">s_axi_rresp[1:0]</obj_property>
+         <obj_property name="ObjectShortName">s_axi_rresp[1:0]</obj_property>
+      </wvobject>
+      <wvobject fp_name="/simulation_rv32i_overlay_wrapper/simulation_rv32i_overlay_i/cpu_BRAM_controller/s_axi_rlast" type="logic">
+         <obj_property name="ElementShortName">s_axi_rlast</obj_property>
+         <obj_property name="ObjectShortName">s_axi_rlast</obj_property>
+      </wvobject>
+      <wvobject fp_name="/simulation_rv32i_overlay_wrapper/simulation_rv32i_overlay_i/cpu_BRAM_controller/s_axi_rvalid" type="logic">
+         <obj_property name="ElementShortName">s_axi_rvalid</obj_property>
+         <obj_property name="ObjectShortName">s_axi_rvalid</obj_property>
+      </wvobject>
+      <wvobject fp_name="/simulation_rv32i_overlay_wrapper/simulation_rv32i_overlay_i/cpu_BRAM_controller/s_axi_rready" type="logic">
+         <obj_property name="ElementShortName">s_axi_rready</obj_property>
+         <obj_property name="ObjectShortName">s_axi_rready</obj_property>
+      </wvobject>
+      <wvobject fp_name="/simulation_rv32i_overlay_wrapper/simulation_rv32i_overlay_i/cpu_BRAM_controller/bram_rst_a" type="logic">
+         <obj_property name="ElementShortName">bram_rst_a</obj_property>
+         <obj_property name="ObjectShortName">bram_rst_a</obj_property>
+      </wvobject>
+      <wvobject fp_name="/simulation_rv32i_overlay_wrapper/simulation_rv32i_overlay_i/cpu_BRAM_controller/bram_clk_a" type="logic">
+         <obj_property name="ElementShortName">bram_clk_a</obj_property>
+         <obj_property name="ObjectShortName">bram_clk_a</obj_property>
+      </wvobject>
+      <wvobject fp_name="/simulation_rv32i_overlay_wrapper/simulation_rv32i_overlay_i/cpu_BRAM_controller/bram_en_a" type="logic">
+         <obj_property name="ElementShortName">bram_en_a</obj_property>
+         <obj_property name="ObjectShortName">bram_en_a</obj_property>
+      </wvobject>
+      <wvobject fp_name="/simulation_rv32i_overlay_wrapper/simulation_rv32i_overlay_i/cpu_BRAM_controller/bram_we_a" type="array">
+         <obj_property name="ElementShortName">bram_we_a[3:0]</obj_property>
+         <obj_property name="ObjectShortName">bram_we_a[3:0]</obj_property>
+      </wvobject>
+      <wvobject fp_name="/simulation_rv32i_overlay_wrapper/simulation_rv32i_overlay_i/cpu_BRAM_controller/bram_addr_a" type="array">
+         <obj_property name="ElementShortName">bram_addr_a[15:0]</obj_property>
+         <obj_property name="ObjectShortName">bram_addr_a[15:0]</obj_property>
+      </wvobject>
+      <wvobject fp_name="/simulation_rv32i_overlay_wrapper/simulation_rv32i_overlay_i/cpu_BRAM_controller/bram_wrdata_a" type="array">
+         <obj_property name="ElementShortName">bram_wrdata_a[31:0]</obj_property>
+         <obj_property name="ObjectShortName">bram_wrdata_a[31:0]</obj_property>
+      </wvobject>
+      <wvobject fp_name="/simulation_rv32i_overlay_wrapper/simulation_rv32i_overlay_i/cpu_BRAM_controller/bram_rddata_a" type="array">
+         <obj_property name="ElementShortName">bram_rddata_a[31:0]</obj_property>
+         <obj_property name="ObjectShortName">bram_rddata_a[31:0]</obj_property>
+      </wvobject>
+      <wvobject fp_name="/simulation_rv32i_overlay_wrapper/simulation_rv32i_overlay_i/cpu_BRAM_controller/S_AXI" type="protoinst">
+         <obj_property name="ElementShortName">S_AXI</obj_property>
+         <obj_property name="ObjectShortName">S_AXI</obj_property>
+      </wvobject>
+   </wvobject>
+   <wvobject fp_name="group540" type="group">
+      <obj_property name="label">BRAM</obj_property>
+      <obj_property name="DisplayName">label</obj_property>
+      <wvobject fp_name="/simulation_rv32i_overlay_wrapper/simulation_rv32i_overlay_i/cpu_BRAM_controller_bram/clka" type="logic">
+         <obj_property name="ElementShortName">clka</obj_property>
+         <obj_property name="ObjectShortName">clka</obj_property>
+      </wvobject>
+      <wvobject fp_name="/simulation_rv32i_overlay_wrapper/simulation_rv32i_overlay_i/cpu_BRAM_controller_bram/ena" type="logic">
+         <obj_property name="ElementShortName">ena</obj_property>
+         <obj_property name="ObjectShortName">ena</obj_property>
+      </wvobject>
+      <wvobject fp_name="/simulation_rv32i_overlay_wrapper/simulation_rv32i_overlay_i/cpu_BRAM_controller_bram/wea" type="array">
+         <obj_property name="ElementShortName">wea[3:0]</obj_property>
+         <obj_property name="ObjectShortName">wea[3:0]</obj_property>
+      </wvobject>
+      <wvobject fp_name="/simulation_rv32i_overlay_wrapper/simulation_rv32i_overlay_i/cpu_BRAM_controller_bram/addra" type="array">
+         <obj_property name="ElementShortName">addra[31:0]</obj_property>
+         <obj_property name="ObjectShortName">addra[31:0]</obj_property>
+      </wvobject>
+      <wvobject fp_name="/simulation_rv32i_overlay_wrapper/simulation_rv32i_overlay_i/cpu_BRAM_controller_bram/dina" type="array">
+         <obj_property name="ElementShortName">dina[31:0]</obj_property>
+         <obj_property name="ObjectShortName">dina[31:0]</obj_property>
+      </wvobject>
+      <wvobject fp_name="/simulation_rv32i_overlay_wrapper/simulation_rv32i_overlay_i/cpu_BRAM_controller_bram/douta" type="array">
+         <obj_property name="ElementShortName">douta[31:0]</obj_property>
+         <obj_property name="ObjectShortName">douta[31:0]</obj_property>
+      </wvobject>
+      <wvobject fp_name="/simulation_rv32i_overlay_wrapper/simulation_rv32i_overlay_i/cpu_BRAM_controller_bram/clkb" type="logic">
+         <obj_property name="ElementShortName">clkb</obj_property>
+         <obj_property name="ObjectShortName">clkb</obj_property>
+      </wvobject>
+      <wvobject fp_name="/simulation_rv32i_overlay_wrapper/simulation_rv32i_overlay_i/cpu_BRAM_controller_bram/enb" type="logic">
+         <obj_property name="ElementShortName">enb</obj_property>
+         <obj_property name="ObjectShortName">enb</obj_property>
+      </wvobject>
+      <wvobject fp_name="/simulation_rv32i_overlay_wrapper/simulation_rv32i_overlay_i/cpu_BRAM_controller_bram/web" type="array">
+         <obj_property name="ElementShortName">web[3:0]</obj_property>
+         <obj_property name="ObjectShortName">web[3:0]</obj_property>
+      </wvobject>
+      <wvobject fp_name="/simulation_rv32i_overlay_wrapper/simulation_rv32i_overlay_i/cpu_BRAM_controller_bram/addrb" type="array">
+         <obj_property name="ElementShortName">addrb[31:0]</obj_property>
+         <obj_property name="ObjectShortName">addrb[31:0]</obj_property>
+      </wvobject>
+      <wvobject fp_name="/simulation_rv32i_overlay_wrapper/simulation_rv32i_overlay_i/cpu_BRAM_controller_bram/dinb" type="array">
+         <obj_property name="ElementShortName">dinb[31:0]</obj_property>
+         <obj_property name="ObjectShortName">dinb[31:0]</obj_property>
+      </wvobject>
+      <wvobject fp_name="/simulation_rv32i_overlay_wrapper/simulation_rv32i_overlay_i/cpu_BRAM_controller_bram/doutb" type="array">
+         <obj_property name="ElementShortName">doutb[31:0]</obj_property>
+         <obj_property name="ObjectShortName">doutb[31:0]</obj_property>
+      </wvobject>
+   </wvobject>
+   <wvobject fp_name="group587" type="group">
+      <obj_property name="label">button Controller</obj_property>
+      <obj_property name="DisplayName">label</obj_property>
+      <wvobject fp_name="/simulation_rv32i_overlay_wrapper/simulation_rv32i_overlay_i/button_controller/s_axi_aclk" type="logic">
+         <obj_property name="ElementShortName">s_axi_aclk</obj_property>
+         <obj_property name="ObjectShortName">s_axi_aclk</obj_property>
+      </wvobject>
+      <wvobject fp_name="/simulation_rv32i_overlay_wrapper/simulation_rv32i_overlay_i/button_controller/s_axi_aresetn" type="logic">
+         <obj_property name="ElementShortName">s_axi_aresetn</obj_property>
+         <obj_property name="ObjectShortName">s_axi_aresetn</obj_property>
+      </wvobject>
+      <wvobject fp_name="/simulation_rv32i_overlay_wrapper/simulation_rv32i_overlay_i/button_controller/s_axi_awaddr" type="array">
+         <obj_property name="ElementShortName">s_axi_awaddr[8:0]</obj_property>
+         <obj_property name="ObjectShortName">s_axi_awaddr[8:0]</obj_property>
+      </wvobject>
+      <wvobject fp_name="/simulation_rv32i_overlay_wrapper/simulation_rv32i_overlay_i/button_controller/s_axi_awvalid" type="logic">
+         <obj_property name="ElementShortName">s_axi_awvalid</obj_property>
+         <obj_property name="ObjectShortName">s_axi_awvalid</obj_property>
+      </wvobject>
+      <wvobject fp_name="/simulation_rv32i_overlay_wrapper/simulation_rv32i_overlay_i/button_controller/s_axi_awready" type="logic">
+         <obj_property name="ElementShortName">s_axi_awready</obj_property>
+         <obj_property name="ObjectShortName">s_axi_awready</obj_property>
+      </wvobject>
+      <wvobject fp_name="/simulation_rv32i_overlay_wrapper/simulation_rv32i_overlay_i/button_controller/s_axi_wdata" type="array">
+         <obj_property name="ElementShortName">s_axi_wdata[31:0]</obj_property>
+         <obj_property name="ObjectShortName">s_axi_wdata[31:0]</obj_property>
+      </wvobject>
+      <wvobject fp_name="/simulation_rv32i_overlay_wrapper/simulation_rv32i_overlay_i/button_controller/s_axi_wstrb" type="array">
+         <obj_property name="ElementShortName">s_axi_wstrb[3:0]</obj_property>
+         <obj_property name="ObjectShortName">s_axi_wstrb[3:0]</obj_property>
+      </wvobject>
+      <wvobject fp_name="/simulation_rv32i_overlay_wrapper/simulation_rv32i_overlay_i/button_controller/s_axi_wvalid" type="logic">
+         <obj_property name="ElementShortName">s_axi_wvalid</obj_property>
+         <obj_property name="ObjectShortName">s_axi_wvalid</obj_property>
+      </wvobject>
+      <wvobject fp_name="/simulation_rv32i_overlay_wrapper/simulation_rv32i_overlay_i/button_controller/s_axi_wready" type="logic">
+         <obj_property name="ElementShortName">s_axi_wready</obj_property>
+         <obj_property name="ObjectShortName">s_axi_wready</obj_property>
+      </wvobject>
+      <wvobject fp_name="/simulation_rv32i_overlay_wrapper/simulation_rv32i_overlay_i/button_controller/s_axi_bresp" type="array">
+         <obj_property name="ElementShortName">s_axi_bresp[1:0]</obj_property>
+         <obj_property name="ObjectShortName">s_axi_bresp[1:0]</obj_property>
+      </wvobject>
+      <wvobject fp_name="/simulation_rv32i_overlay_wrapper/simulation_rv32i_overlay_i/button_controller/s_axi_bvalid" type="logic">
+         <obj_property name="ElementShortName">s_axi_bvalid</obj_property>
+         <obj_property name="ObjectShortName">s_axi_bvalid</obj_property>
+      </wvobject>
+      <wvobject fp_name="/simulation_rv32i_overlay_wrapper/simulation_rv32i_overlay_i/button_controller/s_axi_bready" type="logic">
+         <obj_property name="ElementShortName">s_axi_bready</obj_property>
+         <obj_property name="ObjectShortName">s_axi_bready</obj_property>
+      </wvobject>
+      <wvobject fp_name="/simulation_rv32i_overlay_wrapper/simulation_rv32i_overlay_i/button_controller/s_axi_araddr" type="array">
+         <obj_property name="ElementShortName">s_axi_araddr[8:0]</obj_property>
+         <obj_property name="ObjectShortName">s_axi_araddr[8:0]</obj_property>
+      </wvobject>
+      <wvobject fp_name="/simulation_rv32i_overlay_wrapper/simulation_rv32i_overlay_i/button_controller/s_axi_arvalid" type="logic">
+         <obj_property name="ElementShortName">s_axi_arvalid</obj_property>
+         <obj_property name="ObjectShortName">s_axi_arvalid</obj_property>
+      </wvobject>
+      <wvobject fp_name="/simulation_rv32i_overlay_wrapper/simulation_rv32i_overlay_i/button_controller/s_axi_arready" type="logic">
+         <obj_property name="ElementShortName">s_axi_arready</obj_property>
+         <obj_property name="ObjectShortName">s_axi_arready</obj_property>
+      </wvobject>
+      <wvobject fp_name="/simulation_rv32i_overlay_wrapper/simulation_rv32i_overlay_i/button_controller/s_axi_rdata" type="array">
+         <obj_property name="ElementShortName">s_axi_rdata[31:0]</obj_property>
+         <obj_property name="ObjectShortName">s_axi_rdata[31:0]</obj_property>
+      </wvobject>
+      <wvobject fp_name="/simulation_rv32i_overlay_wrapper/simulation_rv32i_overlay_i/button_controller/s_axi_rresp" type="array">
+         <obj_property name="ElementShortName">s_axi_rresp[1:0]</obj_property>
+         <obj_property name="ObjectShortName">s_axi_rresp[1:0]</obj_property>
+      </wvobject>
+      <wvobject fp_name="/simulation_rv32i_overlay_wrapper/simulation_rv32i_overlay_i/button_controller/s_axi_rvalid" type="logic">
+         <obj_property name="ElementShortName">s_axi_rvalid</obj_property>
+         <obj_property name="ObjectShortName">s_axi_rvalid</obj_property>
+      </wvobject>
+      <wvobject fp_name="/simulation_rv32i_overlay_wrapper/simulation_rv32i_overlay_i/button_controller/s_axi_rready" type="logic">
+         <obj_property name="ElementShortName">s_axi_rready</obj_property>
+         <obj_property name="ObjectShortName">s_axi_rready</obj_property>
+      </wvobject>
+      <wvobject fp_name="/simulation_rv32i_overlay_wrapper/simulation_rv32i_overlay_i/button_controller/gpio_io_i" type="array">
+         <obj_property name="ElementShortName">gpio_io_i[3:0]</obj_property>
+         <obj_property name="ObjectShortName">gpio_io_i[3:0]</obj_property>
+      </wvobject>
+      <wvobject fp_name="/simulation_rv32i_overlay_wrapper/simulation_rv32i_overlay_i/button_controller/S_AXI" type="protoinst">
+         <obj_property name="ElementShortName">S_AXI</obj_property>
+         <obj_property name="ObjectShortName">S_AXI</obj_property>
+      </wvobject>
+   </wvobject>
+   <wvobject fp_name="group636" type="group">
+      <obj_property name="label">LED controller</obj_property>
+      <obj_property name="DisplayName">label</obj_property>
+      <wvobject fp_name="/simulation_rv32i_overlay_wrapper/simulation_rv32i_overlay_i/LED_controller/s_axi_aclk" type="logic">
+         <obj_property name="ElementShortName">s_axi_aclk</obj_property>
+         <obj_property name="ObjectShortName">s_axi_aclk</obj_property>
+      </wvobject>
+      <wvobject fp_name="/simulation_rv32i_overlay_wrapper/simulation_rv32i_overlay_i/LED_controller/s_axi_aresetn" type="logic">
+         <obj_property name="ElementShortName">s_axi_aresetn</obj_property>
+         <obj_property name="ObjectShortName">s_axi_aresetn</obj_property>
+      </wvobject>
+      <wvobject fp_name="/simulation_rv32i_overlay_wrapper/simulation_rv32i_overlay_i/LED_controller/s_axi_awaddr" type="array">
+         <obj_property name="ElementShortName">s_axi_awaddr[8:0]</obj_property>
+         <obj_property name="ObjectShortName">s_axi_awaddr[8:0]</obj_property>
+      </wvobject>
+      <wvobject fp_name="/simulation_rv32i_overlay_wrapper/simulation_rv32i_overlay_i/LED_controller/s_axi_awvalid" type="logic">
+         <obj_property name="ElementShortName">s_axi_awvalid</obj_property>
+         <obj_property name="ObjectShortName">s_axi_awvalid</obj_property>
+      </wvobject>
+      <wvobject fp_name="/simulation_rv32i_overlay_wrapper/simulation_rv32i_overlay_i/LED_controller/s_axi_awready" type="logic">
+         <obj_property name="ElementShortName">s_axi_awready</obj_property>
+         <obj_property name="ObjectShortName">s_axi_awready</obj_property>
+      </wvobject>
+      <wvobject fp_name="/simulation_rv32i_overlay_wrapper/simulation_rv32i_overlay_i/LED_controller/s_axi_wdata" type="array">
+         <obj_property name="ElementShortName">s_axi_wdata[31:0]</obj_property>
+         <obj_property name="ObjectShortName">s_axi_wdata[31:0]</obj_property>
+      </wvobject>
+      <wvobject fp_name="/simulation_rv32i_overlay_wrapper/simulation_rv32i_overlay_i/LED_controller/s_axi_wstrb" type="array">
+         <obj_property name="ElementShortName">s_axi_wstrb[3:0]</obj_property>
+         <obj_property name="ObjectShortName">s_axi_wstrb[3:0]</obj_property>
+      </wvobject>
+      <wvobject fp_name="/simulation_rv32i_overlay_wrapper/simulation_rv32i_overlay_i/LED_controller/s_axi_wvalid" type="logic">
+         <obj_property name="ElementShortName">s_axi_wvalid</obj_property>
+         <obj_property name="ObjectShortName">s_axi_wvalid</obj_property>
+      </wvobject>
+      <wvobject fp_name="/simulation_rv32i_overlay_wrapper/simulation_rv32i_overlay_i/LED_controller/s_axi_wready" type="logic">
+         <obj_property name="ElementShortName">s_axi_wready</obj_property>
+         <obj_property name="ObjectShortName">s_axi_wready</obj_property>
+      </wvobject>
+      <wvobject fp_name="/simulation_rv32i_overlay_wrapper/simulation_rv32i_overlay_i/LED_controller/s_axi_bresp" type="array">
+         <obj_property name="ElementShortName">s_axi_bresp[1:0]</obj_property>
+         <obj_property name="ObjectShortName">s_axi_bresp[1:0]</obj_property>
+      </wvobject>
+      <wvobject fp_name="/simulation_rv32i_overlay_wrapper/simulation_rv32i_overlay_i/LED_controller/s_axi_bvalid" type="logic">
+         <obj_property name="ElementShortName">s_axi_bvalid</obj_property>
+         <obj_property name="ObjectShortName">s_axi_bvalid</obj_property>
+      </wvobject>
+      <wvobject fp_name="/simulation_rv32i_overlay_wrapper/simulation_rv32i_overlay_i/LED_controller/s_axi_bready" type="logic">
+         <obj_property name="ElementShortName">s_axi_bready</obj_property>
+         <obj_property name="ObjectShortName">s_axi_bready</obj_property>
+      </wvobject>
+      <wvobject fp_name="/simulation_rv32i_overlay_wrapper/simulation_rv32i_overlay_i/LED_controller/s_axi_araddr" type="array">
+         <obj_property name="ElementShortName">s_axi_araddr[8:0]</obj_property>
+         <obj_property name="ObjectShortName">s_axi_araddr[8:0]</obj_property>
+      </wvobject>
+      <wvobject fp_name="/simulation_rv32i_overlay_wrapper/simulation_rv32i_overlay_i/LED_controller/s_axi_arvalid" type="logic">
+         <obj_property name="ElementShortName">s_axi_arvalid</obj_property>
+         <obj_property name="ObjectShortName">s_axi_arvalid</obj_property>
+      </wvobject>
+      <wvobject fp_name="/simulation_rv32i_overlay_wrapper/simulation_rv32i_overlay_i/LED_controller/s_axi_arready" type="logic">
+         <obj_property name="ElementShortName">s_axi_arready</obj_property>
+         <obj_property name="ObjectShortName">s_axi_arready</obj_property>
+      </wvobject>
+      <wvobject fp_name="/simulation_rv32i_overlay_wrapper/simulation_rv32i_overlay_i/LED_controller/s_axi_rdata" type="array">
+         <obj_property name="ElementShortName">s_axi_rdata[31:0]</obj_property>
+         <obj_property name="ObjectShortName">s_axi_rdata[31:0]</obj_property>
+      </wvobject>
+      <wvobject fp_name="/simulation_rv32i_overlay_wrapper/simulation_rv32i_overlay_i/LED_controller/s_axi_rresp" type="array">
+         <obj_property name="ElementShortName">s_axi_rresp[1:0]</obj_property>
+         <obj_property name="ObjectShortName">s_axi_rresp[1:0]</obj_property>
+      </wvobject>
+      <wvobject fp_name="/simulation_rv32i_overlay_wrapper/simulation_rv32i_overlay_i/LED_controller/s_axi_rvalid" type="logic">
+         <obj_property name="ElementShortName">s_axi_rvalid</obj_property>
+         <obj_property name="ObjectShortName">s_axi_rvalid</obj_property>
+      </wvobject>
+      <wvobject fp_name="/simulation_rv32i_overlay_wrapper/simulation_rv32i_overlay_i/LED_controller/s_axi_rready" type="logic">
+         <obj_property name="ElementShortName">s_axi_rready</obj_property>
+         <obj_property name="ObjectShortName">s_axi_rready</obj_property>
+      </wvobject>
+      <wvobject fp_name="/simulation_rv32i_overlay_wrapper/simulation_rv32i_overlay_i/LED_controller/gpio_io_i" type="array">
+         <obj_property name="ElementShortName">gpio_io_i[3:0]</obj_property>
+         <obj_property name="ObjectShortName">gpio_io_i[3:0]</obj_property>
+      </wvobject>
+      <wvobject fp_name="/simulation_rv32i_overlay_wrapper/simulation_rv32i_overlay_i/LED_controller/gpio_io_o" type="array">
+         <obj_property name="ElementShortName">gpio_io_o[3:0]</obj_property>
+         <obj_property name="ObjectShortName">gpio_io_o[3:0]</obj_property>
+      </wvobject>
+      <wvobject fp_name="/simulation_rv32i_overlay_wrapper/simulation_rv32i_overlay_i/LED_controller/gpio_io_t" type="array">
+         <obj_property name="ElementShortName">gpio_io_t[3:0]</obj_property>
+         <obj_property name="ObjectShortName">gpio_io_t[3:0]</obj_property>
+      </wvobject>
+      <wvobject fp_name="/simulation_rv32i_overlay_wrapper/simulation_rv32i_overlay_i/LED_controller/S_AXI" type="protoinst">
+         <obj_property name="ElementShortName">S_AXI</obj_property>
+         <obj_property name="ObjectShortName">S_AXI</obj_property>
+      </wvobject>
+   </wvobject>
+</wave_config>
