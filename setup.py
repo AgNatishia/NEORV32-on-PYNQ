@@ -100,6 +100,7 @@ setup(
     author_email="pynq_support@xilinx.com",
     url="https://github.com/AgNatishia/NEORV32-on-PYNQ.git",
     license="",
+    packages=find_packages(),
     package_data={ "": data_files, },
     python_requires=">=3.6.0"
 )
