@@ -1,7 +1,7 @@
 ﻿<?xml version="1.0" encoding="UTF-8" standalone="no" ?>
-<EDKSYSTEM EDWVERSION="1.2" TIMESTAMP="Tue Jul 13 15:31:19 2021" VIVADOVERSION="2020.1">
+<EDKSYSTEM EDWVERSION="1.2" TIMESTAMP="Thu Jul 15 12:46:16 2021" VIVADOVERSION="2020.1">
 
-  <SYSTEMINFO ARCH="zynq" BOARD="tul.com.tw:pynq-z2:part0:1.0" DEVICE="7z020" NAME="rv32i_overlay_capture" PACKAGE="clg400" SPEEDGRADE="-1"/>
+  <SYSTEMINFO ARCH="zynq" BOARD="tul.com.tw:pynq-z2:part0:1.0" DEVICE="7z020" NAME="rv32i_overlay" PACKAGE="clg400" SPEEDGRADE="-1"/>
 
   <EXTERNALPORTS>
     <PORT DIR="IO" NAME="DDR_cas_n" SIGIS="undef" SIGNAME="processing_system7_0_DDR_CAS_n">
@@ -377,7 +377,7 @@
         <PARAMETER NAME="C_IS_DUAL" VALUE="0"/>
         <PARAMETER NAME="C_DOUT_DEFAULT_2" VALUE="0x00000000"/>
         <PARAMETER NAME="C_TRI_DEFAULT_2" VALUE="0xFFFFFFFF"/>
-        <PARAMETER NAME="Component_Name" VALUE="rv32i_overlay_capture_LED_controller_0"/>
+        <PARAMETER NAME="Component_Name" VALUE="rv32i_overlay_LED_controller_0"/>
         <PARAMETER NAME="USE_BOARD_FLOW" VALUE="true"/>
         <PARAMETER NAME="GPIO_BOARD_INTERFACE" VALUE="leds_4bits"/>
         <PARAMETER NAME="GPIO2_BOARD_INTERFACE" VALUE="Custom"/>
@@ -446,8 +446,8 @@
         </PORT>
         <PORT DIR="O" LEFT="1" NAME="s_axi_bresp" RIGHT="0" SIGIS="undef" SIGNAME="LED_controller_s_axi_bresp">
           <CONNECTIONS>
-            <CONNECTION INSTANCE="neo_signal_capture" PORT="LEDs_axi_bresp"/>
             <CONNECTION INSTANCE="neo_smartconnect" PORT="M01_AXI_bresp"/>
+            <CONNECTION INSTANCE="neo_signal_capture" PORT="LEDs_axi_bresp"/>
           </CONNECTIONS>
           <CONNECTIONS>
             <CONNECTION INSTANCE="neo_smartconnect" PORT="M01_AXI_bresp"/>
@@ -482,9 +482,9 @@
         </PORT>
         <PORT DIR="O" NAME="s_axi_arready" SIGIS="undef" SIGNAME="LED_controller_s_axi_arready">
           <CONNECTIONS>
-            <CONNECTION INSTANCE="neo_signal_capture" PORT="LEDs_axi_arready"/>
             <CONNECTION INSTANCE="neo_smartconnect" PORT="M01_AXI_arready"/>
             <CONNECTION INSTANCE="LED_controller" PORT="s_axi_rready"/>
+            <CONNECTION INSTANCE="neo_signal_capture" PORT="LEDs_axi_arready"/>
           </CONNECTIONS>
           <CONNECTIONS>
             <CONNECTION INSTANCE="neo_smartconnect" PORT="M01_AXI_arready"/>
@@ -501,8 +501,8 @@
         </PORT>
         <PORT DIR="O" LEFT="1" NAME="s_axi_rresp" RIGHT="0" SIGIS="undef" SIGNAME="LED_controller_s_axi_rresp">
           <CONNECTIONS>
-            <CONNECTION INSTANCE="neo_signal_capture" PORT="LEDs_axi_rresp"/>
             <CONNECTION INSTANCE="neo_smartconnect" PORT="M01_AXI_rresp"/>
+            <CONNECTION INSTANCE="neo_signal_capture" PORT="LEDs_axi_rresp"/>
           </CONNECTIONS>
           <CONNECTIONS>
             <CONNECTION INSTANCE="neo_smartconnect" PORT="M01_AXI_rresp"/>
@@ -527,17 +527,17 @@
         </PORT>
         <PORT DIR="I" LEFT="3" NAME="gpio_io_i" RIGHT="0" SIGIS="undef" SIGNAME="LED_controller_gpio_io_i">
           <CONNECTIONS>
-            <CONNECTION INSTANCE="rv32i_overlay_capture_imp" PORT="leds_4bits_tri_i"/>
+            <CONNECTION INSTANCE="rv32i_overlay_imp" PORT="leds_4bits_tri_i"/>
           </CONNECTIONS>
         </PORT>
         <PORT DIR="O" LEFT="3" NAME="gpio_io_o" RIGHT="0" SIGIS="undef" SIGNAME="LED_controller_gpio_io_o">
           <CONNECTIONS>
-            <CONNECTION INSTANCE="rv32i_overlay_capture_imp" PORT="leds_4bits_tri_o"/>
+            <CONNECTION INSTANCE="rv32i_overlay_imp" PORT="leds_4bits_tri_o"/>
           </CONNECTIONS>
         </PORT>
         <PORT DIR="O" LEFT="3" NAME="gpio_io_t" RIGHT="0" SIGIS="undef" SIGNAME="LED_controller_gpio_io_t">
           <CONNECTIONS>
-            <CONNECTION INSTANCE="rv32i_overlay_capture_imp" PORT="leds_4bits_tri_t"/>
+            <CONNECTION INSTANCE="rv32i_overlay_imp" PORT="leds_4bits_tri_t"/>
           </CONNECTIONS>
         </PORT>
       </PORTS>
@@ -568,7 +568,7 @@
           <PARAMETER NAME="NUM_WRITE_OUTSTANDING" VALUE="1"/>
           <PARAMETER NAME="MAX_BURST_LENGTH" VALUE="1"/>
           <PARAMETER NAME="PHASE" VALUE="0.000"/>
-          <PARAMETER NAME="CLK_DOMAIN" VALUE="rv32i_overlay_capture_cpu_clock_stepper_0_gated_clock"/>
+          <PARAMETER NAME="CLK_DOMAIN" VALUE="rv32i_overlay_cpu_clock_stepper_0_gated_clock"/>
           <PARAMETER NAME="NUM_READ_THREADS" VALUE="1"/>
           <PARAMETER NAME="NUM_WRITE_THREADS" VALUE="1"/>
           <PARAMETER NAME="RUSER_BITS_PER_BYTE" VALUE="0"/>
@@ -789,7 +789,7 @@
         <PARAMETER NAME="C_IS_DUAL" VALUE="0"/>
         <PARAMETER NAME="C_DOUT_DEFAULT_2" VALUE="0x00000000"/>
         <PARAMETER NAME="C_TRI_DEFAULT_2" VALUE="0xFFFFFFFF"/>
-        <PARAMETER NAME="Component_Name" VALUE="rv32i_overlay_capture_button_controller_0"/>
+        <PARAMETER NAME="Component_Name" VALUE="rv32i_overlay_button_controller_0"/>
         <PARAMETER NAME="USE_BOARD_FLOW" VALUE="true"/>
         <PARAMETER NAME="GPIO_BOARD_INTERFACE" VALUE="btns_4bits"/>
         <PARAMETER NAME="GPIO2_BOARD_INTERFACE" VALUE="Custom"/>
@@ -822,8 +822,8 @@
         </PORT>
         <PORT DIR="O" NAME="s_axi_awready" SIGIS="undef" SIGNAME="button_controller_s_axi_awready">
           <CONNECTIONS>
-            <CONNECTION INSTANCE="neo_signal_capture" PORT="buttons_axi_awready"/>
             <CONNECTION INSTANCE="neo_smartconnect" PORT="M02_AXI_awready"/>
+            <CONNECTION INSTANCE="neo_signal_capture" PORT="buttons_axi_awready"/>
           </CONNECTIONS>
           <CONNECTIONS>
             <CONNECTION INSTANCE="neo_smartconnect" PORT="M02_AXI_awready"/>
@@ -849,8 +849,8 @@
         </PORT>
         <PORT DIR="O" NAME="s_axi_wready" SIGIS="undef" SIGNAME="button_controller_s_axi_wready">
           <CONNECTIONS>
-            <CONNECTION INSTANCE="neo_signal_capture" PORT="buttons_axi_wready"/>
             <CONNECTION INSTANCE="neo_smartconnect" PORT="M02_AXI_wready"/>
+            <CONNECTION INSTANCE="neo_signal_capture" PORT="buttons_axi_wready"/>
           </CONNECTIONS>
           <CONNECTIONS>
             <CONNECTION INSTANCE="neo_smartconnect" PORT="M02_AXI_wready"/>
@@ -867,8 +867,8 @@
         </PORT>
         <PORT DIR="O" NAME="s_axi_bvalid" SIGIS="undef" SIGNAME="button_controller_s_axi_bvalid">
           <CONNECTIONS>
-            <CONNECTION INSTANCE="neo_signal_capture" PORT="buttons_axi_bvalid"/>
             <CONNECTION INSTANCE="neo_smartconnect" PORT="M02_AXI_bvalid"/>
+            <CONNECTION INSTANCE="neo_signal_capture" PORT="buttons_axi_bvalid"/>
           </CONNECTIONS>
           <CONNECTIONS>
             <CONNECTION INSTANCE="neo_smartconnect" PORT="M02_AXI_bvalid"/>
@@ -903,8 +903,8 @@
         </PORT>
         <PORT DIR="O" LEFT="31" NAME="s_axi_rdata" RIGHT="0" SIGIS="undef" SIGNAME="button_controller_s_axi_rdata">
           <CONNECTIONS>
-            <CONNECTION INSTANCE="neo_signal_capture" PORT="buttons_axi_rdata"/>
             <CONNECTION INSTANCE="neo_smartconnect" PORT="M02_AXI_rdata"/>
+            <CONNECTION INSTANCE="neo_signal_capture" PORT="buttons_axi_rdata"/>
           </CONNECTIONS>
           <CONNECTIONS>
             <CONNECTION INSTANCE="neo_smartconnect" PORT="M02_AXI_rdata"/>
@@ -921,8 +921,8 @@
         </PORT>
         <PORT DIR="O" NAME="s_axi_rvalid" SIGIS="undef" SIGNAME="button_controller_s_axi_rvalid">
           <CONNECTIONS>
-            <CONNECTION INSTANCE="neo_signal_capture" PORT="buttons_axi_rvalid"/>
             <CONNECTION INSTANCE="neo_smartconnect" PORT="M02_AXI_rvalid"/>
+            <CONNECTION INSTANCE="neo_signal_capture" PORT="buttons_axi_rvalid"/>
           </CONNECTIONS>
           <CONNECTIONS>
             <CONNECTION INSTANCE="neo_smartconnect" PORT="M02_AXI_rvalid"/>
@@ -936,7 +936,7 @@
         </PORT>
         <PORT DIR="I" LEFT="3" NAME="gpio_io_i" RIGHT="0" SIGIS="undef" SIGNAME="button_controller_gpio_io_i">
           <CONNECTIONS>
-            <CONNECTION INSTANCE="rv32i_overlay_capture_imp" PORT="btns_4bits_tri_i"/>
+            <CONNECTION INSTANCE="rv32i_overlay_imp" PORT="btns_4bits_tri_i"/>
           </CONNECTIONS>
         </PORT>
       </PORTS>
@@ -967,7 +967,7 @@
           <PARAMETER NAME="NUM_WRITE_OUTSTANDING" VALUE="1"/>
           <PARAMETER NAME="MAX_BURST_LENGTH" VALUE="1"/>
           <PARAMETER NAME="PHASE" VALUE="0.000"/>
-          <PARAMETER NAME="CLK_DOMAIN" VALUE="rv32i_overlay_capture_cpu_clock_stepper_0_gated_clock"/>
+          <PARAMETER NAME="CLK_DOMAIN" VALUE="rv32i_overlay_cpu_clock_stepper_0_gated_clock"/>
           <PARAMETER NAME="NUM_READ_THREADS" VALUE="1"/>
           <PARAMETER NAME="NUM_WRITE_THREADS" VALUE="1"/>
           <PARAMETER NAME="RUSER_BITS_PER_BYTE" VALUE="0"/>
@@ -1338,7 +1338,7 @@
         <PARAMETER NAME="USE_ECC" VALUE="0"/>
         <PARAMETER NAME="FAULT_INJECT" VALUE="0"/>
         <PARAMETER NAME="ECC_ONOFF_RESET_VALUE" VALUE="0"/>
-        <PARAMETER NAME="Component_Name" VALUE="rv32i_overlay_capture_cpu_BRAM_controller_0"/>
+        <PARAMETER NAME="Component_Name" VALUE="rv32i_overlay_cpu_BRAM_controller_0"/>
         <PARAMETER NAME="BMG_INSTANCE" VALUE="EXTERNAL"/>
         <PARAMETER NAME="MEM_DEPTH" VALUE="16384"/>
         <PARAMETER NAME="READ_LATENCY" VALUE="1"/>
@@ -1509,26 +1509,26 @@
         </PORT>
         <PORT DIR="O" NAME="bram_en_a" SIGIS="undef" SIGNAME="cpu_BRAM_controller_bram_en_a">
           <CONNECTIONS>
-            <CONNECTION INSTANCE="neo_signal_capture" PORT="BRAM_enable"/>
             <CONNECTION INSTANCE="cpu_BRAM_controller_bram" PORT="enb"/>
+            <CONNECTION INSTANCE="neo_signal_capture" PORT="BRAM_enable"/>
           </CONNECTIONS>
         </PORT>
         <PORT DIR="O" LEFT="3" NAME="bram_we_a" RIGHT="0" SIGIS="undef" SIGNAME="cpu_BRAM_controller_bram_we_a">
           <CONNECTIONS>
-            <CONNECTION INSTANCE="neo_signal_capture" PORT="BRAM_write_data"/>
             <CONNECTION INSTANCE="cpu_BRAM_controller_bram" PORT="web"/>
+            <CONNECTION INSTANCE="neo_signal_capture" PORT="BRAM_write_data"/>
           </CONNECTIONS>
         </PORT>
         <PORT DIR="O" LEFT="15" NAME="bram_addr_a" RIGHT="0" SIGIS="undef" SIGNAME="cpu_BRAM_controller_bram_addr_a">
           <CONNECTIONS>
-            <CONNECTION INSTANCE="neo_signal_capture" PORT="BRAM_addr"/>
             <CONNECTION INSTANCE="cpu_BRAM_controller_bram" PORT="addrb"/>
+            <CONNECTION INSTANCE="neo_signal_capture" PORT="BRAM_addr"/>
           </CONNECTIONS>
         </PORT>
         <PORT DIR="O" LEFT="31" NAME="bram_wrdata_a" RIGHT="0" SIGIS="undef" SIGNAME="cpu_BRAM_controller_bram_wrdata_a">
           <CONNECTIONS>
-            <CONNECTION INSTANCE="neo_signal_capture" PORT="BRAM_write_enable"/>
             <CONNECTION INSTANCE="cpu_BRAM_controller_bram" PORT="dinb"/>
+            <CONNECTION INSTANCE="neo_signal_capture" PORT="BRAM_write_enable"/>
           </CONNECTIONS>
         </PORT>
         <PORT DIR="I" LEFT="31" NAME="bram_rddata_a" RIGHT="0" SIGIS="undef" SIGNAME="cpu_BRAM_controller_bram_doutb">
@@ -1564,7 +1564,7 @@
           <PARAMETER NAME="NUM_WRITE_OUTSTANDING" VALUE="1"/>
           <PARAMETER NAME="MAX_BURST_LENGTH" VALUE="1"/>
           <PARAMETER NAME="PHASE" VALUE="0.000"/>
-          <PARAMETER NAME="CLK_DOMAIN" VALUE="rv32i_overlay_capture_cpu_clock_stepper_0_gated_clock"/>
+          <PARAMETER NAME="CLK_DOMAIN" VALUE="rv32i_overlay_cpu_clock_stepper_0_gated_clock"/>
           <PARAMETER NAME="NUM_READ_THREADS" VALUE="1"/>
           <PARAMETER NAME="NUM_WRITE_THREADS" VALUE="1"/>
           <PARAMETER NAME="RUSER_BITS_PER_BYTE" VALUE="0"/>
@@ -1691,7 +1691,7 @@
         <PARAMETER NAME="C_COUNT_36K_BRAM" VALUE="16"/>
         <PARAMETER NAME="C_COUNT_18K_BRAM" VALUE="0"/>
         <PARAMETER NAME="C_EST_POWER_SUMMARY" VALUE="Estimated Power for IP     :     20.388 mW"/>
-        <PARAMETER NAME="Component_Name" VALUE="rv32i_overlay_capture_cpu_BRAM_controller_bram_0"/>
+        <PARAMETER NAME="Component_Name" VALUE="rv32i_overlay_cpu_BRAM_controller_bram_0"/>
         <PARAMETER NAME="Interface_Type" VALUE="Native"/>
         <PARAMETER NAME="AXI_Type" VALUE="AXI4_Full"/>
         <PARAMETER NAME="AXI_Slave_Type" VALUE="Memory_Slave"/>
@@ -1833,8 +1833,8 @@
         </PORT>
         <PORT DIR="O" LEFT="31" NAME="doutb" RIGHT="0" SIGIS="undef" SIGNAME="cpu_BRAM_controller_bram_doutb">
           <CONNECTIONS>
-            <CONNECTION INSTANCE="neo_signal_capture" PORT="BRAM_read_data"/>
             <CONNECTION INSTANCE="cpu_BRAM_controller" PORT="bram_rddata_a"/>
+            <CONNECTION INSTANCE="neo_signal_capture" PORT="BRAM_read_data"/>
           </CONNECTIONS>
         </PORT>
         <PORT DIR="O" NAME="rsta_busy" SIGIS="undef"/>
@@ -1883,7 +1883,7 @@
         <PARAMETER NAME="CPU_EXTENSION_RISCV_M" VALUE="false"/>
         <PARAMETER NAME="FAST_SHIFT_EN" VALUE="false"/>
         <PARAMETER NAME="TINY_SHIFT_EN" VALUE="false"/>
-        <PARAMETER NAME="Component_Name" VALUE="rv32i_overlay_capture_cpu_alu_0"/>
+        <PARAMETER NAME="Component_Name" VALUE="rv32i_overlay_cpu_alu_0"/>
         <PARAMETER NAME="EDK_IPTYPE" VALUE="PERIPHERAL"/>
       </PARAMETERS>
       <PORTS>
@@ -1974,7 +1974,7 @@
       <PARAMETERS>
         <PARAMETER NAME="C_S00_AXI_DATA_WIDTH" VALUE="32"/>
         <PARAMETER NAME="C_S00_AXI_ADDR_WIDTH" VALUE="4"/>
-        <PARAMETER NAME="Component_Name" VALUE="rv32i_overlay_capture_cpu_clock_stepper_0"/>
+        <PARAMETER NAME="Component_Name" VALUE="rv32i_overlay_cpu_clock_stepper_0"/>
         <PARAMETER NAME="EDK_IPTYPE" VALUE="PERIPHERAL"/>
         <PARAMETER NAME="C_S00_AXI_BASEADDR" VALUE="0x43C00000"/>
         <PARAMETER NAME="C_S00_AXI_HIGHADDR" VALUE="0x43C0FFFF"/>
@@ -2136,7 +2136,7 @@
           <PARAMETER NAME="NUM_WRITE_OUTSTANDING" VALUE="8"/>
           <PARAMETER NAME="MAX_BURST_LENGTH" VALUE="1"/>
           <PARAMETER NAME="PHASE" VALUE="0.000"/>
-          <PARAMETER NAME="CLK_DOMAIN" VALUE="rv32i_overlay_capture_processing_system7_0_0_FCLK_CLK0"/>
+          <PARAMETER NAME="CLK_DOMAIN" VALUE="rv32i_overlay_processing_system7_0_0_FCLK_CLK0"/>
           <PARAMETER NAME="NUM_READ_THREADS" VALUE="1"/>
           <PARAMETER NAME="NUM_WRITE_THREADS" VALUE="1"/>
           <PARAMETER NAME="RUSER_BITS_PER_BYTE" VALUE="0"/>
@@ -2186,7 +2186,7 @@
         <PARAMETER NAME="PMP_MIN_GRANULARITY" VALUE="65536"/>
         <PARAMETER NAME="HPM_NUM_CNTS" VALUE="0"/>
         <PARAMETER NAME="HPM_CNT_WIDTH" VALUE="40"/>
-        <PARAMETER NAME="Component_Name" VALUE="rv32i_overlay_capture_cpu_control_unit_0"/>
+        <PARAMETER NAME="Component_Name" VALUE="rv32i_overlay_cpu_control_unit_0"/>
         <PARAMETER NAME="EDK_IPTYPE" VALUE="PERIPHERAL"/>
       </PARAMETERS>
       <PORTS>
@@ -2369,7 +2369,7 @@
         <PARAMETER NAME="DIN_WIDTH" VALUE="8"/>
         <PARAMETER NAME="DIN_FROM" VALUE="0"/>
         <PARAMETER NAME="DIN_TO" VALUE="0"/>
-        <PARAMETER NAME="Component_Name" VALUE="rv32i_overlay_capture_cpu_cp_0_start_slice_0"/>
+        <PARAMETER NAME="Component_Name" VALUE="rv32i_overlay_cpu_cp_0_start_slice_0"/>
         <PARAMETER NAME="DOUT_WIDTH" VALUE="1"/>
         <PARAMETER NAME="EDK_IPTYPE" VALUE="PERIPHERAL"/>
       </PARAMETERS>
@@ -2393,7 +2393,7 @@
         <PARAMETER NAME="DIN_WIDTH" VALUE="8"/>
         <PARAMETER NAME="DIN_FROM" VALUE="1"/>
         <PARAMETER NAME="DIN_TO" VALUE="1"/>
-        <PARAMETER NAME="Component_Name" VALUE="rv32i_overlay_capture_cpu_cp_1_start_slice_0"/>
+        <PARAMETER NAME="Component_Name" VALUE="rv32i_overlay_cpu_cp_1_start_slice_0"/>
         <PARAMETER NAME="DOUT_WIDTH" VALUE="1"/>
         <PARAMETER NAME="EDK_IPTYPE" VALUE="PERIPHERAL"/>
       </PARAMETERS>
@@ -2413,7 +2413,7 @@
         <PARAMETER NAME="DIN_WIDTH" VALUE="8"/>
         <PARAMETER NAME="DIN_FROM" VALUE="2"/>
         <PARAMETER NAME="DIN_TO" VALUE="2"/>
-        <PARAMETER NAME="Component_Name" VALUE="rv32i_overlay_capture_cpu_cp_2_start_slice_0"/>
+        <PARAMETER NAME="Component_Name" VALUE="rv32i_overlay_cpu_cp_2_start_slice_0"/>
         <PARAMETER NAME="DOUT_WIDTH" VALUE="1"/>
         <PARAMETER NAME="EDK_IPTYPE" VALUE="PERIPHERAL"/>
       </PARAMETERS>
@@ -2433,7 +2433,7 @@
         <PARAMETER NAME="DIN_WIDTH" VALUE="8"/>
         <PARAMETER NAME="DIN_FROM" VALUE="3"/>
         <PARAMETER NAME="DIN_TO" VALUE="3"/>
-        <PARAMETER NAME="Component_Name" VALUE="rv32i_overlay_capture_cpu_cp_3_start_slice_0"/>
+        <PARAMETER NAME="Component_Name" VALUE="rv32i_overlay_cpu_cp_3_start_slice_0"/>
         <PARAMETER NAME="DOUT_WIDTH" VALUE="1"/>
         <PARAMETER NAME="EDK_IPTYPE" VALUE="PERIPHERAL"/>
       </PARAMETERS>
@@ -2453,7 +2453,7 @@
         <PARAMETER NAME="DIN_WIDTH" VALUE="8"/>
         <PARAMETER NAME="DIN_FROM" VALUE="4"/>
         <PARAMETER NAME="DIN_TO" VALUE="4"/>
-        <PARAMETER NAME="Component_Name" VALUE="rv32i_overlay_capture_cpu_cp_4_start_slice_0"/>
+        <PARAMETER NAME="Component_Name" VALUE="rv32i_overlay_cpu_cp_4_start_slice_0"/>
         <PARAMETER NAME="DOUT_WIDTH" VALUE="1"/>
         <PARAMETER NAME="EDK_IPTYPE" VALUE="PERIPHERAL"/>
       </PARAMETERS>
@@ -2473,7 +2473,7 @@
         <PARAMETER NAME="DIN_WIDTH" VALUE="8"/>
         <PARAMETER NAME="DIN_FROM" VALUE="5"/>
         <PARAMETER NAME="DIN_TO" VALUE="5"/>
-        <PARAMETER NAME="Component_Name" VALUE="rv32i_overlay_capture_cpu_cp_5_start_slice_0"/>
+        <PARAMETER NAME="Component_Name" VALUE="rv32i_overlay_cpu_cp_5_start_slice_0"/>
         <PARAMETER NAME="DOUT_WIDTH" VALUE="1"/>
         <PARAMETER NAME="EDK_IPTYPE" VALUE="PERIPHERAL"/>
       </PARAMETERS>
@@ -2493,7 +2493,7 @@
         <PARAMETER NAME="DIN_WIDTH" VALUE="8"/>
         <PARAMETER NAME="DIN_FROM" VALUE="6"/>
         <PARAMETER NAME="DIN_TO" VALUE="6"/>
-        <PARAMETER NAME="Component_Name" VALUE="rv32i_overlay_capture_cpu_cp_6_start_slice_0"/>
+        <PARAMETER NAME="Component_Name" VALUE="rv32i_overlay_cpu_cp_6_start_slice_0"/>
         <PARAMETER NAME="DOUT_WIDTH" VALUE="1"/>
         <PARAMETER NAME="EDK_IPTYPE" VALUE="PERIPHERAL"/>
       </PARAMETERS>
@@ -2513,7 +2513,7 @@
         <PARAMETER NAME="DIN_WIDTH" VALUE="8"/>
         <PARAMETER NAME="DIN_FROM" VALUE="7"/>
         <PARAMETER NAME="DIN_TO" VALUE="7"/>
-        <PARAMETER NAME="Component_Name" VALUE="rv32i_overlay_capture_cpu_cp_7_start_slice_0"/>
+        <PARAMETER NAME="Component_Name" VALUE="rv32i_overlay_cpu_cp_7_start_slice_0"/>
         <PARAMETER NAME="DOUT_WIDTH" VALUE="1"/>
         <PARAMETER NAME="EDK_IPTYPE" VALUE="PERIPHERAL"/>
       </PARAMETERS>
@@ -2564,7 +2564,7 @@
         <PARAMETER NAME="IN31_WIDTH" VALUE="1"/>
         <PARAMETER NAME="dout_width" VALUE="256"/>
         <PARAMETER NAME="NUM_PORTS" VALUE="8"/>
-        <PARAMETER NAME="Component_Name" VALUE="rv32i_overlay_capture_cpu_cp_result_concat_0"/>
+        <PARAMETER NAME="Component_Name" VALUE="rv32i_overlay_cpu_cp_result_concat_0"/>
         <PARAMETER NAME="EDK_IPTYPE" VALUE="PERIPHERAL"/>
       </PARAMETERS>
       <PORTS>
@@ -2626,7 +2626,7 @@
         <PARAMETER NAME="IN31_WIDTH" VALUE="1"/>
         <PARAMETER NAME="dout_width" VALUE="8"/>
         <PARAMETER NAME="NUM_PORTS" VALUE="8"/>
-        <PARAMETER NAME="Component_Name" VALUE="rv32i_overlay_capture_cpu_cp_valid_concat_0"/>
+        <PARAMETER NAME="Component_Name" VALUE="rv32i_overlay_cpu_cp_valid_concat_0"/>
         <PARAMETER NAME="EDK_IPTYPE" VALUE="PERIPHERAL"/>
       </PARAMETERS>
       <PORTS>
@@ -2658,7 +2658,7 @@
         <PARAMETER NAME="CPU_EXTENSION_RISCV_C" VALUE="false"/>
         <PARAMETER NAME="PMP_NUM_REGIONS" VALUE="0"/>
         <PARAMETER NAME="PMP_MIN_GRANULARITY" VALUE="65536"/>
-        <PARAMETER NAME="Component_Name" VALUE="rv32i_overlay_capture_cpu_external_bus_control_0"/>
+        <PARAMETER NAME="Component_Name" VALUE="rv32i_overlay_cpu_external_bus_control_0"/>
         <PARAMETER NAME="EDK_IPTYPE" VALUE="PERIPHERAL"/>
       </PARAMETERS>
       <PORTS>
@@ -2893,7 +2893,7 @@
       <DOCUMENTS/>
       <PARAMETERS>
         <PARAMETER NAME="CPU_EXTENSION_RISCV_E" VALUE="false"/>
-        <PARAMETER NAME="Component_Name" VALUE="rv32i_overlay_capture_cpu_regfile_0"/>
+        <PARAMETER NAME="Component_Name" VALUE="rv32i_overlay_cpu_regfile_0"/>
         <PARAMETER NAME="EDK_IPTYPE" VALUE="PERIPHERAL"/>
       </PARAMETERS>
       <PORTS>
@@ -2945,7 +2945,7 @@
       <PARAMETERS>
         <PARAMETER NAME="C_OPERATION" VALUE="or"/>
         <PARAMETER NAME="C_SIZE" VALUE="1"/>
-        <PARAMETER NAME="Component_Name" VALUE="rv32i_overlay_capture_interface_bus_err_or_0"/>
+        <PARAMETER NAME="Component_Name" VALUE="rv32i_overlay_interface_bus_err_or_0"/>
         <PARAMETER NAME="LOGO_FILE" VALUE="data/sym_orgate.png"/>
         <PARAMETER NAME="EDK_IPTYPE" VALUE="PERIPHERAL"/>
       </PARAMETERS>
@@ -2977,7 +2977,7 @@
         <PARAMETER NAME="MEM_INT_IMEM_SIZE" VALUE="8192"/>
         <PARAMETER NAME="MEM_INT_DMEM_EN" VALUE="false"/>
         <PARAMETER NAME="MEM_INT_DMEM_SIZE" VALUE="8192"/>
-        <PARAMETER NAME="Component_Name" VALUE="rv32i_overlay_capture_interface_bus_keeper_0"/>
+        <PARAMETER NAME="Component_Name" VALUE="rv32i_overlay_interface_bus_keeper_0"/>
         <PARAMETER NAME="EDK_IPTYPE" VALUE="PERIPHERAL"/>
       </PARAMETERS>
       <PORTS>
@@ -3030,7 +3030,7 @@
       <PARAMETERS>
         <PARAMETER NAME="PORT_CA_READ_ONLY" VALUE="false"/>
         <PARAMETER NAME="PORT_CB_READ_ONLY" VALUE="true"/>
-        <PARAMETER NAME="Component_Name" VALUE="rv32i_overlay_capture_interface_bus_switch_0"/>
+        <PARAMETER NAME="Component_Name" VALUE="rv32i_overlay_interface_bus_switch_0"/>
         <PARAMETER NAME="EDK_IPTYPE" VALUE="PERIPHERAL"/>
       </PARAMETERS>
       <PORTS>
@@ -3211,7 +3211,7 @@
         <PARAMETER NAME="MEM_INT_DMEM_EN" VALUE="false"/>
         <PARAMETER NAME="MEM_INT_DMEM_SIZE" VALUE="4096"/>
         <PARAMETER NAME="BUS_TIMEOUT" VALUE="0"/>
-        <PARAMETER NAME="Component_Name" VALUE="rv32i_overlay_capture_interface_bus_to_wishbone_0"/>
+        <PARAMETER NAME="Component_Name" VALUE="rv32i_overlay_interface_bus_to_wishbone_0"/>
         <PARAMETER NAME="EDK_IPTYPE" VALUE="PERIPHERAL"/>
       </PARAMETERS>
       <PORTS>
@@ -3357,7 +3357,7 @@
         <PARAMETER NAME="DIN_WIDTH" VALUE="74"/>
         <PARAMETER NAME="DIN_FROM" VALUE="46"/>
         <PARAMETER NAME="DIN_TO" VALUE="45"/>
-        <PARAMETER NAME="Component_Name" VALUE="rv32i_overlay_capture_interface_wishbone_priv_slice_0"/>
+        <PARAMETER NAME="Component_Name" VALUE="rv32i_overlay_interface_wishbone_priv_slice_0"/>
         <PARAMETER NAME="DOUT_WIDTH" VALUE="2"/>
         <PARAMETER NAME="EDK_IPTYPE" VALUE="PERIPHERAL"/>
       </PARAMETERS>
@@ -3378,7 +3378,7 @@
     <MODULE COREREVISION="1" FULLNAME="/interface_wishbone_to_axi" HWVERSION="1.0" INSTANCE="interface_wishbone_to_axi" IPTYPE="PERIPHERAL" IS_ENABLE="1" MODCLASS="PERIPHERAL" MODTYPE="BD_wishbon_axi4lite_bridge" VLNV="xilinx.com:module_ref:BD_wishbon_axi4lite_bridge:1.0">
       <DOCUMENTS/>
       <PARAMETERS>
-        <PARAMETER NAME="Component_Name" VALUE="rv32i_overlay_capture_interface_wishbone_to_axi_0"/>
+        <PARAMETER NAME="Component_Name" VALUE="rv32i_overlay_interface_wishbone_to_axi_0"/>
         <PARAMETER NAME="EDK_IPTYPE" VALUE="PERIPHERAL"/>
       </PARAMETERS>
       <PORTS>
@@ -3625,7 +3625,7 @@
           <PARAMETER NAME="NUM_WRITE_OUTSTANDING" VALUE="1"/>
           <PARAMETER NAME="MAX_BURST_LENGTH" VALUE="1"/>
           <PARAMETER NAME="PHASE" VALUE="0.000"/>
-          <PARAMETER NAME="CLK_DOMAIN" VALUE="rv32i_overlay_capture_cpu_clock_stepper_0_gated_clock"/>
+          <PARAMETER NAME="CLK_DOMAIN" VALUE="rv32i_overlay_cpu_clock_stepper_0_gated_clock"/>
           <PARAMETER NAME="NUM_READ_THREADS" VALUE="1"/>
           <PARAMETER NAME="NUM_WRITE_THREADS" VALUE="1"/>
           <PARAMETER NAME="RUSER_BITS_PER_BYTE" VALUE="0"/>
@@ -3665,7 +3665,7 @@
         <PERIPHERAL INSTANCE="LED_controller"/>
       </PERIPHERALS>
     </MODULE>
-    <MODULE COREREVISION="3" FULLNAME="/neo_signal_capture" HWVERSION="0.1" INSTANCE="neo_signal_capture" IPTYPE="PERIPHERAL" IS_ENABLE="1" MODCLASS="PERIPHERAL" MODTYPE="neo_capture_harness" VLNV="xilinx.com:user:neo_capture_harness:0.1">
+    <MODULE COREREVISION="1" FULLNAME="/neo_signal_capture" HWVERSION="1.1" INSTANCE="neo_signal_capture" IPTYPE="PERIPHERAL" IS_ENABLE="1" MODCLASS="PERIPHERAL" MODTYPE="neo_capture_harness" VLNV="xilinx.com:user:neo_capture_harness:1.1">
       <DOCUMENTS/>
       <ADDRESSBLOCKS>
         <ADDRESSBLOCK ACCESS="" INTERFACE="S00_AXI" NAME="S00_AXI_reg" RANGE="4096" USAGE="register"/>
@@ -3673,7 +3673,7 @@
       <PARAMETERS>
         <PARAMETER NAME="C_S00_AXI_DATA_WIDTH" VALUE="32"/>
         <PARAMETER NAME="C_S00_AXI_ADDR_WIDTH" VALUE="8"/>
-        <PARAMETER NAME="Component_Name" VALUE="rv32i_overlay_capture_neo_capture_harness_0_0"/>
+        <PARAMETER NAME="Component_Name" VALUE="rv32i_overlay_neo_signal_capture_0"/>
         <PARAMETER NAME="EDK_IPTYPE" VALUE="PERIPHERAL"/>
         <PARAMETER NAME="C_S00_AXI_BASEADDR" VALUE="0x43C10000"/>
         <PARAMETER NAME="C_S00_AXI_HIGHADDR" VALUE="0x43C1FFFF"/>
@@ -4324,9 +4324,6 @@
             <CONNECTION INSTANCE="neo_smartconnect" PORT="M01_AXI_bready"/>
           </CONNECTIONS>
         </PORT>
-        <PORT DIR="I" LEFT="3" NAME="LEDs_i" RIGHT="0" SIGIS="undef"/>
-        <PORT DIR="I" LEFT="3" NAME="LEDs_o" RIGHT="0" SIGIS="undef"/>
-        <PORT DIR="I" LEFT="3" NAME="LEDs_t" RIGHT="0" SIGIS="undef"/>
         <PORT DIR="I" LEFT="31" NAME="buttons_axi_araddr" RIGHT="0" SIGIS="undef" SIGNAME="neo_smartconnect_M02_AXI_araddr">
           <CONNECTIONS>
             <CONNECTION INSTANCE="neo_smartconnect" PORT="M02_AXI_araddr"/>
@@ -4422,7 +4419,6 @@
             <CONNECTION INSTANCE="neo_smartconnect" PORT="M02_AXI_bready"/>
           </CONNECTIONS>
         </PORT>
-        <PORT DIR="I" LEFT="3" NAME="buttons_i" RIGHT="0" SIGIS="undef"/>
         <PORT CLKFREQUENCY="100000000" DIR="I" NAME="s00_axi_aclk" SIGIS="clk" SIGNAME="processing_system7_0_FCLK_CLK0">
           <CONNECTIONS>
             <CONNECTION INSTANCE="processing_system7_0" PORT="FCLK_CLK0"/>
@@ -4558,7 +4554,7 @@
           <PARAMETER NAME="NUM_WRITE_OUTSTANDING" VALUE="8"/>
           <PARAMETER NAME="MAX_BURST_LENGTH" VALUE="1"/>
           <PARAMETER NAME="PHASE" VALUE="0.000"/>
-          <PARAMETER NAME="CLK_DOMAIN" VALUE="rv32i_overlay_capture_processing_system7_0_0_FCLK_CLK0"/>
+          <PARAMETER NAME="CLK_DOMAIN" VALUE="rv32i_overlay_processing_system7_0_0_FCLK_CLK0"/>
           <PARAMETER NAME="NUM_READ_THREADS" VALUE="1"/>
           <PARAMETER NAME="NUM_WRITE_THREADS" VALUE="1"/>
           <PARAMETER NAME="RUSER_BITS_PER_BYTE" VALUE="0"/>
@@ -4588,14 +4584,14 @@
         </BUSINTERFACE>
       </BUSINTERFACES>
     </MODULE>
-    <MODULE BD="rv32i_overlay_capture_neo_smartconnect_0" BDTYPE="SBD" COREREVISION="13" DRIVERMODE="CORE" FULLNAME="/neo_smartconnect" HWVERSION="1.0" INSTANCE="neo_smartconnect" IPTYPE="BUS" IS_ENABLE="1" MODCLASS="BUS" MODTYPE="smartconnect" SIM_BD="rv32i_overlay_capture_neo_smartconnect_0" VLNV="xilinx.com:ip:smartconnect:1.0">
+    <MODULE BD="rv32i_overlay_neo_smartconnect_0" BDTYPE="SBD" COREREVISION="13" DRIVERMODE="CORE" FULLNAME="/neo_smartconnect" HWVERSION="1.0" INSTANCE="neo_smartconnect" IPTYPE="BUS" IS_ENABLE="1" MODCLASS="BUS" MODTYPE="smartconnect" SIM_BD="rv32i_overlay_neo_smartconnect_0" VLNV="xilinx.com:ip:smartconnect:1.0">
       <DOCUMENTS>
         <DOCUMENT SOURCE="http://www.xilinx.com/cgi-bin/docs/ipdoc?c=smartconnect;v=v1_0;d=pg247-smartconnect.pdf"/>
       </DOCUMENTS>
       <PARAMETERS>
-        <PARAMETER NAME="TLM_COMPONENT_NAME" VALUE="rv32i_overlay_capture_neo_smartconnect_0"/>
+        <PARAMETER NAME="TLM_COMPONENT_NAME" VALUE="rv32i_overlay_neo_smartconnect_0"/>
         <PARAMETER NAME="HAS_RESET" VALUE="1"/>
-        <PARAMETER NAME="Component_Name" VALUE="rv32i_overlay_capture_neo_smartconnect_0"/>
+        <PARAMETER NAME="Component_Name" VALUE="rv32i_overlay_neo_smartconnect_0"/>
         <PARAMETER NAME="NUM_MI" VALUE="3"/>
         <PARAMETER NAME="NUM_SI" VALUE="1"/>
         <PARAMETER NAME="NUM_CLKS" VALUE="1"/>
@@ -4902,8 +4898,8 @@
         <PORT DIR="O" LEFT="8" NAME="M01_AXI_awaddr" RIGHT="0" SIGIS="undef" SIGNAME="neo_smartconnect_M01_AXI_awaddr">
           <CONNECTIONS>
             <CONNECTION INSTANCE="LED_controller" PORT="s_axi_awaddr"/>
-            <CONNECTION INSTANCE="neo_signal_capture" PORT="LEDs_axi_awaddr"/>
             <CONNECTION INSTANCE="LED_controller" PORT="s_axi_awaddr"/>
+            <CONNECTION INSTANCE="neo_signal_capture" PORT="LEDs_axi_awaddr"/>
           </CONNECTIONS>
         </PORT>
         <PORT DIR="O" LEFT="2" NAME="M01_AXI_awprot" RIGHT="0" SIGIS="undef" SIGNAME="neo_smartconnect_M01_AXI_awprot">
@@ -4914,8 +4910,8 @@
         <PORT DIR="O" NAME="M01_AXI_awvalid" SIGIS="undef" SIGNAME="neo_smartconnect_M01_AXI_awvalid">
           <CONNECTIONS>
             <CONNECTION INSTANCE="LED_controller" PORT="s_axi_awvalid"/>
-            <CONNECTION INSTANCE="neo_signal_capture" PORT="LEDs_axi_awvalid"/>
             <CONNECTION INSTANCE="LED_controller" PORT="s_axi_awvalid"/>
+            <CONNECTION INSTANCE="neo_signal_capture" PORT="LEDs_axi_awvalid"/>
           </CONNECTIONS>
         </PORT>
         <PORT DIR="I" NAME="M01_AXI_awready" SIGIS="undef" SIGNAME="LED_controller_s_axi_awready">
@@ -4929,22 +4925,22 @@
         <PORT DIR="O" LEFT="31" NAME="M01_AXI_wdata" RIGHT="0" SIGIS="undef" SIGNAME="neo_smartconnect_M01_AXI_wdata">
           <CONNECTIONS>
             <CONNECTION INSTANCE="LED_controller" PORT="s_axi_wdata"/>
-            <CONNECTION INSTANCE="neo_signal_capture" PORT="LEDs_axi_wdata"/>
             <CONNECTION INSTANCE="LED_controller" PORT="s_axi_wdata"/>
+            <CONNECTION INSTANCE="neo_signal_capture" PORT="LEDs_axi_wdata"/>
           </CONNECTIONS>
         </PORT>
         <PORT DIR="O" LEFT="3" NAME="M01_AXI_wstrb" RIGHT="0" SIGIS="undef" SIGNAME="neo_smartconnect_M01_AXI_wstrb">
           <CONNECTIONS>
             <CONNECTION INSTANCE="LED_controller" PORT="s_axi_wstrb"/>
-            <CONNECTION INSTANCE="neo_signal_capture" PORT="LEDs_axi_wstrb"/>
             <CONNECTION INSTANCE="LED_controller" PORT="s_axi_wstrb"/>
+            <CONNECTION INSTANCE="neo_signal_capture" PORT="LEDs_axi_wstrb"/>
           </CONNECTIONS>
         </PORT>
         <PORT DIR="O" NAME="M01_AXI_wvalid" SIGIS="undef" SIGNAME="neo_smartconnect_M01_AXI_wvalid">
           <CONNECTIONS>
             <CONNECTION INSTANCE="LED_controller" PORT="s_axi_wvalid"/>
-            <CONNECTION INSTANCE="neo_signal_capture" PORT="LEDs_axi_wvalid"/>
             <CONNECTION INSTANCE="LED_controller" PORT="s_axi_wvalid"/>
+            <CONNECTION INSTANCE="neo_signal_capture" PORT="LEDs_axi_wvalid"/>
           </CONNECTIONS>
         </PORT>
         <PORT DIR="I" NAME="M01_AXI_wready" SIGIS="undef" SIGNAME="LED_controller_s_axi_wready">
@@ -4974,15 +4970,15 @@
         <PORT DIR="O" NAME="M01_AXI_bready" SIGIS="undef" SIGNAME="neo_smartconnect_M01_AXI_bready">
           <CONNECTIONS>
             <CONNECTION INSTANCE="LED_controller" PORT="s_axi_bready"/>
-            <CONNECTION INSTANCE="neo_signal_capture" PORT="LEDs_axi_bready"/>
             <CONNECTION INSTANCE="LED_controller" PORT="s_axi_bready"/>
+            <CONNECTION INSTANCE="neo_signal_capture" PORT="LEDs_axi_bready"/>
           </CONNECTIONS>
         </PORT>
         <PORT DIR="O" LEFT="8" NAME="M01_AXI_araddr" RIGHT="0" SIGIS="undef" SIGNAME="neo_smartconnect_M01_AXI_araddr">
           <CONNECTIONS>
             <CONNECTION INSTANCE="LED_controller" PORT="s_axi_araddr"/>
-            <CONNECTION INSTANCE="neo_signal_capture" PORT="LEDs_axi_araddr"/>
             <CONNECTION INSTANCE="LED_controller" PORT="s_axi_araddr"/>
+            <CONNECTION INSTANCE="neo_signal_capture" PORT="LEDs_axi_araddr"/>
           </CONNECTIONS>
         </PORT>
         <PORT DIR="O" LEFT="2" NAME="M01_AXI_arprot" RIGHT="0" SIGIS="undef" SIGNAME="neo_smartconnect_M01_AXI_arprot">
@@ -4993,8 +4989,8 @@
         <PORT DIR="O" NAME="M01_AXI_arvalid" SIGIS="undef" SIGNAME="neo_smartconnect_M01_AXI_arvalid">
           <CONNECTIONS>
             <CONNECTION INSTANCE="LED_controller" PORT="s_axi_arvalid"/>
-            <CONNECTION INSTANCE="neo_signal_capture" PORT="LEDs_axi_arvalid"/>
             <CONNECTION INSTANCE="LED_controller" PORT="s_axi_arvalid"/>
+            <CONNECTION INSTANCE="neo_signal_capture" PORT="LEDs_axi_arvalid"/>
           </CONNECTIONS>
         </PORT>
         <PORT DIR="I" NAME="M01_AXI_arready" SIGIS="undef" SIGNAME="LED_controller_s_axi_arready">
@@ -5038,8 +5034,8 @@
         <PORT DIR="O" LEFT="8" NAME="M02_AXI_awaddr" RIGHT="0" SIGIS="undef" SIGNAME="neo_smartconnect_M02_AXI_awaddr">
           <CONNECTIONS>
             <CONNECTION INSTANCE="button_controller" PORT="s_axi_awaddr"/>
-            <CONNECTION INSTANCE="neo_signal_capture" PORT="buttons_axi_awaddr"/>
             <CONNECTION INSTANCE="button_controller" PORT="s_axi_awaddr"/>
+            <CONNECTION INSTANCE="neo_signal_capture" PORT="buttons_axi_awaddr"/>
           </CONNECTIONS>
         </PORT>
         <PORT DIR="O" LEFT="2" NAME="M02_AXI_awprot" RIGHT="0" SIGIS="undef" SIGNAME="neo_smartconnect_M02_AXI_awprot">
@@ -5050,8 +5046,8 @@
         <PORT DIR="O" NAME="M02_AXI_awvalid" SIGIS="undef" SIGNAME="neo_smartconnect_M02_AXI_awvalid">
           <CONNECTIONS>
             <CONNECTION INSTANCE="button_controller" PORT="s_axi_awvalid"/>
-            <CONNECTION INSTANCE="neo_signal_capture" PORT="buttons_axi_awvalid"/>
             <CONNECTION INSTANCE="button_controller" PORT="s_axi_awvalid"/>
+            <CONNECTION INSTANCE="neo_signal_capture" PORT="buttons_axi_awvalid"/>
           </CONNECTIONS>
         </PORT>
         <PORT DIR="I" NAME="M02_AXI_awready" SIGIS="undef" SIGNAME="button_controller_s_axi_awready">
@@ -5065,22 +5061,22 @@
         <PORT DIR="O" LEFT="31" NAME="M02_AXI_wdata" RIGHT="0" SIGIS="undef" SIGNAME="neo_smartconnect_M02_AXI_wdata">
           <CONNECTIONS>
             <CONNECTION INSTANCE="button_controller" PORT="s_axi_wdata"/>
-            <CONNECTION INSTANCE="neo_signal_capture" PORT="buttons_axi_wdata"/>
             <CONNECTION INSTANCE="button_controller" PORT="s_axi_wdata"/>
+            <CONNECTION INSTANCE="neo_signal_capture" PORT="buttons_axi_wdata"/>
           </CONNECTIONS>
         </PORT>
         <PORT DIR="O" LEFT="3" NAME="M02_AXI_wstrb" RIGHT="0" SIGIS="undef" SIGNAME="neo_smartconnect_M02_AXI_wstrb">
           <CONNECTIONS>
             <CONNECTION INSTANCE="button_controller" PORT="s_axi_wstrb"/>
-            <CONNECTION INSTANCE="neo_signal_capture" PORT="buttons_axi_wstrb"/>
             <CONNECTION INSTANCE="button_controller" PORT="s_axi_wstrb"/>
+            <CONNECTION INSTANCE="neo_signal_capture" PORT="buttons_axi_wstrb"/>
           </CONNECTIONS>
         </PORT>
         <PORT DIR="O" NAME="M02_AXI_wvalid" SIGIS="undef" SIGNAME="neo_smartconnect_M02_AXI_wvalid">
           <CONNECTIONS>
             <CONNECTION INSTANCE="button_controller" PORT="s_axi_wvalid"/>
-            <CONNECTION INSTANCE="neo_signal_capture" PORT="buttons_axi_wvalid"/>
             <CONNECTION INSTANCE="button_controller" PORT="s_axi_wvalid"/>
+            <CONNECTION INSTANCE="neo_signal_capture" PORT="buttons_axi_wvalid"/>
           </CONNECTIONS>
         </PORT>
         <PORT DIR="I" NAME="M02_AXI_wready" SIGIS="undef" SIGNAME="button_controller_s_axi_wready">
@@ -5110,15 +5106,15 @@
         <PORT DIR="O" NAME="M02_AXI_bready" SIGIS="undef" SIGNAME="neo_smartconnect_M02_AXI_bready">
           <CONNECTIONS>
             <CONNECTION INSTANCE="button_controller" PORT="s_axi_bready"/>
-            <CONNECTION INSTANCE="neo_signal_capture" PORT="buttons_axi_bready"/>
             <CONNECTION INSTANCE="button_controller" PORT="s_axi_bready"/>
+            <CONNECTION INSTANCE="neo_signal_capture" PORT="buttons_axi_bready"/>
           </CONNECTIONS>
         </PORT>
         <PORT DIR="O" LEFT="8" NAME="M02_AXI_araddr" RIGHT="0" SIGIS="undef" SIGNAME="neo_smartconnect_M02_AXI_araddr">
           <CONNECTIONS>
             <CONNECTION INSTANCE="button_controller" PORT="s_axi_araddr"/>
-            <CONNECTION INSTANCE="neo_signal_capture" PORT="buttons_axi_araddr"/>
             <CONNECTION INSTANCE="button_controller" PORT="s_axi_araddr"/>
+            <CONNECTION INSTANCE="neo_signal_capture" PORT="buttons_axi_araddr"/>
           </CONNECTIONS>
         </PORT>
         <PORT DIR="O" LEFT="2" NAME="M02_AXI_arprot" RIGHT="0" SIGIS="undef" SIGNAME="neo_smartconnect_M02_AXI_arprot">
@@ -5129,8 +5125,8 @@
         <PORT DIR="O" NAME="M02_AXI_arvalid" SIGIS="undef" SIGNAME="neo_smartconnect_M02_AXI_arvalid">
           <CONNECTIONS>
             <CONNECTION INSTANCE="button_controller" PORT="s_axi_arvalid"/>
-            <CONNECTION INSTANCE="neo_signal_capture" PORT="buttons_axi_arvalid"/>
             <CONNECTION INSTANCE="button_controller" PORT="s_axi_arvalid"/>
+            <CONNECTION INSTANCE="neo_signal_capture" PORT="buttons_axi_arvalid"/>
           </CONNECTIONS>
         </PORT>
         <PORT DIR="I" NAME="M02_AXI_arready" SIGIS="undef" SIGNAME="button_controller_s_axi_arready">
@@ -5168,8 +5164,8 @@
         <PORT DIR="O" NAME="M02_AXI_rready" SIGIS="undef" SIGNAME="neo_smartconnect_M02_AXI_rready">
           <CONNECTIONS>
             <CONNECTION INSTANCE="button_controller" PORT="s_axi_rready"/>
-            <CONNECTION INSTANCE="neo_signal_capture" PORT="buttons_axi_rready"/>
             <CONNECTION INSTANCE="button_controller" PORT="s_axi_rready"/>
+            <CONNECTION INSTANCE="neo_signal_capture" PORT="buttons_axi_rready"/>
           </CONNECTIONS>
         </PORT>
       </PORTS>
@@ -5200,7 +5196,7 @@
           <PARAMETER NAME="NUM_WRITE_OUTSTANDING" VALUE="1"/>
           <PARAMETER NAME="MAX_BURST_LENGTH" VALUE="1"/>
           <PARAMETER NAME="PHASE" VALUE="0.000"/>
-          <PARAMETER NAME="CLK_DOMAIN" VALUE="rv32i_overlay_capture_cpu_clock_stepper_0_gated_clock"/>
+          <PARAMETER NAME="CLK_DOMAIN" VALUE="rv32i_overlay_cpu_clock_stepper_0_gated_clock"/>
           <PARAMETER NAME="NUM_READ_THREADS" VALUE="1"/>
           <PARAMETER NAME="NUM_WRITE_THREADS" VALUE="1"/>
           <PARAMETER NAME="RUSER_BITS_PER_BYTE" VALUE="0"/>
@@ -5254,7 +5250,7 @@
           <PARAMETER NAME="NUM_WRITE_OUTSTANDING" VALUE="1"/>
           <PARAMETER NAME="MAX_BURST_LENGTH" VALUE="1"/>
           <PARAMETER NAME="PHASE" VALUE="0.000"/>
-          <PARAMETER NAME="CLK_DOMAIN" VALUE="rv32i_overlay_capture_cpu_clock_stepper_0_gated_clock"/>
+          <PARAMETER NAME="CLK_DOMAIN" VALUE="rv32i_overlay_cpu_clock_stepper_0_gated_clock"/>
           <PARAMETER NAME="NUM_READ_THREADS" VALUE="1"/>
           <PARAMETER NAME="NUM_WRITE_THREADS" VALUE="1"/>
           <PARAMETER NAME="RUSER_BITS_PER_BYTE" VALUE="0"/>
@@ -5308,7 +5304,7 @@
           <PARAMETER NAME="NUM_WRITE_OUTSTANDING" VALUE="1"/>
           <PARAMETER NAME="MAX_BURST_LENGTH" VALUE="1"/>
           <PARAMETER NAME="PHASE" VALUE="0.000"/>
-          <PARAMETER NAME="CLK_DOMAIN" VALUE="rv32i_overlay_capture_cpu_clock_stepper_0_gated_clock"/>
+          <PARAMETER NAME="CLK_DOMAIN" VALUE="rv32i_overlay_cpu_clock_stepper_0_gated_clock"/>
           <PARAMETER NAME="NUM_READ_THREADS" VALUE="1"/>
           <PARAMETER NAME="NUM_WRITE_THREADS" VALUE="1"/>
           <PARAMETER NAME="RUSER_BITS_PER_BYTE" VALUE="0"/>
@@ -5362,7 +5358,7 @@
           <PARAMETER NAME="NUM_WRITE_OUTSTANDING" VALUE="1"/>
           <PARAMETER NAME="MAX_BURST_LENGTH" VALUE="1"/>
           <PARAMETER NAME="PHASE" VALUE="0.000"/>
-          <PARAMETER NAME="CLK_DOMAIN" VALUE="rv32i_overlay_capture_cpu_clock_stepper_0_gated_clock"/>
+          <PARAMETER NAME="CLK_DOMAIN" VALUE="rv32i_overlay_cpu_clock_stepper_0_gated_clock"/>
           <PARAMETER NAME="NUM_READ_THREADS" VALUE="1"/>
           <PARAMETER NAME="NUM_WRITE_THREADS" VALUE="1"/>
           <PARAMETER NAME="RUSER_BITS_PER_BYTE" VALUE="0"/>
@@ -6330,7 +6326,7 @@
         <PARAMETER NAME="PCW_SMC_CYCLE_T6" VALUE="NA"/>
         <PARAMETER NAME="PCW_PACKAGE_NAME" VALUE="clg400"/>
         <PARAMETER NAME="PCW_PLL_BYPASSMODE_ENABLE" VALUE="0"/>
-        <PARAMETER NAME="Component_Name" VALUE="rv32i_overlay_capture_processing_system7_0_0"/>
+        <PARAMETER NAME="Component_Name" VALUE="rv32i_overlay_processing_system7_0_0"/>
         <PARAMETER NAME="EDK_IPTYPE" VALUE="PERIPHERAL"/>
       </PARAMETERS>
       <PORTS>
@@ -6554,107 +6550,107 @@
         </PORT>
         <PORT DIR="IO" LEFT="53" NAME="MIO" RIGHT="0" SIGIS="undef" SIGNAME="processing_system7_0_MIO">
           <CONNECTIONS>
-            <CONNECTION INSTANCE="rv32i_overlay_capture_imp" PORT="FIXED_IO_mio"/>
+            <CONNECTION INSTANCE="rv32i_overlay_imp" PORT="FIXED_IO_mio"/>
           </CONNECTIONS>
         </PORT>
         <PORT DIR="IO" NAME="DDR_CAS_n" SIGIS="undef" SIGNAME="processing_system7_0_DDR_CAS_n">
           <CONNECTIONS>
-            <CONNECTION INSTANCE="rv32i_overlay_capture_imp" PORT="DDR_cas_n"/>
+            <CONNECTION INSTANCE="rv32i_overlay_imp" PORT="DDR_cas_n"/>
           </CONNECTIONS>
         </PORT>
         <PORT DIR="IO" NAME="DDR_CKE" SIGIS="undef" SIGNAME="processing_system7_0_DDR_CKE">
           <CONNECTIONS>
-            <CONNECTION INSTANCE="rv32i_overlay_capture_imp" PORT="DDR_cke"/>
+            <CONNECTION INSTANCE="rv32i_overlay_imp" PORT="DDR_cke"/>
           </CONNECTIONS>
         </PORT>
         <PORT DIR="IO" NAME="DDR_Clk_n" SIGIS="clk" SIGNAME="processing_system7_0_DDR_Clk_n">
           <CONNECTIONS>
-            <CONNECTION INSTANCE="rv32i_overlay_capture_imp" PORT="DDR_ck_n"/>
+            <CONNECTION INSTANCE="rv32i_overlay_imp" PORT="DDR_ck_n"/>
           </CONNECTIONS>
         </PORT>
         <PORT DIR="IO" NAME="DDR_Clk" SIGIS="clk" SIGNAME="processing_system7_0_DDR_Clk">
           <CONNECTIONS>
-            <CONNECTION INSTANCE="rv32i_overlay_capture_imp" PORT="DDR_ck_p"/>
+            <CONNECTION INSTANCE="rv32i_overlay_imp" PORT="DDR_ck_p"/>
           </CONNECTIONS>
         </PORT>
         <PORT DIR="IO" NAME="DDR_CS_n" SIGIS="undef" SIGNAME="processing_system7_0_DDR_CS_n">
           <CONNECTIONS>
-            <CONNECTION INSTANCE="rv32i_overlay_capture_imp" PORT="DDR_cs_n"/>
+            <CONNECTION INSTANCE="rv32i_overlay_imp" PORT="DDR_cs_n"/>
           </CONNECTIONS>
         </PORT>
         <PORT DIR="IO" NAME="DDR_DRSTB" SIGIS="rst" SIGNAME="processing_system7_0_DDR_DRSTB">
           <CONNECTIONS>
-            <CONNECTION INSTANCE="rv32i_overlay_capture_imp" PORT="DDR_reset_n"/>
+            <CONNECTION INSTANCE="rv32i_overlay_imp" PORT="DDR_reset_n"/>
           </CONNECTIONS>
         </PORT>
         <PORT DIR="IO" NAME="DDR_ODT" SIGIS="undef" SIGNAME="processing_system7_0_DDR_ODT">
           <CONNECTIONS>
-            <CONNECTION INSTANCE="rv32i_overlay_capture_imp" PORT="DDR_odt"/>
+            <CONNECTION INSTANCE="rv32i_overlay_imp" PORT="DDR_odt"/>
           </CONNECTIONS>
         </PORT>
         <PORT DIR="IO" NAME="DDR_RAS_n" SIGIS="undef" SIGNAME="processing_system7_0_DDR_RAS_n">
           <CONNECTIONS>
-            <CONNECTION INSTANCE="rv32i_overlay_capture_imp" PORT="DDR_ras_n"/>
+            <CONNECTION INSTANCE="rv32i_overlay_imp" PORT="DDR_ras_n"/>
           </CONNECTIONS>
         </PORT>
         <PORT DIR="IO" NAME="DDR_WEB" SIGIS="undef" SIGNAME="processing_system7_0_DDR_WEB">
           <CONNECTIONS>
-            <CONNECTION INSTANCE="rv32i_overlay_capture_imp" PORT="DDR_we_n"/>
+            <CONNECTION INSTANCE="rv32i_overlay_imp" PORT="DDR_we_n"/>
           </CONNECTIONS>
         </PORT>
         <PORT DIR="IO" LEFT="2" NAME="DDR_BankAddr" RIGHT="0" SIGIS="undef" SIGNAME="processing_system7_0_DDR_BankAddr">
           <CONNECTIONS>
-            <CONNECTION INSTANCE="rv32i_overlay_capture_imp" PORT="DDR_ba"/>
+            <CONNECTION INSTANCE="rv32i_overlay_imp" PORT="DDR_ba"/>
           </CONNECTIONS>
         </PORT>
         <PORT DIR="IO" LEFT="14" NAME="DDR_Addr" RIGHT="0" SIGIS="undef" SIGNAME="processing_system7_0_DDR_Addr">
           <CONNECTIONS>
-            <CONNECTION INSTANCE="rv32i_overlay_capture_imp" PORT="DDR_addr"/>
+            <CONNECTION INSTANCE="rv32i_overlay_imp" PORT="DDR_addr"/>
           </CONNECTIONS>
         </PORT>
         <PORT DIR="IO" NAME="DDR_VRN" SIGIS="undef" SIGNAME="processing_system7_0_DDR_VRN">
           <CONNECTIONS>
-            <CONNECTION INSTANCE="rv32i_overlay_capture_imp" PORT="FIXED_IO_ddr_vrn"/>
+            <CONNECTION INSTANCE="rv32i_overlay_imp" PORT="FIXED_IO_ddr_vrn"/>
           </CONNECTIONS>
         </PORT>
         <PORT DIR="IO" NAME="DDR_VRP" SIGIS="undef" SIGNAME="processing_system7_0_DDR_VRP">
           <CONNECTIONS>
-            <CONNECTION INSTANCE="rv32i_overlay_capture_imp" PORT="FIXED_IO_ddr_vrp"/>
+            <CONNECTION INSTANCE="rv32i_overlay_imp" PORT="FIXED_IO_ddr_vrp"/>
           </CONNECTIONS>
         </PORT>
         <PORT DIR="IO" LEFT="3" NAME="DDR_DM" RIGHT="0" SIGIS="undef" SIGNAME="processing_system7_0_DDR_DM">
           <CONNECTIONS>
-            <CONNECTION INSTANCE="rv32i_overlay_capture_imp" PORT="DDR_dm"/>
+            <CONNECTION INSTANCE="rv32i_overlay_imp" PORT="DDR_dm"/>
           </CONNECTIONS>
         </PORT>
         <PORT DIR="IO" LEFT="31" NAME="DDR_DQ" RIGHT="0" SIGIS="undef" SIGNAME="processing_system7_0_DDR_DQ">
           <CONNECTIONS>
-            <CONNECTION INSTANCE="rv32i_overlay_capture_imp" PORT="DDR_dq"/>
+            <CONNECTION INSTANCE="rv32i_overlay_imp" PORT="DDR_dq"/>
           </CONNECTIONS>
         </PORT>
         <PORT DIR="IO" LEFT="3" NAME="DDR_DQS_n" RIGHT="0" SIGIS="undef" SIGNAME="processing_system7_0_DDR_DQS_n">
           <CONNECTIONS>
-            <CONNECTION INSTANCE="rv32i_overlay_capture_imp" PORT="DDR_dqs_n"/>
+            <CONNECTION INSTANCE="rv32i_overlay_imp" PORT="DDR_dqs_n"/>
           </CONNECTIONS>
         </PORT>
         <PORT DIR="IO" LEFT="3" NAME="DDR_DQS" RIGHT="0" SIGIS="undef" SIGNAME="processing_system7_0_DDR_DQS">
           <CONNECTIONS>
-            <CONNECTION INSTANCE="rv32i_overlay_capture_imp" PORT="DDR_dqs_p"/>
+            <CONNECTION INSTANCE="rv32i_overlay_imp" PORT="DDR_dqs_p"/>
           </CONNECTIONS>
         </PORT>
         <PORT DIR="IO" NAME="PS_SRSTB" SIGIS="undef" SIGNAME="processing_system7_0_PS_SRSTB">
           <CONNECTIONS>
-            <CONNECTION INSTANCE="rv32i_overlay_capture_imp" PORT="FIXED_IO_ps_srstb"/>
+            <CONNECTION INSTANCE="rv32i_overlay_imp" PORT="FIXED_IO_ps_srstb"/>
           </CONNECTIONS>
         </PORT>
         <PORT DIR="IO" NAME="PS_CLK" SIGIS="undef" SIGNAME="processing_system7_0_PS_CLK">
           <CONNECTIONS>
-            <CONNECTION INSTANCE="rv32i_overlay_capture_imp" PORT="FIXED_IO_ps_clk"/>
+            <CONNECTION INSTANCE="rv32i_overlay_imp" PORT="FIXED_IO_ps_clk"/>
           </CONNECTIONS>
         </PORT>
         <PORT DIR="IO" NAME="PS_PORB" SIGIS="undef" SIGNAME="processing_system7_0_PS_PORB">
           <CONNECTIONS>
-            <CONNECTION INSTANCE="rv32i_overlay_capture_imp" PORT="FIXED_IO_ps_porb"/>
+            <CONNECTION INSTANCE="rv32i_overlay_imp" PORT="FIXED_IO_ps_porb"/>
           </CONNECTIONS>
         </PORT>
       </PORTS>
@@ -6736,7 +6732,7 @@
           <PARAMETER NAME="HAS_RRESP" VALUE="1"/>
           <PARAMETER NAME="MAX_BURST_LENGTH" VALUE="16"/>
           <PARAMETER NAME="PHASE" VALUE="0.000"/>
-          <PARAMETER NAME="CLK_DOMAIN" VALUE="rv32i_overlay_capture_processing_system7_0_0_FCLK_CLK0"/>
+          <PARAMETER NAME="CLK_DOMAIN" VALUE="rv32i_overlay_processing_system7_0_0_FCLK_CLK0"/>
           <PARAMETER NAME="NUM_READ_THREADS" VALUE="4"/>
           <PARAMETER NAME="NUM_WRITE_THREADS" VALUE="4"/>
           <PARAMETER NAME="RUSER_BITS_PER_BYTE" VALUE="0"/>
@@ -6800,7 +6796,7 @@
       <PARAMETERS>
         <PARAMETER NAME="CONST_WIDTH" VALUE="16"/>
         <PARAMETER NAME="CONST_VAL" VALUE="0x0000"/>
-        <PARAMETER NAME="Component_Name" VALUE="rv32i_overlay_capture_pull_down_16_bit_0"/>
+        <PARAMETER NAME="Component_Name" VALUE="rv32i_overlay_pull_down_16_bit_0"/>
         <PARAMETER NAME="EDK_IPTYPE" VALUE="PERIPHERAL"/>
       </PARAMETERS>
       <PORTS>
@@ -6817,7 +6813,7 @@
       <PARAMETERS>
         <PARAMETER NAME="CONST_WIDTH" VALUE="1"/>
         <PARAMETER NAME="CONST_VAL" VALUE="0x0"/>
-        <PARAMETER NAME="Component_Name" VALUE="rv32i_overlay_capture_pull_down_1_bit_0"/>
+        <PARAMETER NAME="Component_Name" VALUE="rv32i_overlay_pull_down_1_bit_0"/>
         <PARAMETER NAME="EDK_IPTYPE" VALUE="PERIPHERAL"/>
       </PARAMETERS>
       <PORTS>
@@ -6838,7 +6834,7 @@
       <PARAMETERS>
         <PARAMETER NAME="CONST_WIDTH" VALUE="5"/>
         <PARAMETER NAME="CONST_VAL" VALUE="0x00"/>
-        <PARAMETER NAME="Component_Name" VALUE="rv32i_overlay_capture_pull_down_5_bit_0"/>
+        <PARAMETER NAME="Component_Name" VALUE="rv32i_overlay_pull_down_5_bit_0"/>
         <PARAMETER NAME="EDK_IPTYPE" VALUE="PERIPHERAL"/>
       </PARAMETERS>
       <PORTS>
@@ -6855,7 +6851,7 @@
       <PARAMETERS>
         <PARAMETER NAME="CONST_WIDTH" VALUE="64"/>
         <PARAMETER NAME="CONST_VAL" VALUE="0x0000000000000000"/>
-        <PARAMETER NAME="Component_Name" VALUE="rv32i_overlay_capture_pull_down_64_bit_0"/>
+        <PARAMETER NAME="Component_Name" VALUE="rv32i_overlay_pull_down_64_bit_0"/>
         <PARAMETER NAME="EDK_IPTYPE" VALUE="PERIPHERAL"/>
       </PARAMETERS>
       <PORTS>
@@ -7205,7 +7201,7 @@
         <PARAMETER NAME="USE_ECC" VALUE="0"/>
         <PARAMETER NAME="FAULT_INJECT" VALUE="0"/>
         <PARAMETER NAME="ECC_ONOFF_RESET_VALUE" VALUE="0"/>
-        <PARAMETER NAME="Component_Name" VALUE="rv32i_overlay_capture_pynq_BRAM_controller_0"/>
+        <PARAMETER NAME="Component_Name" VALUE="rv32i_overlay_pynq_BRAM_controller_0"/>
         <PARAMETER NAME="BMG_INSTANCE" VALUE="EXTERNAL"/>
         <PARAMETER NAME="MEM_DEPTH" VALUE="2048"/>
         <PARAMETER NAME="READ_LATENCY" VALUE="1"/>
@@ -7444,7 +7440,7 @@
           <PARAMETER NAME="NUM_WRITE_OUTSTANDING" VALUE="8"/>
           <PARAMETER NAME="MAX_BURST_LENGTH" VALUE="16"/>
           <PARAMETER NAME="PHASE" VALUE="0.000"/>
-          <PARAMETER NAME="CLK_DOMAIN" VALUE="rv32i_overlay_capture_processing_system7_0_0_FCLK_CLK0"/>
+          <PARAMETER NAME="CLK_DOMAIN" VALUE="rv32i_overlay_processing_system7_0_0_FCLK_CLK0"/>
           <PARAMETER NAME="NUM_READ_THREADS" VALUE="1"/>
           <PARAMETER NAME="NUM_WRITE_THREADS" VALUE="1"/>
           <PARAMETER NAME="RUSER_BITS_PER_BYTE" VALUE="0"/>
@@ -7509,7 +7505,7 @@
         <PARAMETER NAME="DIN_WIDTH" VALUE="64"/>
         <PARAMETER NAME="DIN_FROM" VALUE="0"/>
         <PARAMETER NAME="DIN_TO" VALUE="0"/>
-        <PARAMETER NAME="Component_Name" VALUE="rv32i_overlay_capture_pynq_GPIO_neo_reset_slice_0"/>
+        <PARAMETER NAME="Component_Name" VALUE="rv32i_overlay_pynq_GPIO_neo_reset_slice_0"/>
         <PARAMETER NAME="DOUT_WIDTH" VALUE="1"/>
         <PARAMETER NAME="EDK_IPTYPE" VALUE="PERIPHERAL"/>
       </PARAMETERS>
@@ -7533,14 +7529,14 @@
       </PORTS>
       <BUSINTERFACES/>
     </MODULE>
-    <MODULE BD="rv32i_overlay_capture_pynq_smartconnect_0" BDTYPE="SBD" COREREVISION="13" DRIVERMODE="CORE" FULLNAME="/pynq_smartconnect" HWVERSION="1.0" INSTANCE="pynq_smartconnect" IPTYPE="BUS" IS_ENABLE="1" MODCLASS="BUS" MODTYPE="smartconnect" SIM_BD="rv32i_overlay_capture_pynq_smartconnect_0" VLNV="xilinx.com:ip:smartconnect:1.0">
+    <MODULE BD="rv32i_overlay_pynq_smartconnect_0" BDTYPE="SBD" COREREVISION="13" DRIVERMODE="CORE" FULLNAME="/pynq_smartconnect" HWVERSION="1.0" INSTANCE="pynq_smartconnect" IPTYPE="BUS" IS_ENABLE="1" MODCLASS="BUS" MODTYPE="smartconnect" SIM_BD="rv32i_overlay_pynq_smartconnect_0" VLNV="xilinx.com:ip:smartconnect:1.0">
       <DOCUMENTS>
         <DOCUMENT SOURCE="http://www.xilinx.com/cgi-bin/docs/ipdoc?c=smartconnect;v=v1_0;d=pg247-smartconnect.pdf"/>
       </DOCUMENTS>
       <PARAMETERS>
-        <PARAMETER NAME="TLM_COMPONENT_NAME" VALUE="rv32i_overlay_capture_pynq_smartconnect_0"/>
+        <PARAMETER NAME="TLM_COMPONENT_NAME" VALUE="rv32i_overlay_pynq_smartconnect_0"/>
         <PARAMETER NAME="HAS_RESET" VALUE="1"/>
-        <PARAMETER NAME="Component_Name" VALUE="rv32i_overlay_capture_pynq_smartconnect_0"/>
+        <PARAMETER NAME="Component_Name" VALUE="rv32i_overlay_pynq_smartconnect_0"/>
         <PARAMETER NAME="NUM_MI" VALUE="3"/>
         <PARAMETER NAME="NUM_SI" VALUE="1"/>
         <PARAMETER NAME="NUM_CLKS" VALUE="1"/>
@@ -8124,7 +8120,7 @@
           <PARAMETER NAME="NUM_WRITE_OUTSTANDING" VALUE="8"/>
           <PARAMETER NAME="MAX_BURST_LENGTH" VALUE="16"/>
           <PARAMETER NAME="PHASE" VALUE="0.000"/>
-          <PARAMETER NAME="CLK_DOMAIN" VALUE="rv32i_overlay_capture_processing_system7_0_0_FCLK_CLK0"/>
+          <PARAMETER NAME="CLK_DOMAIN" VALUE="rv32i_overlay_processing_system7_0_0_FCLK_CLK0"/>
           <PARAMETER NAME="NUM_READ_THREADS" VALUE="4"/>
           <PARAMETER NAME="NUM_WRITE_THREADS" VALUE="4"/>
           <PARAMETER NAME="RUSER_BITS_PER_BYTE" VALUE="0"/>
@@ -8197,7 +8193,7 @@
           <PARAMETER NAME="NUM_WRITE_OUTSTANDING" VALUE="8"/>
           <PARAMETER NAME="MAX_BURST_LENGTH" VALUE="16"/>
           <PARAMETER NAME="PHASE" VALUE="0.000"/>
-          <PARAMETER NAME="CLK_DOMAIN" VALUE="rv32i_overlay_capture_processing_system7_0_0_FCLK_CLK0"/>
+          <PARAMETER NAME="CLK_DOMAIN" VALUE="rv32i_overlay_processing_system7_0_0_FCLK_CLK0"/>
           <PARAMETER NAME="NUM_READ_THREADS" VALUE="1"/>
           <PARAMETER NAME="NUM_WRITE_THREADS" VALUE="1"/>
           <PARAMETER NAME="RUSER_BITS_PER_BYTE" VALUE="0"/>
@@ -8265,7 +8261,7 @@
           <PARAMETER NAME="NUM_WRITE_OUTSTANDING" VALUE="8"/>
           <PARAMETER NAME="MAX_BURST_LENGTH" VALUE="1"/>
           <PARAMETER NAME="PHASE" VALUE="0.000"/>
-          <PARAMETER NAME="CLK_DOMAIN" VALUE="rv32i_overlay_capture_processing_system7_0_0_FCLK_CLK0"/>
+          <PARAMETER NAME="CLK_DOMAIN" VALUE="rv32i_overlay_processing_system7_0_0_FCLK_CLK0"/>
           <PARAMETER NAME="NUM_READ_THREADS" VALUE="1"/>
           <PARAMETER NAME="NUM_WRITE_THREADS" VALUE="1"/>
           <PARAMETER NAME="RUSER_BITS_PER_BYTE" VALUE="0"/>
@@ -8319,7 +8315,7 @@
           <PARAMETER NAME="NUM_WRITE_OUTSTANDING" VALUE="8"/>
           <PARAMETER NAME="MAX_BURST_LENGTH" VALUE="1"/>
           <PARAMETER NAME="PHASE" VALUE="0.000"/>
-          <PARAMETER NAME="CLK_DOMAIN" VALUE="rv32i_overlay_capture_processing_system7_0_0_FCLK_CLK0"/>
+          <PARAMETER NAME="CLK_DOMAIN" VALUE="rv32i_overlay_processing_system7_0_0_FCLK_CLK0"/>
           <PARAMETER NAME="NUM_READ_THREADS" VALUE="1"/>
           <PARAMETER NAME="NUM_WRITE_THREADS" VALUE="1"/>
           <PARAMETER NAME="RUSER_BITS_PER_BYTE" VALUE="0"/>
@@ -8363,7 +8359,7 @@
         <PARAMETER NAME="C_NUM_PERP_RST" VALUE="1"/>
         <PARAMETER NAME="C_NUM_INTERCONNECT_ARESETN" VALUE="1"/>
         <PARAMETER NAME="C_NUM_PERP_ARESETN" VALUE="1"/>
-        <PARAMETER NAME="Component_Name" VALUE="rv32i_overlay_capture_rst_ps7_0_100M_0"/>
+        <PARAMETER NAME="Component_Name" VALUE="rv32i_overlay_rst_ps7_0_100M_0"/>
         <PARAMETER NAME="USE_BOARD_FLOW" VALUE="false"/>
         <PARAMETER NAME="RESET_BOARD_INTERFACE" VALUE="Custom"/>
         <PARAMETER NAME="EDK_IPTYPE" VALUE="PERIPHERAL"/>

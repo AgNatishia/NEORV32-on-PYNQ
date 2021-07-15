@@ -38,6 +38,14 @@ import platform
 import re
 #from pynq.utils import build_py
 
+# Check platform running on PYNQ Z2
+cpu = platform.processor()
+if cpu in ['armv7l', 'aarch64']:
+    pass
+elif cpu in ['x86_64']:
+    pass
+else:
+    raise OSError("Platform is not supported.")
 
 # global variables
 module_name = "NEORV32_on_PYNQ"
