@@ -1,0 +1,293 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<wave_config>
+   <wave_state>
+   </wave_state>
+   <db_ref_list>
+      <db_ref path="processor_stepper_v1_0_behav.wdb" id="1">
+         <top_modules>
+            <top_module name="processor_stepper_v1_0" />
+         </top_modules>
+      </db_ref>
+   </db_ref_list>
+   <zoom_setting>
+      <ZoomStartTime time="418000fs"></ZoomStartTime>
+      <ZoomEndTime time="949001fs"></ZoomEndTime>
+      <Cursor1Time time="648000fs"></Cursor1Time>
+   </zoom_setting>
+   <column_width_setting>
+      <NameColumnWidth column_width="306"></NameColumnWidth>
+      <ValueColumnWidth column_width="117"></ValueColumnWidth>
+   </column_width_setting>
+   <WVObjectSize size="25" />
+   <wvobject fp_name="/processor_stepper_v1_0/s00_axi_aclk" type="logic">
+      <obj_property name="ElementShortName">s00_axi_aclk</obj_property>
+      <obj_property name="ObjectShortName">s00_axi_aclk</obj_property>
+   </wvobject>
+   <wvobject fp_name="/processor_stepper_v1_0/s00_axi_aresetn" type="logic">
+      <obj_property name="ElementShortName">s00_axi_aresetn</obj_property>
+      <obj_property name="ObjectShortName">s00_axi_aresetn</obj_property>
+   </wvobject>
+   <wvobject fp_name="group59" type="group">
+      <obj_property name="label">axi</obj_property>
+      <obj_property name="DisplayName">label</obj_property>
+      <obj_property name="isExpanded"></obj_property>
+      <wvobject fp_name="group93" type="group">
+         <obj_property name="label">write addr</obj_property>
+         <obj_property name="DisplayName">label</obj_property>
+         <obj_property name="isExpanded"></obj_property>
+         <wvobject fp_name="/processor_stepper_v1_0/s00_axi_awaddr" type="array">
+            <obj_property name="ElementShortName">s00_axi_awaddr[3:0]</obj_property>
+            <obj_property name="ObjectShortName">s00_axi_awaddr[3:0]</obj_property>
+         </wvobject>
+         <wvobject fp_name="/processor_stepper_v1_0/s00_axi_awprot" type="array">
+            <obj_property name="ElementShortName">s00_axi_awprot[2:0]</obj_property>
+            <obj_property name="ObjectShortName">s00_axi_awprot[2:0]</obj_property>
+         </wvobject>
+         <wvobject fp_name="/processor_stepper_v1_0/s00_axi_awvalid" type="logic">
+            <obj_property name="ElementShortName">s00_axi_awvalid</obj_property>
+            <obj_property name="ObjectShortName">s00_axi_awvalid</obj_property>
+         </wvobject>
+         <wvobject fp_name="/processor_stepper_v1_0/s00_axi_awready" type="logic">
+            <obj_property name="ElementShortName">s00_axi_awready</obj_property>
+            <obj_property name="ObjectShortName">s00_axi_awready</obj_property>
+         </wvobject>
+      </wvobject>
+      <wvobject fp_name="group94" type="group">
+         <obj_property name="label">write data</obj_property>
+         <obj_property name="DisplayName">label</obj_property>
+         <obj_property name="isExpanded"></obj_property>
+         <wvobject fp_name="/processor_stepper_v1_0/s00_axi_wdata" type="array">
+            <obj_property name="ElementShortName">s00_axi_wdata[31:0]</obj_property>
+            <obj_property name="ObjectShortName">s00_axi_wdata[31:0]</obj_property>
+         </wvobject>
+         <wvobject fp_name="/processor_stepper_v1_0/s00_axi_wstrb" type="array">
+            <obj_property name="ElementShortName">s00_axi_wstrb[3:0]</obj_property>
+            <obj_property name="ObjectShortName">s00_axi_wstrb[3:0]</obj_property>
+         </wvobject>
+         <wvobject fp_name="/processor_stepper_v1_0/s00_axi_wvalid" type="logic">
+            <obj_property name="ElementShortName">s00_axi_wvalid</obj_property>
+            <obj_property name="ObjectShortName">s00_axi_wvalid</obj_property>
+         </wvobject>
+         <wvobject fp_name="/processor_stepper_v1_0/s00_axi_wready" type="logic">
+            <obj_property name="ElementShortName">s00_axi_wready</obj_property>
+            <obj_property name="ObjectShortName">s00_axi_wready</obj_property>
+         </wvobject>
+      </wvobject>
+      <wvobject fp_name="group95" type="group">
+         <obj_property name="label">write resp</obj_property>
+         <obj_property name="DisplayName">label</obj_property>
+         <obj_property name="isExpanded"></obj_property>
+         <wvobject fp_name="/processor_stepper_v1_0/s00_axi_bresp" type="array">
+            <obj_property name="ElementShortName">s00_axi_bresp[1:0]</obj_property>
+            <obj_property name="ObjectShortName">s00_axi_bresp[1:0]</obj_property>
+         </wvobject>
+         <wvobject fp_name="/processor_stepper_v1_0/s00_axi_bvalid" type="logic">
+            <obj_property name="ElementShortName">s00_axi_bvalid</obj_property>
+            <obj_property name="ObjectShortName">s00_axi_bvalid</obj_property>
+         </wvobject>
+         <wvobject fp_name="/processor_stepper_v1_0/s00_axi_bready" type="logic">
+            <obj_property name="ElementShortName">s00_axi_bready</obj_property>
+            <obj_property name="ObjectShortName">s00_axi_bready</obj_property>
+         </wvobject>
+      </wvobject>
+      <wvobject fp_name="group96" type="group">
+         <obj_property name="label">read addr</obj_property>
+         <obj_property name="DisplayName">label</obj_property>
+         <wvobject fp_name="/processor_stepper_v1_0/s00_axi_araddr" type="array">
+            <obj_property name="ElementShortName">s00_axi_araddr[3:0]</obj_property>
+            <obj_property name="ObjectShortName">s00_axi_araddr[3:0]</obj_property>
+         </wvobject>
+         <wvobject fp_name="/processor_stepper_v1_0/s00_axi_arprot" type="array">
+            <obj_property name="ElementShortName">s00_axi_arprot[2:0]</obj_property>
+            <obj_property name="ObjectShortName">s00_axi_arprot[2:0]</obj_property>
+         </wvobject>
+         <wvobject fp_name="/processor_stepper_v1_0/s00_axi_arvalid" type="logic">
+            <obj_property name="ElementShortName">s00_axi_arvalid</obj_property>
+            <obj_property name="ObjectShortName">s00_axi_arvalid</obj_property>
+         </wvobject>
+         <wvobject fp_name="/processor_stepper_v1_0/s00_axi_arready" type="logic">
+            <obj_property name="ElementShortName">s00_axi_arready</obj_property>
+            <obj_property name="ObjectShortName">s00_axi_arready</obj_property>
+         </wvobject>
+      </wvobject>
+      <wvobject fp_name="group97" type="group">
+         <obj_property name="label">read data</obj_property>
+         <obj_property name="DisplayName">label</obj_property>
+         <wvobject fp_name="/processor_stepper_v1_0/s00_axi_rdata" type="array">
+            <obj_property name="ElementShortName">s00_axi_rdata[31:0]</obj_property>
+            <obj_property name="ObjectShortName">s00_axi_rdata[31:0]</obj_property>
+         </wvobject>
+         <wvobject fp_name="/processor_stepper_v1_0/s00_axi_rresp" type="array">
+            <obj_property name="ElementShortName">s00_axi_rresp[1:0]</obj_property>
+            <obj_property name="ObjectShortName">s00_axi_rresp[1:0]</obj_property>
+         </wvobject>
+         <wvobject fp_name="/processor_stepper_v1_0/s00_axi_rvalid" type="logic">
+            <obj_property name="ElementShortName">s00_axi_rvalid</obj_property>
+            <obj_property name="ObjectShortName">s00_axi_rvalid</obj_property>
+         </wvobject>
+         <wvobject fp_name="/processor_stepper_v1_0/s00_axi_rready" type="logic">
+            <obj_property name="ElementShortName">s00_axi_rready</obj_property>
+            <obj_property name="ObjectShortName">s00_axi_rready</obj_property>
+         </wvobject>
+      </wvobject>
+   </wvobject>
+   <wvobject fp_name="/processor_stepper_v1_0/curr_PC" type="array">
+      <obj_property name="ElementShortName">curr_PC[31:0]</obj_property>
+      <obj_property name="ObjectShortName">curr_PC[31:0]</obj_property>
+   </wvobject>
+   <wvobject fp_name="/processor_stepper_v1_0/gated_clock" type="logic">
+      <obj_property name="ElementShortName">gated_clock</obj_property>
+      <obj_property name="ObjectShortName">gated_clock</obj_property>
+   </wvobject>
+   <wvobject type="divider" fp_name="divider60">
+   </wvobject>
+   <wvobject fp_name="/processor_stepper_v1_0/last_PC" type="array">
+      <obj_property name="ElementShortName">last_PC[31:0]</obj_property>
+      <obj_property name="ObjectShortName">last_PC[31:0]</obj_property>
+   </wvobject>
+   <wvobject fp_name="/processor_stepper_v1_0/PC_delta" type="logic">
+      <obj_property name="ElementShortName">PC_delta</obj_property>
+      <obj_property name="ObjectShortName">PC_delta</obj_property>
+   </wvobject>
+   <wvobject fp_name="group98" type="group">
+      <obj_property name="label">Control Reg</obj_property>
+      <obj_property name="DisplayName">label</obj_property>
+      <obj_property name="isExpanded"></obj_property>
+      <wvobject fp_name="/processor_stepper_v1_0/control_reg_from_axi" type="array">
+         <obj_property name="ElementShortName">control_reg_from_axi[31:0]</obj_property>
+         <obj_property name="ObjectShortName">control_reg_from_axi[31:0]</obj_property>
+      </wvobject>
+      <wvobject fp_name="/processor_stepper_v1_0/control_reg_from_rtl" type="array">
+         <obj_property name="ElementShortName">control_reg_from_rtl[31:0]</obj_property>
+         <obj_property name="ObjectShortName">control_reg_from_rtl[31:0]</obj_property>
+      </wvobject>
+      <wvobject fp_name="/processor_stepper_v1_0/control_reg_axi_write" type="logic">
+         <obj_property name="ElementShortName">control_reg_axi_write</obj_property>
+         <obj_property name="ObjectShortName">control_reg_axi_write</obj_property>
+      </wvobject>
+      <wvobject fp_name="/processor_stepper_v1_0/control_reg_to_axi" type="array">
+         <obj_property name="ElementShortName">control_reg_to_axi[31:0]</obj_property>
+         <obj_property name="ObjectShortName">control_reg_to_axi[31:0]</obj_property>
+      </wvobject>
+      <wvobject fp_name="/processor_stepper_v1_0/control_reg_stop_all" type="logic">
+         <obj_property name="ElementShortName">control_reg_stop_all</obj_property>
+         <obj_property name="ObjectShortName">control_reg_stop_all</obj_property>
+      </wvobject>
+   </wvobject>
+   <wvobject fp_name="group101" type="group">
+      <obj_property name="label">clock counter</obj_property>
+      <obj_property name="DisplayName">label</obj_property>
+      <wvobject fp_name="/processor_stepper_v1_0/clock_counter_from_axi" type="array">
+         <obj_property name="ElementShortName">clock_counter_from_axi[31:0]</obj_property>
+         <obj_property name="ObjectShortName">clock_counter_from_axi[31:0]</obj_property>
+      </wvobject>
+      <wvobject fp_name="/processor_stepper_v1_0/clock_counter_from_rtl" type="array">
+         <obj_property name="ElementShortName">clock_counter_from_rtl[31:0]</obj_property>
+         <obj_property name="ObjectShortName">clock_counter_from_rtl[31:0]</obj_property>
+      </wvobject>
+      <wvobject fp_name="/processor_stepper_v1_0/clock_counter_to_axi" type="array">
+         <obj_property name="ElementShortName">clock_counter_to_axi[31:0]</obj_property>
+         <obj_property name="ObjectShortName">clock_counter_to_axi[31:0]</obj_property>
+      </wvobject>
+      <wvobject fp_name="/processor_stepper_v1_0/clock_counter_axi_write" type="logic">
+         <obj_property name="ElementShortName">clock_counter_axi_write</obj_property>
+         <obj_property name="ObjectShortName">clock_counter_axi_write</obj_property>
+      </wvobject>
+   </wvobject>
+   <wvobject fp_name="group99" type="group">
+      <obj_property name="label">PC counter</obj_property>
+      <obj_property name="DisplayName">label</obj_property>
+      <wvobject fp_name="/processor_stepper_v1_0/PC_counter_from_rtl" type="array">
+         <obj_property name="ElementShortName">PC_counter_from_rtl[31:0]</obj_property>
+         <obj_property name="ObjectShortName">PC_counter_from_rtl[31:0]</obj_property>
+      </wvobject>
+      <wvobject fp_name="/processor_stepper_v1_0/PC_counter_from_axi" type="array">
+         <obj_property name="ElementShortName">PC_counter_from_axi[31:0]</obj_property>
+         <obj_property name="ObjectShortName">PC_counter_from_axi[31:0]</obj_property>
+      </wvobject>
+      <wvobject fp_name="/processor_stepper_v1_0/PC_counter_to_axi" type="array">
+         <obj_property name="ElementShortName">PC_counter_to_axi[31:0]</obj_property>
+         <obj_property name="ObjectShortName">PC_counter_to_axi[31:0]</obj_property>
+      </wvobject>
+      <wvobject fp_name="/processor_stepper_v1_0/PC_counter_axi_write" type="logic">
+         <obj_property name="ElementShortName">PC_counter_axi_write</obj_property>
+         <obj_property name="ObjectShortName">PC_counter_axi_write</obj_property>
+      </wvobject>
+   </wvobject>
+   <wvobject fp_name="group100" type="group">
+      <obj_property name="label">PC target</obj_property>
+      <obj_property name="DisplayName">label</obj_property>
+      <wvobject fp_name="/processor_stepper_v1_0/PC_target_from_axi" type="array">
+         <obj_property name="ElementShortName">PC_target_from_axi[31:0]</obj_property>
+         <obj_property name="ObjectShortName">PC_target_from_axi[31:0]</obj_property>
+      </wvobject>
+      <wvobject fp_name="/processor_stepper_v1_0/PC_target_to_axi" type="array">
+         <obj_property name="ElementShortName">PC_target_to_axi[31:0]</obj_property>
+         <obj_property name="ObjectShortName">PC_target_to_axi[31:0]</obj_property>
+      </wvobject>
+      <wvobject fp_name="/processor_stepper_v1_0/PC_target_axi_write" type="logic">
+         <obj_property name="ElementShortName">PC_target_axi_write</obj_property>
+         <obj_property name="ObjectShortName">PC_target_axi_write</obj_property>
+      </wvobject>
+   </wvobject>
+   <wvobject fp_name="/processor_stepper_v1_0/control_stop_on_first" type="logic">
+      <obj_property name="ElementShortName">control_stop_on_first</obj_property>
+      <obj_property name="ObjectShortName">control_stop_on_first</obj_property>
+   </wvobject>
+   <wvobject fp_name="/processor_stepper_v1_0/control_stop_on_first_next" type="logic">
+      <obj_property name="ElementShortName">control_stop_on_first_next</obj_property>
+      <obj_property name="ObjectShortName">control_stop_on_first_next</obj_property>
+   </wvobject>
+   <wvobject fp_name="group102" type="group">
+      <obj_property name="label">continuos run rule</obj_property>
+      <obj_property name="DisplayName">label</obj_property>
+      <wvobject fp_name="/processor_stepper_v1_0/control_continous_run" type="logic">
+         <obj_property name="ElementShortName">control_continous_run</obj_property>
+         <obj_property name="ObjectShortName">control_continous_run</obj_property>
+      </wvobject>
+      <wvobject fp_name="/processor_stepper_v1_0/control_continous_run_next" type="logic">
+         <obj_property name="ElementShortName">control_continous_run_next</obj_property>
+         <obj_property name="ObjectShortName">control_continous_run_next</obj_property>
+      </wvobject>
+   </wvobject>
+   <wvobject fp_name="/processor_stepper_v1_0/control_clock_single" type="logic">
+      <obj_property name="ElementShortName">control_clock_single</obj_property>
+      <obj_property name="ObjectShortName">control_clock_single</obj_property>
+   </wvobject>
+   <wvobject fp_name="/processor_stepper_v1_0/control_clock_single_next" type="logic">
+      <obj_property name="ElementShortName">control_clock_single_next</obj_property>
+      <obj_property name="ObjectShortName">control_clock_single_next</obj_property>
+   </wvobject>
+   <wvobject fp_name="/processor_stepper_v1_0/control_clock_counter" type="logic">
+      <obj_property name="ElementShortName">control_clock_counter</obj_property>
+      <obj_property name="ObjectShortName">control_clock_counter</obj_property>
+   </wvobject>
+   <wvobject fp_name="/processor_stepper_v1_0/control_clock_counter_next" type="logic">
+      <obj_property name="ElementShortName">control_clock_counter_next</obj_property>
+      <obj_property name="ObjectShortName">control_clock_counter_next</obj_property>
+   </wvobject>
+   <wvobject fp_name="/processor_stepper_v1_0/control_PC_single" type="logic">
+      <obj_property name="ElementShortName">control_PC_single</obj_property>
+      <obj_property name="ObjectShortName">control_PC_single</obj_property>
+   </wvobject>
+   <wvobject fp_name="/processor_stepper_v1_0/control_PC_single_next" type="logic">
+      <obj_property name="ElementShortName">control_PC_single_next</obj_property>
+      <obj_property name="ObjectShortName">control_PC_single_next</obj_property>
+   </wvobject>
+   <wvobject fp_name="/processor_stepper_v1_0/control_PC_counter" type="logic">
+      <obj_property name="ElementShortName">control_PC_counter</obj_property>
+      <obj_property name="ObjectShortName">control_PC_counter</obj_property>
+   </wvobject>
+   <wvobject fp_name="/processor_stepper_v1_0/control_PC_counter_next" type="logic">
+      <obj_property name="ElementShortName">control_PC_counter_next</obj_property>
+      <obj_property name="ObjectShortName">control_PC_counter_next</obj_property>
+   </wvobject>
+   <wvobject fp_name="/processor_stepper_v1_0/control_PC_target" type="logic">
+      <obj_property name="ElementShortName">control_PC_target</obj_property>
+      <obj_property name="ObjectShortName">control_PC_target</obj_property>
+   </wvobject>
+   <wvobject fp_name="/processor_stepper_v1_0/control_PC_target_next" type="logic">
+      <obj_property name="ElementShortName">control_PC_target_next</obj_property>
+      <obj_property name="ObjectShortName">control_PC_target_next</obj_property>
+   </wvobject>
+</wave_config>
