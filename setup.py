@@ -38,20 +38,29 @@ import platform
 import re
 #from pynq.utils import build_py
 
-# Check platform running on PYNQ Z2
-cpu = platform.processor()
-if cpu in ['armv7l', 'aarch64']:
-    pass
-elif cpu in ['x86_64']:
-    pass
-else:
-    raise OSError("Platform is not supported.")
-
 # global variables
 module_name = "NEORV32_on_PYNQ"
 data_files = []
-current_platform = ""
+current_platform = "Pynq-Z2"
 
+# # Check platform running on PYNQ Z2
+# # get current platform: either edge or pcie
+# def get_platform():
+#     cpu = platform.processor()
+#     if cpu in ['armv7l', 'aarch64']:
+#         return "edge"
+#     elif cpu in ['x86_64']:
+#         return "pcie"
+#     else:
+#         raise OSError("Platform is not supported.")
+#
+# cpu = platform.processor()
+# if cpu in ['armv7l', 'aarch64']:
+#     pass
+# elif cpu in ['x86_64']:
+#     pass
+# else:
+#     raise OSError("Platform is not supported.")
 
 # parse version number
 def find_version(file_path):
@@ -62,6 +71,8 @@ def find_version(file_path):
     if version_match:
         return version_match.group(1)
     raise NameError("Version string must be defined in {}.".format(file_path))
+
+pkg_version = find_version("__init__.py")
 
 
 # extend package
@@ -74,50 +85,21 @@ def extend_package(path):
     elif os.path.isfile(path):
         data_files.append(os.path.join("..", path))
 
-
-# get current platform: either edge or pcie
-def get_platform():
-    cpu = platform.processor()
-    if cpu in ['armv7l', 'aarch64']:
-        return "edge"
-    elif cpu in ['x86_64']:
-        return "pcie"
-    else:
-        raise OSError("Platform is not supported.")
-
-
-pkg_version = find_version('{}/__init__.py'.format(module_name))
-with open("README.md", encoding='utf-8') as fh:
-    readme_lines = fh.readlines()[2:6]
-long_description = (''.join(readme_lines))
-extend_package(os.path.join(module_name, "notebooks"))
-
+for package in [
+        "notebooks",
+        "overlay_programming",
+        os.path.join("pregenerated_overlays", current_platform)
+    ]:
+    extend_package(package)
 
 setup(
     name=module_name,
     version=pkg_version,
     description="NEORV32 softprocess running on Xilinx PYNQ boards",
-    long_description=long_description,
-    long_description_content_type='text/markdown',
     author="Stephen Clarke",
     author_email="pynq_support@xilinx.com",
     url="https://github.com/AgNatishia/NEORV32-on-PYNQ.git",
     license="",
-    packages=find_packages(),
-    package_data={
-        "": data_files,
-    },
-    python_requires=">=3.6.0",
-    install_requires=[
-    #    "pynq"
-    ],
-    extras_require={
-    },
-    entry_points={
-        #"pynq.notebooks": [
-        #    "pynq-helloworld = {}.notebooks.{}".format(
-        #        module_name, get_platform())
-        #]
-    },
-    #cmdclass={"build_py": build_py}
+    package_data={ "": data_files, },
+    python_requires=">=3.6.0"
 )
