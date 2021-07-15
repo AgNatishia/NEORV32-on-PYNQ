@@ -36,7 +36,7 @@ from setuptools import setup, find_packages
 import os
 import platform
 import re
-from pynq.utils import build_py
+#from pynq.utils import build_py
 
 
 # global variables
@@ -91,9 +91,9 @@ setup(
     description="NEORV32 softprocess running on Xilinx PYNQ boards",
     long_description=long_description,
     long_description_content_type='text/markdown',
-    author="",
-    author_email="",
-    url="",
+    author="Stephen Clarke",
+    author_email="pynq_support@xilinx.com",
+    url="https://github.com/AgNatishia/NEORV32-on-PYNQ.git",
     license="",
     packages=find_packages(),
     package_data={
@@ -101,15 +101,15 @@ setup(
     },
     python_requires=">=3.6.0",
     install_requires=[
-        "pynq"
+    #    "pynq"
     ],
     extras_require={
     },
     entry_points={
-        "pynq.notebooks": [
-            "pynq-helloworld = {}.notebooks.{}".format(
-                module_name, get_platform())
-        ]
+        #"pynq.notebooks": [
+        #    "pynq-helloworld = {}.notebooks.{}".format(
+        #        module_name, get_platform())
+        #]
     },
-    cmdclass={"build_py": build_py}
+    #cmdclass={"build_py": build_py}
 )
