@@ -103,11 +103,11 @@ setup(
     license="",
     packages=find_packages(),
     package_data={ "": data_files, },
-    entry_points={
-        "pynq.notebooks": [
-            "pynq-helloworld = {}.notebooks.{}".format(
-                module_name, get_platform())
-        ]
-    },
+    # entry_points={
+    #     "pynq.notebooks": [
+    #         "pynq-helloworld = {}.notebooks.{}".format(
+    #             module_name, get_platform())
+    #     ]
+    # },
     python_requires=">=3.6.0"
 )
