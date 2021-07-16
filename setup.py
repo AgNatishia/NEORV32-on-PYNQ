@@ -43,7 +43,6 @@ module_name = "NEORV32_on_PYNQ"
 data_files = []
 current_platform = "Pynq-Z2"
 
-# # Check platform running on PYNQ Z2
 # # get current platform: either edge or pcie
 # def get_platform():
 #     cpu = platform.processor()
@@ -54,13 +53,14 @@ current_platform = "Pynq-Z2"
 #     else:
 #         raise OSError("Platform is not supported.")
 #
-# cpu = platform.processor()
-# if cpu in ['armv7l', 'aarch64']:
-#     pass
-# elif cpu in ['x86_64']:
-#     pass
-# else:
-#     raise OSError("Platform is not supported.")
+# Check platform running on PYNQ Z2
+cpu = platform.processor()
+if cpu in ['armv7l', 'aarch64']:
+    pass
+elif cpu in ['x86_64']:
+    pass
+else:
+    raise OSError("Platform is not supported.")
 
 # parse version number
 def find_version(file_path):
@@ -85,11 +85,12 @@ def extend_package(path):
     elif os.path.isfile(path):
         data_files.append(os.path.join("..", path))
 
-for package in [
-        "notebooks",
-        "overlay_programming",
-        os.path.join("pregenerated_overlays", current_platform)
-    ]:
+packages = [
+    "notebooks",
+    "overlay_programming",
+    os.path.join("pregenerated_overlays", current_platform)
+]
+for package in packages:
     extend_package(package)
 
 setup(
@@ -102,5 +103,11 @@ setup(
     license="",
     packages=find_packages(),
     package_data={ "": data_files, },
+    entry_points={
+        "pynq.notebooks": [
+            "pynq-helloworld = {}.notebooks.{}".format(
+                module_name, get_platform())
+        ]
+    },
     python_requires=">=3.6.0"
 )
