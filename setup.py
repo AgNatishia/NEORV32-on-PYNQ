@@ -36,28 +36,14 @@ from setuptools import setup, find_packages
 import os
 import platform
 import re
-#from pynq.utils import build_py
 
 # global variables
 module_name = "NEORV32_on_PYNQ"
 data_files = []
-current_platform = "Pynq-Z2"
 
-# # get current platform: either edge or pcie
-# def get_platform():
-#     cpu = platform.processor()
-#     if cpu in ['armv7l', 'aarch64']:
-#         return "edge"
-#     elif cpu in ['x86_64']:
-#         return "pcie"
-#     else:
-#         raise OSError("Platform is not supported.")
-#
 # Check platform running on PYNQ Z2
-cpu = platform.processor()
-if cpu in ['armv7l', 'aarch64']:
-    pass
-elif cpu in ['x86_64']:
+platform = os.environ['BOARD']
+if platform in ["Pynq-Z2"]:
     pass
 else:
     raise OSError("Platform is not supported.")
@@ -72,7 +58,7 @@ def find_version(file_path):
         return version_match.group(1)
     raise NameError("Version string must be defined in {}.".format(file_path))
 
-pkg_version = find_version("__init__.py")
+pkg_version = find_version(module_name + "/__init__.py")
 
 
 # extend package
@@ -85,13 +71,7 @@ def extend_package(path):
     elif os.path.isfile(path):
         data_files.append(os.path.join("..", path))
 
-packages = [
-    "notebooks",
-    "overlay_programming",
-    os.path.join("pregenerated_overlays", current_platform)
-]
-for package in packages:
-    extend_package(package)
+extend_package(module_name)
 
 setup(
     name=module_name,
@@ -103,11 +83,11 @@ setup(
     license="",
     packages=find_packages(),
     package_data={ "": data_files, },
-    # entry_points={
-    #     "pynq.notebooks": [
-    #         "pynq-helloworld = {}.notebooks.{}".format(
-    #             module_name, get_platform())
-    #     ]
-    # },
+    entry_points={
+        "pynq.notebooks": [
+            "NEORV32_on_PYNQ = {}.notebooks".format(
+                module_name)
+        ]
+    },
     python_requires=">=3.6.0"
 )
