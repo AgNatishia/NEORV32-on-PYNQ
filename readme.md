@@ -1,6 +1,61 @@
-# RISCV-NEORV32 on PYNQ
+# NEORV32 on PYNQ
 
-This repo contains the work done on getting the NEORV32 soft-processor to work on Xilinx PYNQ boards.
+This repo contains work done on getting the NEORV32 soft-processor to work with the Xilinx PYNQ boards.
+
+
+# Installing on a PYNQ board
+
+This repo supports pip installation on PYNQ boards using the following commands.
+
+```
+pip3 install git+https://github.com/AgNatishia/NEORV32-on-PYNQ
+pynq-get-notebooks --force --path /home/xilinx/jupyter_notebooks/
+```
+
+This should install the NEORV32_on_PYNQ module on your PYNQ board, and deliver the notebooks contained within it to /home/xilinx/jupyter_notebooks/NEORV32_on_PYNQ/.
+
+However in order for many of the notebooks in this repo to run a C-to-RISCV compiler must be available on your board, one has been provided in the releases of this Repo, https://github.com/AgNatishia/NEORV32-on-PYNQ/releases/tag/toolchain.
+It should to copied to the board, unzipped, and it's location added to the path variable.
+
+Once this had been done you can't only run the example programs, but can also develop your own using the jupyter magic riscvc.
+This magic handles the compilation of C code into a RISCV bin files targeting the NERORV32 core.
+Below is an example 0f a riscvc magic cell, it compiles a program called blink_all_LEDs.bin
+
+```c
+%%riscvc blink_all_LEDs
+
+#include <stdint.h>
+
+const int value = 0;
+const int tristate = 1;
+int32_t volatile * const buttons = (int32_t*) 0x40010000;
+int32_t volatile * const LEDs    = (int32_t*) 0x40020000;
+
+int main()
+{
+  // Set all LED pins as output
+  LEDs[tristate] = 0;
+
+  while(1)
+  {
+    LEDs[value] = 0x0;
+    LEDs[value] = 0xf;
+  }
+
+  return 0;
+}
+```
+
+
+
+
+
+
+
+
+
+# Old documentation for reworking
+There are 2 usage
 
 Current there are 2 sets of files, separated based on which system they are meant to run on.
 <ul>

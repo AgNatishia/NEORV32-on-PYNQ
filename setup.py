@@ -83,6 +83,9 @@ setup(
     license="",
     packages=find_packages(),
     package_data={ "": data_files, },
+    install_requires=[
+        "bin2coe",
+    ],
     entry_points={
         "pynq.notebooks": [
             "NEORV32_on_PYNQ = {}.notebooks".format(
