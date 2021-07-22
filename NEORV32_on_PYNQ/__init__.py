@@ -30,10 +30,10 @@
 __author__ = "Stephen Clarke"
 __copyright__ = "Copyright 2021, Xilinx"
 __email__ = "pynq_support@xilinx.com"
-__version__ = '0.6.0'
+__version__ = '0.6.22'
 
 def load_ipython_extension(ipython):
     from . import compilerMagic
     compilerMagic.load_ipython_extension(ipython)
 
-from .overlay import overlay
+from .overlay import overlay, stepper_controls, stepper_regmap
