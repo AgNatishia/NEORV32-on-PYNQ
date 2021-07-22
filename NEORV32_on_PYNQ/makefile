@@ -90,7 +90,7 @@ CORE_SRC  = $(wildcard $(NEORV32_SRC_PATH)/*.c)
 CORE_SRC += $(NEORV32_COM_PATH)/crt0.S
 
 # Linker script
-LD_SCRIPT = ../../neorv32.ld
+LD_SCRIPT ?= ../../neorv32.ld
 
 # Main output files
 APP_EXE  = neorv32_exe.bin

@@ -15,23 +15,37 @@ class compilerMagic(Magics):
     def riscvc(self, line, cell):
         # Get program name from line
         program_name = line.strip()
-        
+
         # Get the file character of program is a letter or underscore
         if not(program_name[0].isalpha() or program_name[0] == "_"):
             raise ValueError("program_name must start with a letter or underscore")
         if not all([char.isalpha() or char.isnumeric() or char  == "_" for char in program_name]):
             raise ValueError("program_name may only contain letters, numbers, and underscores")
-        
-        # Create C file
-        with open(program_name + ".c", "w") as f:
-            f.write(cell)
-        
-        # Run toolchain
-        _ = run("make clean exe")
-        _ = run("mv main.bin " + program_name + ".bin")
-        _ = run("riscv32-unknown-elf-objdump -D main.elf > " + program_name + ".objdump")
-        _ = run("bin2coe -i " + program_name + ".bin -o " + program_name + ".coe -w 32")
 
+        # Make sure a folder in programs exists and is prepared for this program
+        _ = run("mkdir -p programs/%s"%(program_name,))
+        _ = run("cp /usr/local/lib/python3.6/dist-packages/NEORV32_on_PYNQ/makefile programs/%s/makefile"%(program_name,))
+
+        # Create C file
+        with open("programs/%s/%s.c"%(program_name, program_name,), "w") as f:
+            f.write(cell)
+
+        # Run makefile
+        _ = run(" ".join( [
+                "make clean exe",
+                "NEORV32_HOME=/usr/local/lib/python3.6/dist-packages/NEORV32_on_PYNQ/NEORV_lib",
+                "LD_SCRIPT=/usr/local/lib/python3.6/dist-packages/NEORV32_on_PYNQ/NEORV32_on_PYNQ.ld",
+            ] ),
+            cwd="programs/%s"%(program_name, )
+        )
+
+        # Process makefile outputs
+        _ = run("mv main.bin %s.bin"%(program_name, ), cwd="programs/%s"%(program_name, ))
+        _ = run("mv main.asm %s.asm"%(program_name, ), cwd="programs/%s"%(program_name, ))
+        _ = run("bin2coe -i %s.bin -o %s.coe -w 32"%(program_name, program_name), cwd="programs/%s"%(program_name, ))
+
+        # Clean up main files
+        _ = run("rm main.* neorv32_exe.bin", cwd="programs/%s"%(program_name, ))
 
 def load_ipython_extension(ipython):
     ipython.register_magics(compilerMagic)
