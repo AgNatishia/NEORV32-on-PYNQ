@@ -85,6 +85,7 @@ setup(
     package_data={ "": data_files, },
     install_requires=[
         "bin2coe",
+        "pandas"
     ],
     entry_points={
         "pynq.notebooks": [
