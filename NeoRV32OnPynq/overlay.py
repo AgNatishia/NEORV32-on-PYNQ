@@ -25,29 +25,9 @@ _stepper_regmap = {
     "PC_target"     : 0xC
 }
 
-def _textboz_to_int(text):
-    if len(text) != 0:
-        if text.startswith(("0b", "0B")):
-            value = int(text, 2)
-        elif text.startswith(("0x", "0X")):
-            value = int(text, 16)
-        else:
-            value = int(text, 10)
-    else:
-        raise ValueError("No text given")
-
-    return value
-
-_RISCV_reg_names = [
-    "Zero",     "ra",   "sp",   "gp",   "tp",   "t0",   "t1",   "t1",
-    "s0/fp",    "s1",   "a0",   "a1",   "a2",   "a3",   "a4",   "a5",
-    "a6",       "a7",   "s2",   "s3",   "s4",   "s5",   "s6",   "s7",
-    "s8",       "s9",   "s10",  "s11",  "t3",   "t4",   "t5",   "t6",
-]
-
 class overlay():
     def __init__(this):
-        this.overlay = Overlay("/usr/local/lib/python3.6/dist-packages/NEORV32_on_PYNQ/rv32i_overlay.bit")
+        this.overlay = Overlay("/usr/local/lib/python3.6/dist-packages/NeoRV32OnPynq/rv32i_overlay.bit")
 
         this.core_reset = GPIO(GPIO.get_gpio_pin(0), 'out')
         this.BRAM = this.overlay.pynq_BRAM_controller
@@ -126,28 +106,32 @@ class overlay():
         if not isinstance(program_folder, str):
             raise ValueError("program_folder must be a string")
         elif not os.path.isdir(program_folder):
-            raise ValueError("program_folder, %s, doesn't pick to a folder"%(program_folder, ))
+            raise ValueError("program_folder, %s, doesn't point to a folder"%(program_folder, ))
 
-        # Find all programs within program folder
-        programs = []
-        if folder_per_program:
-            for sub_name in os.listdir(program_folder):
-                sub_path = os.path.join(program_folder, sub_name)
-                program_name = sub_name + ".bin"
-                program_path = os.path.join(sub_path, program_name)
-                if os.path.isdir(sub_path) and program_name in os.listdir(sub_path) and os.path.isfile(program_path):
-                    programs.append(sub_name)
-        else:
-            for sub_name in os.listdir(program_folder):
-                program_name = sub_name + ".bin"
-                if os.path.isfile(program_name):
-                    programs.append(sub_name)
+        def scan_for_programs():
+            # Find all programs within program folder
+            programs = []
+            if folder_per_program:
+                for sub_name in os.listdir(program_folder):
+                    sub_path = os.path.join(program_folder, sub_name)
+                    program_name = sub_name + ".bin"
+                    program_path = os.path.join(sub_path, program_name)
+                    if os.path.isdir(sub_path) and program_name in os.listdir(sub_path) and os.path.isfile(program_path):
+                        programs.append(sub_name)
+            else:
+                for sub_name in os.listdir(program_folder):
+                    program_name = sub_name + ".bin"
+                    if os.path.isfile(program_name):
+                        programs.append(sub_name)
+            return programs
 
         # Build GUI
-        gui_label = widgets.Label("Program Select:")
-
+        gui_scan_button = widgets.Button(
+            description="Refresh programs",
+            tooltip="Rescans the program folder for changed and updates the program select"
+        )
         gui_program_dropdown = widgets.Dropdown(
-            options=programs,
+            options=scan_for_programs(),
             tooltip="Selexts the program to be loaded the next turn the 'Load Program' button is pressed"
         )
         gui_write_button = widgets.Button(
@@ -158,7 +142,9 @@ class overlay():
             value="Last Loaded: ",
             tooltip="Shows the last program loaded, ie the program currenlly running on the overlay"
         )
-        gui_lower_row = widgets.HBox([gui_program_dropdown, gui_write_button, gui_loaded_label])
+
+        gui_label = widgets.Label("Program Select:")
+        gui_lower_row = widgets.HBox([gui_scan_button, gui_program_dropdown, gui_write_button, gui_loaded_label])
         gui = widgets.VBox([gui_label, gui_lower_row])
 
         # Functions to handle interacting with the widgets, to load a program into the overlay's BRAM
@@ -174,16 +160,19 @@ class overlay():
 
             # Update last Loaded
             gui_loaded_label.value = "Last Loaded: %s.bin"%(program, )
+        def gui_scan_button_click(_):
+            programs = scan_for_programs()
+            gui_program_dropdown.options=programs
+            gui_program_dropdown.value=programs[0]
+
 
         # Bind gui_write_button_click to button's on_click hook
         gui_write_button.on_click(gui_write_button_click)
+        gui_scan_button.on_click(gui_scan_button_click)
 
         return gui
 
     def execution_control(this):
-        # Build GUI
-        gui_label = widgets.Label("Execution Control:")
-
         # Rules sections
         # Clock counter rule
         clock_counter_enable_label = widgets.Label(
@@ -281,18 +270,18 @@ class overlay():
                 # Build controls and write registors
                 controls = 0
                 if clock_counter_enable.value == True:
-                    reg_value = _textboz_to_int(clock_counter_value.value)
+                    reg_value = textboz_to_int(clock_counter_value.value)
                     if reg_value != 0:
                         controls |= _stepper_controls["clock_counter"]
                         this._stepper_write_registor(_stepper_regmap["clock_counter"], reg_value)
                 if instr_counter_enable.value == True:
-                    reg_value = _textboz_to_int(instr_counter_value.value)
+                    reg_value = textboz_to_int(instr_counter_value.value)
                     if reg_value != 0:
                         controls |= _stepper_controls["instr_counter"]
                         this._stepper_write_registor(_stepper_regmap["instr_counter"], reg_value)
                 if PC_target_enable.value == True:
                     controls |= _stepper_controls["PC_target"]
-                    reg_value = _textboz_to_int(PC_target_value.value) + 0x40000000
+                    reg_value = textboz_to_int(PC_target_value.value) + 0x40000000
                     this._stepper_write_registor(_stepper_regmap["PC_target"], reg_value)
 
                 # Write controls to the stepper
@@ -320,6 +309,7 @@ class overlay():
         reset_button.on_click(reset_button_click)
 
         # Pack buttons and gui
+        gui_label = widgets.Label("Execution Control:")
         gui_buttons = widgets.HBox([step_clock_button, step_instruction_button, run_stop_button, reset_button])
         gui = widgets.VBox([gui_label, gui_rules, gui_buttons])
 
@@ -381,7 +371,27 @@ class overlay():
         data_bundle_offset  = 10
         muxed_bundle_offset = 20
 
+        RISCV_reg_names = [
+            "Zero",     "ra",   "sp",   "gp",   "tp",   "t0",   "t1",   "t1",
+            "s0/fp",    "s1",   "a0",   "a1",   "a2",   "a3",   "a4",   "a5",
+            "a6",       "a7",   "s2",   "s3",   "s4",   "s5",   "s6",   "s7",
+            "s8",       "s9",   "s10",  "s11",  "t3",   "t4",   "t5",   "t6",
+        ]
+
         # Reuse table generate functions
+        def textboz_to_int(text):
+            if len(text) != 0:
+                if text.startswith(("0b", "0B")):
+                    value = int(text, 2)
+                elif text.startswith(("0x", "0X")):
+                    value = int(text, 16)
+                else:
+                    value = int(text, 10)
+            else:
+                raise ValueError("No text given")
+
+            return value
+
         def generate_internal_bus_table(capture_data, bundle_offset, bus_words):
             read    = (capture_data[buses_bundle] >> (bundle_offset + 0)) & 0x00000001
             write   = (capture_data[buses_bundle] >> (bundle_offset + 1)) & 0x00000001
@@ -510,7 +520,7 @@ class overlay():
                 ],
                 "Value": [
                     hex(addr_value)[2:].zfill(2),
-                    _RISCV_reg_names[addr_value],
+                    RISCV_reg_names[addr_value],
                     hex(capture_data[regfile_rs1_out])[2:].zfill(8),
                 ]
             })
@@ -529,7 +539,7 @@ class overlay():
                 ],
                 "Value": [
                     hex(addr_value)[2:].zfill(2),
-                    _RISCV_reg_names[addr_value],
+                    RISCV_reg_names[addr_value],
                     hex(capture_data[regfile_rs2_out])[2:].zfill(8),
                 ]
             })
@@ -563,7 +573,7 @@ class overlay():
                 ],
                 "Value": [
                     hex(addr_value)[2:].zfill(2),
-                    _RISCV_reg_names[addr_value],
+                    RISCV_reg_names[addr_value],
                 ]
             })
         def generate_regfile_rd_input_table(capture_data):
@@ -945,10 +955,10 @@ class overlay():
                     hex(strobe)[2:].zfill(1),
                     hex(cycle)[2:].zfill(1),
 
-                    hex(capture_data[33])[2:].zfill(8),
+                    hex(capture_data[wb_addr])[2:].zfill(8),
                     hex(read_write)[2:].zfill(1),
-                    hex(capture_data[34])[2:].zfill(8),
-                    hex(capture_data[35])[2:].zfill(8),
+                    hex(capture_data[wb_read_data])[2:].zfill(8),
+                    hex(capture_data[wb_write_data])[2:].zfill(8),
 
                     hex(bytes)[2:].zfill(1),
                     hex(tag)[2:].zfill(1),
@@ -975,6 +985,32 @@ class overlay():
         BRAM_axi_label = widgets.Label("BRAM Axi")
         BRAM_axi_table = widgets.Output()
         BRAM_axi = widgets.VBox([BRAM_axi_label, BRAM_axi_table])
+
+        # BRAM port
+        def generate_BRAM_port_table(capture_data):
+            enable  = (capture_data[BRAM_bundle] >> 0) & 0x00000001
+            bytes   = (capture_data[BRAM_bundle] >> 4) & 0x0000000F
+
+            return  pd.DataFrame({
+                "Signal": [
+                    "Addr"
+                    "Enable",
+                    "read_data",
+                    "Write Sel",
+                    "write_data",
+                ],
+                "Value": [
+                    hex(capture_data[BRAM_addr])[2:].zfill(8),
+                    hex(enable)[2:].zfill(1),
+                    hex(capture_data[BRAM_read_data])[2:].zfill(8),
+                    hex(bytes)[2:].zfill(1),
+                    hex(capture_data[BRAM_write_data])[2:].zfill(8),
+                ]
+            })
+
+        BRAM_port_label = widgets.Label("BRAM")
+        BRAM_port_table = widgets.Output()
+        BRAM_port = widgets.VBox([BRAM_port_label, BRAM_port_table])
 
         BRAM_section_label = widgets.Label("BRAM")
         BRAM_columes = widgets.HBox([BRAM_axi, ])
@@ -1087,9 +1123,11 @@ class overlay():
         capture_button.on_click(capture_button_click)
 
         # Collect all sections into GUI
-        capture_GUI = widgets.VBox(
-            [regfile_section, ALU_section, copro__section, bus_section, switch_section,
-            external_bus_section, BRAM_section, LED_section, buttons_section, capture_button
-        ])
+        gui_label = widgets.Label("Internals")
+        section_tabs = widgets.Tab(
+            children=[regfile_section, ALU_section, copro__section, bus_section, switch_section, external_bus_section, BRAM_section, LED_section],
+            titles =["Regfile", "ALU", "CoProcessers", "Bus Control", "Bus Switch", "External Bus", "BRAM", "LEDs", "Buttons"]
+        )
+        capture_GUI = widgets.VBox([gui_label, section_tabs, capture_button ])
 
         return capture_GUI

@@ -30,7 +30,7 @@
 __author__ = "Stephen Clarke"
 __copyright__ = "Copyright 2021, Xilinx"
 __email__ = "pynq_support@xilinx.com"
-__version__ = "0.7.56"
+__version__ = "0.8.11"
 
 def load_ipython_extension(ipython):
     from . import compilerMagic

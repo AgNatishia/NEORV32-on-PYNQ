@@ -1,5 +1,5 @@
 ﻿<?xml version="1.0" encoding="UTF-8" standalone="no" ?>
-<EDKSYSTEM EDWVERSION="1.2" TIMESTAMP="Thu Jul 15 12:46:16 2021" VIVADOVERSION="2020.1">
+<EDKSYSTEM EDWVERSION="1.2" TIMESTAMP="Mon Jul 26 15:46:43 2021" VIVADOVERSION="2020.1">
 
   <SYSTEMINFO ARCH="zynq" BOARD="tul.com.tw:pynq-z2:part0:1.0" DEVICE="7z020" NAME="rv32i_overlay" PACKAGE="clg400" SPEEDGRADE="-1"/>
 
@@ -1966,7 +1966,7 @@
       </PORTS>
       <BUSINTERFACES/>
     </MODULE>
-    <MODULE COREREVISION="2" FULLNAME="/cpu_clock_stepper" HWVERSION="1.0" INSTANCE="cpu_clock_stepper" IPTYPE="PERIPHERAL" IS_ENABLE="1" MODCLASS="PERIPHERAL" MODTYPE="processor_stepper" VLNV="xilinx.com:user:processor_stepper:1.0">
+    <MODULE COREREVISION="3" FULLNAME="/cpu_clock_stepper" HWVERSION="1.0" INSTANCE="cpu_clock_stepper" IPTYPE="PERIPHERAL" IS_ENABLE="1" MODCLASS="PERIPHERAL" MODTYPE="processor_stepper" VLNV="xilinx.com:user:processor_stepper:1.0">
       <DOCUMENTS/>
       <ADDRESSBLOCKS>
         <ADDRESSBLOCK ACCESS="" INTERFACE="S00_AXI" NAME="S00_AXI_reg" RANGE="4096" USAGE="register"/>
@@ -3665,7 +3665,7 @@
         <PERIPHERAL INSTANCE="LED_controller"/>
       </PERIPHERALS>
     </MODULE>
-    <MODULE COREREVISION="1" FULLNAME="/neo_signal_capture" HWVERSION="1.1" INSTANCE="neo_signal_capture" IPTYPE="PERIPHERAL" IS_ENABLE="1" MODCLASS="PERIPHERAL" MODTYPE="neo_capture_harness" VLNV="xilinx.com:user:neo_capture_harness:1.1">
+    <MODULE COREREVISION="3" FULLNAME="/neo_signal_capture" HWVERSION="1.1" INSTANCE="neo_signal_capture" IPTYPE="PERIPHERAL" IS_ENABLE="1" MODCLASS="PERIPHERAL" MODTYPE="neo_capture_harness" VLNV="xilinx.com:user:neo_capture_harness:1.1">
       <DOCUMENTS/>
       <ADDRESSBLOCKS>
         <ADDRESSBLOCK ACCESS="" INTERFACE="S00_AXI" NAME="S00_AXI_reg" RANGE="4096" USAGE="register"/>

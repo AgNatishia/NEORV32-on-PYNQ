@@ -33,8 +33,8 @@ class compilerMagic(Magics):
         # Run makefile
         _ = run(" ".join( [
                 "make clean exe",
-                "NEORV32_HOME=/usr/local/lib/python3.6/dist-packages/NEORV32_on_PYNQ/NEORV_lib",
-                "LD_SCRIPT=/usr/local/lib/python3.6/dist-packages/NEORV32_on_PYNQ/NEORV32_on_PYNQ.ld",
+                "NEORV32_HOME=/usr/local/lib/python3.6/dist-packages/NeoRV32OnPynq/NEORV_lib",
+                "LD_SCRIPT=/usr/local/lib/python3.6/dist-packages/NeoRV32OnPynq/NeoRV32OnPynq.ld",
             ] ),
             cwd="programs/%s"%(program_name, )
         )

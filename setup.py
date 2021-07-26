@@ -38,7 +38,7 @@ import platform
 import re
 
 # global variables
-module_name = "NEORV32_on_PYNQ"
+module_name = "NeoRV32OnPynq"
 data_files = []
 
 # Check platform running on PYNQ Z2
