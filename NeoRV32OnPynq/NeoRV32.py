@@ -435,26 +435,10 @@ class NeoRV32():
                 ]
             })
 
-        def generate_axi_table(capture_data, base_word):
+        def generate_axi_read_addr_channal_table(capture_data, base_word):
             arready = (capture_data[base_word] >>  0) & 0x00000001
             arvalid = (capture_data[base_word] >>  1) & 0x00000001
             arprot  = (capture_data[base_word] >>  2) & 0x00000007
-
-            rready  = (capture_data[base_word] >>  5) & 0x00000001
-            rvalid  = (capture_data[base_word] >>  6) & 0x00000001
-            rresp   = (capture_data[base_word] >>  7) & 0x00000003
-
-            awready = (capture_data[base_word] >>  9) & 0x00000001
-            awvalid = (capture_data[base_word] >> 10) & 0x00000001
-            awprot  = (capture_data[base_word] >> 11) & 0x00000007
-
-            wready  = (capture_data[base_word] >> 14) & 0x00000001
-            wvalid  = (capture_data[base_word] >> 15) & 0x00000001
-            wstrb   = (capture_data[base_word] >> 16) & 0x00000007
-
-            bready  = (capture_data[base_word] >> 19) & 0x00000001
-            bvalid  = (capture_data[base_word] >> 20) & 0x00000001
-            bresp   = (capture_data[base_word] >> 21) & 0x00000003
 
             return  pd.DataFrame({
                 "Signal": [
@@ -462,47 +446,87 @@ class NeoRV32():
                     "arprot",
                     "arready",
                     "arvalid",
-
-                    "rdata",
-                    "rresp",
-                    "rready",
-                    "rvalid",
-
-                    "awaddr",
-                    "awprot",
-                    "awready",
-                    "awvalid",
-
-                    "wdata",
-                    "wstrb",
-                    "wready",
-                    "wvalid",
-
-                    "bresp",
-                    "bready",
-                    "bvalid",
                 ],
                 "Value": [
                     hex(capture_data[base_word + 1])[2:].zfill(8),
                     hex(arprot)[2:].zfill(1),
                     hex(arready)[2:].zfill(1),
                     hex(arvalid)[2:].zfill(1),
+                ]
+            })
 
+        def generate_axi_read_data_channal_table(capture_data, base_word):
+            rready  = (capture_data[base_word] >>  5) & 0x00000001
+            rvalid  = (capture_data[base_word] >>  6) & 0x00000001
+            rresp   = (capture_data[base_word] >>  7) & 0x00000003
+
+            return  pd.DataFrame({
+                "Signal": [
+                    "rdata",
+                    "rresp",
+                    "rready",
+                    "rvalid",
+                ],
+                "Value": [
                     hex(capture_data[base_word + 2])[2:].zfill(8),
                     hex(rresp)[2:].zfill(1),
                     hex(rready)[2:].zfill(1),
                     hex(rvalid)[2:].zfill(1),
+                ]
+            })
 
+        def generate_axi_write_addr_channal_table(capture_data, base_word):
+            awready = (capture_data[base_word] >>  9) & 0x00000001
+            awvalid = (capture_data[base_word] >> 10) & 0x00000001
+            awprot  = (capture_data[base_word] >> 11) & 0x00000007
+
+            return  pd.DataFrame({
+                "Signal": [
+                    "awaddr",
+                    "awprot",
+                    "awready",
+                    "awvalid",
+                ],
+                "Value": [
                     hex(capture_data[base_word + 3])[2:].zfill(8),
                     hex(awprot)[2:].zfill(1),
                     hex(awready)[2:].zfill(1),
                     hex(awvalid)[2:].zfill(1),
+                ]
+            })
 
+        def generate_axi_write_data_channal_table(capture_data, base_word):
+            wready  = (capture_data[base_word] >> 14) & 0x00000001
+            wvalid  = (capture_data[base_word] >> 15) & 0x00000001
+            wstrb   = (capture_data[base_word] >> 16) & 0x00000007
+
+            return  pd.DataFrame({
+                "Signal": [
+                    "wdata",
+                    "wstrb",
+                    "wready",
+                    "wvalid",
+                ],
+                "Value": [
                     hex(capture_data[base_word + 4])[2:].zfill(8),
                     hex(wstrb)[2:].zfill(1),
                     hex(wready)[2:].zfill(1),
                     hex(wvalid)[2:].zfill(1),
+                ]
+            })
 
+        def generate_axi_write_resp_channal_table(capture_data, base_word):
+            bready  = (capture_data[base_word] >> 19) & 0x00000001
+            bvalid  = (capture_data[base_word] >> 20) & 0x00000001
+            bresp   = (capture_data[base_word] >> 21) & 0x00000003
+
+            return  pd.DataFrame({
+                "Signal": [
+                    "bresp",
+                    "bready",
+                    "bvalid",
+                ],
+                "Value": [
                     hex(bresp)[2:].zfill(1),
                     hex(bready)[2:].zfill(1),
                     hex(bvalid)[2:].zfill(1),
@@ -588,7 +612,7 @@ class NeoRV32():
                 "Value": [
                     hex(capture_data[bus_read_data])[2:].zfill(8),
                     hex(capture_data[ALU_result])[2:].zfill(8),
-                    ["Mem", "ALU"][input_sel]
+                    ["0 (Mem)", "1 (ALU)"][input_sel]
                 ]
             })
         def generate_regfile_rd_control_table(capture_data):
@@ -597,7 +621,7 @@ class NeoRV32():
             return  pd.DataFrame({
                 "Signal": [
                     "Enable",
-                    "Force 0",
+                    "Force r0",
                 ],
                 "Value": [
                     hex(enable_bit)[2:],
@@ -611,9 +635,8 @@ class NeoRV32():
         regfile_rd_tables = widgets.HBox([regfile_rd_addr_table, regfile_rd_input_table, regfile_rd_control_table])
         regfile_rd = widgets.VBox([regfile_rd_label, regfile_rd_tables])
 
-        regfile_section_label = widgets.Label("Regfile")
         regfile_sources = widgets.HBox([regfile_rs1, regfile_rs2, regfile_cmp])
-        regfile_section = widgets.VBox([regfile_section_label, regfile_sources, regfile_rd])
+        regfile_section = widgets.VBox([regfile_sources, regfile_rd])
 
         # ALU section
         # ALU operand A section
@@ -621,14 +644,14 @@ class NeoRV32():
             input_sel = (capture_data[ALU_bundle] >>  0) & 0x0000001
             return  pd.DataFrame({
                 "Signal": [
-                    "RS1 in",
-                    "PC in",
+                    "RS1",
+                    "PC",
                     "OpA Sel"
                 ],
                 "Value": [
                     hex(capture_data[regfile_rs1_out])[2:].zfill(8),
                     hex(capture_data[curr_PC])[2:].zfill(8),
-                    ["RS1", "PC"][input_sel]
+                    ["0 (RS1)", "1 (PC)"][input_sel]
                 ]
             })
         ALU_opA_label = widgets.Label("Operand A")
@@ -640,17 +663,17 @@ class NeoRV32():
             input_sel = (capture_data[ALU_bundle] >> 1) & 0x0000001
             return  pd.DataFrame({
                 "Signal": [
-                    "RS2 in",
-                    "IMM in",
+                    "RS2",
+                    "IMM",
                     "OpB Sel"
                 ],
                 "Value": [
                     hex(capture_data[regfile_rs2_out])[2:].zfill(8),
                     hex(capture_data[IMM])[2:].zfill(8),
-                    ["RS2", "IMM"][input_sel]
+                    ["0 (RS2)", "1 (IMM)"][input_sel]
                 ]
             })
-        ALU_opB_label = widgets.Label("Operand A")
+        ALU_opB_label = widgets.Label("Operand B")
         ALU_opB_input_table = widgets.Output()
         ALU_opB_input = widgets.VBox([ALU_opB_label, ALU_opB_input_table])
 
@@ -703,9 +726,7 @@ class NeoRV32():
         ALU_results_table = widgets.Output()
         ALU_results = widgets.VBox([ALU_results_label, ALU_results_table])
 
-        ALU_section_label = widgets.Label("ALU")
-        ALU_signals = widgets.HBox([ALU_opA_input, ALU_opB_input, ALU_controls, ALU_results])
-        ALU_section = widgets.VBox([ALU_section_label, ALU_signals])
+        ALU_section = widgets.HBox([ALU_opA_input, ALU_opB_input, ALU_controls, ALU_results])
 
         # Coprocessor section
         # Decoded funct section
@@ -746,7 +767,7 @@ class NeoRV32():
                     hex(valid)[2:].zfill(2),
                 ]
             })
-        copro_ALU_interface_label = widgets.Label("ALU Internface")
+        copro_ALU_interface_label = widgets.Label("ALU Interface")
         copro_ALU_interface_table = widgets.Output()
         copro_ALU_interface = widgets.VBox([copro_ALU_interface_label, copro_ALU_interface_table])
 
@@ -778,9 +799,7 @@ class NeoRV32():
         copro_results_table = widgets.Output()
         copro_results = widgets.VBox([copro_results_label, copro_results_table])
 
-        copro_section_label = widgets.Label("Coprocessors")
-        copro_columes = widgets.HBox([copro_funct, copro_ALU_interface, copro_results])
-        copro__section = widgets.VBox([copro_section_label, copro_columes])
+        copro_section = widgets.HBox([copro_funct, copro_ALU_interface, copro_results])
 
         # Bus control section
         # Bus instr section
@@ -806,7 +825,7 @@ class NeoRV32():
                     hex(ack)[2:].zfill(1),
                 ]
             })
-        bus_instr_label = widgets.Label("Instr Fetch")
+        bus_instr_label = widgets.Label("Instruction Fetch")
         bus_instr_table = widgets.Output()
         bus_instr = widgets.VBox([bus_instr_label, bus_instr_table])
 
@@ -878,9 +897,7 @@ class NeoRV32():
         bus_signals_table = widgets.Output()
         bus_signals = widgets.VBox([bus_signals_label, bus_signals_table])
 
-        bus_section_label = widgets.Label("Bus Control")
-        bus_columes = widgets.HBox([bus_instr, bus_data, bus_signals])
-        bus_section = widgets.VBox([bus_section_label, bus_columes])
+        bus_section = widgets.HBox([bus_instr, bus_data, bus_signals])
 
         # Bus switch sections
         # Instruction Bus Section
@@ -920,9 +937,7 @@ class NeoRV32():
         muxed_bus_table = widgets.Output()
         muxed_bus = widgets.VBox([muxed_bus_label, muxed_bus_table])
 
-        switch_section_label = widgets.Label("Bus switch")
-        switch_columes = widgets.HBox([Instr_bus, data_bus, switch_controls, muxed_bus])
-        switch_section = widgets.VBox([switch_section_label, switch_columes])
+        switch_section = widgets.HBox([Instr_bus, data_bus, switch_controls, muxed_bus])
 
         # External bus section
         # Wishbone
@@ -973,19 +988,21 @@ class NeoRV32():
         wishbone = widgets.VBox([wishbone_label, wishbone_table])
 
         # External axi4lite
-        neo_axi_label = widgets.Label("NeoRV Axi")
-        neo_axi_table = widgets.Output()
-        neo_axi = widgets.VBox([neo_axi_label, neo_axi_table])
+        neo_axi_label = widgets.Label("Axi4Lite")
+        neo_axi_read_channels_table = widgets.Output()
+        neo_axi_write_channels_table = widgets.Output()
+        neo_axi_tables = widgets.HBox([neo_axi_read_channels_table, neo_axi_write_channels_table])
+        neo_axi = widgets.VBox([neo_axi_label, neo_axi_tables])
 
-        external_bus_section_label = widgets.Label("External Bus")
-        external_bus_columes = widgets.HBox([wishbone, neo_axi])
-        external_bus_section = widgets.VBox([external_bus_section_label, external_bus_columes])
+        external_bus_section = widgets.HBox([wishbone, neo_axi])
 
         # BRAM section
         # BRAM axi
-        BRAM_axi_label = widgets.Label("BRAM Axi")
-        BRAM_axi_table = widgets.Output()
-        BRAM_axi = widgets.VBox([BRAM_axi_label, BRAM_axi_table])
+        BRAM_axi_label = widgets.Label("Axi4Lite Bus")
+        BRAM_axi_read_channels_table = widgets.Output()
+        BRAM_axi_write_channels_table = widgets.Output()
+        BRAM_axi_tables = widgets.HBox([BRAM_axi_read_channels_table, BRAM_axi_write_channels_table])
+        BRAM_axi = widgets.VBox([BRAM_axi_label, BRAM_axi_tables])
 
         # BRAM port
         def generate_BRAM_port_table(capture_data):
@@ -994,7 +1011,7 @@ class NeoRV32():
 
             return  pd.DataFrame({
                 "Signal": [
-                    "Addr"
+                    "Addr",
                     "Enable",
                     "read_data",
                     "Write Sel",
@@ -1009,35 +1026,31 @@ class NeoRV32():
                 ]
             })
 
-        BRAM_port_label = widgets.Label("BRAM")
+        BRAM_port_label = widgets.Label("BRAM Ports")
         BRAM_port_table = widgets.Output()
         BRAM_port = widgets.VBox([BRAM_port_label, BRAM_port_table])
 
-        BRAM_section_label = widgets.Label("BRAM")
-        BRAM_columes = widgets.HBox([BRAM_axi, ])
-        BRAM_section = widgets.VBox([BRAM_section_label, BRAM_columes])
-
-        # BRAM internface
+        BRAM_section = widgets.HBox([BRAM_axi, BRAM_port])
 
         # LED section
         # LED axi
-        LED_axi_label = widgets.Label("LED Axi")
-        LED_axi_table = widgets.Output()
-        LED_axi = widgets.VBox([LED_axi_label, LED_axi_table])
+        LED_axi_label = widgets.Label("Axi4Lite Bus")
+        LED_axi_read_channels_table = widgets.Output()
+        LED_axi_write_channels_table = widgets.Output()
+        LED_axi_tables = widgets.HBox([LED_axi_read_channels_table, LED_axi_write_channels_table])
+        LED_axi = widgets.VBox([LED_axi_label, LED_axi_tables])
 
-        LED_section_label = widgets.Label("LEDs")
-        LED_columes = widgets.HBox([LED_axi, ])
-        LED_section = widgets.VBox([LED_section_label, LED_columes])
+        LED_section = widgets.HBox([LED_axi, ])
 
         # buttons section
         # buttons axi
-        buttons_axi_label = widgets.Label("Buttons Axi")
-        buttons_axi_table = widgets.Output()
-        buttons_axi = widgets.VBox([buttons_axi_label, buttons_axi_table])
+        buttons_axi_label = widgets.Label("Axi4Lite Bus")
+        buttons_axi_read_channels_table = widgets.Output()
+        buttons_axi_write_channels_table = widgets.Output()
+        buttons_axi_tables = widgets.HBox([buttons_axi_read_channels_table, buttons_axi_write_channels_table])
+        buttons_axi = widgets.VBox([buttons_axi_label, buttons_axi_tables])
 
-        buttons_section_label = widgets.Label("Buttons")
-        buttons_columes = widgets.HBox([buttons_axi, ])
-        buttons_section = widgets.VBox([buttons_section_label, buttons_columes])
+        buttons_section = widgets.HBox([buttons_axi, ])
 
         # Define update function and blank out tables
         def update_internals(captured_data):
@@ -1093,21 +1106,52 @@ class NeoRV32():
 
             # Update External bus section's tables
             wishbone_table.clear_output()
-            neo_axi_table.clear_output()
+            neo_axi_read_channels_table.clear_output()
+            neo_axi_write_channels_table.clear_output()
             with wishbone_table : display(generate_wishbone_table(captured_data))
-            with neo_axi_table : display(generate_axi_table(captured_data, neo_axi_words))
+            with neo_axi_read_channels_table :
+                display(generate_axi_read_addr_channal_table(captured_data, neo_axi_words))
+                display(generate_axi_read_data_channal_table(captured_data, neo_axi_words))
+            with neo_axi_write_channels_table :
+                display(generate_axi_write_addr_channal_table(captured_data, neo_axi_words))
+                display(generate_axi_write_data_channal_table(captured_data, neo_axi_words))
+                display(generate_axi_write_resp_channal_table(captured_data, neo_axi_words))
 
             # Update BRAM section's tables
-            BRAM_axi_table.clear_output()
-            with BRAM_axi_table : display(generate_axi_table(captured_data, BRAM_axi_words))
+            BRAM_axi_read_channels_table.clear_output()
+            BRAM_axi_write_channels_table.clear_output()
+            BRAM_port_table.clear_output()
+            with BRAM_axi_read_channels_table :
+                display(generate_axi_read_addr_channal_table(captured_data, BRAM_axi_words))
+                display(generate_axi_read_data_channal_table(captured_data, BRAM_axi_words))
+            with BRAM_axi_write_channels_table :
+                display(generate_axi_write_addr_channal_table(captured_data, BRAM_axi_words))
+                display(generate_axi_write_data_channal_table(captured_data, BRAM_axi_words))
+                display(generate_axi_write_resp_channal_table(captured_data, BRAM_axi_words))
+            with BRAM_port_table : display(generate_BRAM_port_table(captured_data))
 
-            # Update LED section's tables3
-            LED_axi_table.clear_output()
-            with LED_axi_table : display(generate_axi_table(captured_data, LED_axi_words))
+            # Update LED section's tables
+            LED_axi_read_channels_table.clear_output()
+            LED_axi_write_channels_table.clear_output()
+            with LED_axi_read_channels_table :
+                display(generate_axi_read_addr_channal_table(captured_data, LED_axi_words))
+                display(generate_axi_read_data_channal_table(captured_data, LED_axi_words))
+            with LED_axi_write_channels_table :
+                display(generate_axi_write_addr_channal_table(captured_data, LED_axi_words))
+                display(generate_axi_write_data_channal_table(captured_data, LED_axi_words))
+                display(generate_axi_write_resp_channal_table(captured_data, LED_axi_words))
 
             # Update Buttons section's tables
-            buttons_axi_table.clear_output()
-            with buttons_axi_table : display(generate_axi_table(captured_data, button_axi_words))
+            buttons_axi_read_channels_table.clear_output()
+            buttons_axi_write_channels_table.clear_output()
+            with buttons_axi_read_channels_table :
+                display(generate_axi_read_addr_channal_table(captured_data, button_axi_words))
+                display(generate_axi_read_data_channal_table(captured_data, button_axi_words))
+            with buttons_axi_write_channels_table :
+                display(generate_axi_write_addr_channal_table(captured_data, button_axi_words))
+                display(generate_axi_write_data_channal_table(captured_data, button_axi_words))
+                display(generate_axi_write_resp_channal_table(captured_data, button_axi_words))
+
         update_internals([0]*60)
 
         # Add update button
@@ -1125,10 +1169,20 @@ class NeoRV32():
 
         # Collect all sections into GUI
         gui_label = widgets.Label("Internals")
-        section_tabs = widgets.Tab(
-            children=[regfile_section, ALU_section, copro__section, bus_section, switch_section, external_bus_section, BRAM_section, LED_section],
-            titles =["Regfile", "ALU", "CoProcessers", "Bus Control", "Bus Switch", "External Bus", "BRAM", "LEDs", "Buttons"]
-        )
+        tabs = {
+            "Regfile"       : regfile_section,
+            "ALU"           : ALU_section,
+            "CoProcessers"  : copro_section,
+            "Bus Control"   : bus_section,
+            "Bus Switch"    : switch_section,
+            "External Bus"  : external_bus_section,
+            "BRAM"          : BRAM_section,
+            "LEDs"          : LED_section,
+            "Buttons"       : buttons_section,
+        }
+        section_tabs = widgets.Tab(tuple([i for i in tabs.values()]))
+        [section_tabs.set_title(i, title) for i, title in enumerate(tabs.keys())]
+
         capture_GUI = widgets.VBox([gui_label, section_tabs, capture_button ])
 
         return capture_GUI
