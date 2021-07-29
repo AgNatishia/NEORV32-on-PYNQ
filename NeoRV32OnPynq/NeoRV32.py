@@ -25,7 +25,7 @@ _stepper_regmap = {
     "PC_target"     : 0xC
 }
 
-class overlay():
+class NeoRV32():
     def __init__(this):
         this.overlay = Overlay("/usr/local/lib/python3.6/dist-packages/NeoRV32OnPynq/rv32i_overlay.bit")
 
@@ -35,19 +35,19 @@ class overlay():
         this.signal_capture =  this.overlay.neo_signal_capture
 
     # Reset functions
-    def _start_reset(this):
+    def start_reset(this):
         this.core_reset.write(0) # 0 as reset is negtive logic
 
-    def _end_reset(this):
+    def end_reset(this):
         this.core_reset.write(1) # 1 as reset is negtive logic
 
-    def _pulse_reset(this, pulse_time=0.005):
-        this._start_reset()
+    def pulse_reset(this, pulse_time=0.005):
+        this.start_reset()
         time.sleep(pulse_time)
-        this._end_reset()
+        this.end_reset()
 
     # BRAM functions
-    def _bram_load_program(this, filename, swap_endianess=False):
+    def bram_load_program(this, filename, swap_endianess=False):
         # Read bin file in memory
         BRAM_data = []
         if not filename.endswith(".bin"):
@@ -76,24 +76,24 @@ class overlay():
                 raw_bytes = f.read(4)
 
         # Put NEO into reset to prevert it accesses BRAM while program is being overwriten
-        this._start_reset()
+        this.start_reset()
 
         # Write Program
         for addr, word in enumerate(BRAM_data):
             this.BRAM.write(4*addr, word)
 
         # Let NEO out of teset to start running the now program
-        this._end_reset()
+        this.end_reset()
 
     # Stepper functions
-    def _stepper_write_registor(this, registor, value):
+    def stepper_write_registor(this, registor, value):
         this.stepper.write(registor, value)
 
-    def _stepper_read_registor(this, registor):
+    def stepper_read_registor(this, registor):
         return this.stepper.read(registor)
 
     # Capture Harness functuons
-    def _capharness_read_word(this, word):
+    def capture_harness_read_word(this, word):
         return this.signal_capture.read(4*word)
 
     # GUI functions
@@ -126,10 +126,6 @@ class overlay():
             return programs
 
         # Build GUI
-        gui_scan_button = widgets.Button(
-            description="Refresh programs",
-            tooltip="Rescans the program folder for changed and updates the program select"
-        )
         gui_program_dropdown = widgets.Dropdown(
             options=scan_for_programs(),
             tooltip="Selexts the program to be loaded the next turn the 'Load Program' button is pressed"
@@ -143,8 +139,8 @@ class overlay():
             tooltip="Shows the last program loaded, ie the program currenlly running on the overlay"
         )
 
-        gui_label = widgets.Label("Program Select:")
-        gui_lower_row = widgets.HBox([gui_scan_button, gui_program_dropdown, gui_write_button, gui_loaded_label])
+        gui_label = widgets.Label("Program Select :")
+        gui_lower_row = widgets.HBox([gui_program_dropdown, gui_write_button, gui_loaded_label])
         gui = widgets.VBox([gui_label, gui_lower_row])
 
         # Functions to handle interacting with the widgets, to load a program into the overlay's BRAM
@@ -152,80 +148,94 @@ class overlay():
             # Get selected program
             program = gui_program_dropdown.value
 
-            # Load selected program
-            if folder_per_program:
-                this._bram_load_program(os.path.join(program_folder, program, program))
+            if program != None:
+                # Load selected program
+                if folder_per_program:
+                    this.bram_load_program(os.path.join(program_folder, program, program))
+                else:
+                    this.bram_load_program(os.path.join(program_folder, program))
+
+                # Update last Loaded
+                gui_loaded_label.value = "Last Loaded: %s.bin"%(program, )
             else:
-                this._bram_load_program(os.path.join(program_folder, program))
-
-            # Update last Loaded
-            gui_loaded_label.value = "Last Loaded: %s.bin"%(program, )
-        def gui_scan_button_click(_):
-            programs = scan_for_programs()
-            gui_program_dropdown.options=programs
-            gui_program_dropdown.value=programs[0]
-
+                print("Can't Foad, no program selected")
 
         # Bind gui_write_button_click to button's on_click hook
         gui_write_button.on_click(gui_write_button_click)
-        gui_scan_button.on_click(gui_scan_button_click)
 
         return gui
 
     def execution_control(this):
+        # Reuse table generate functions
+        def textboz_to_int(text):
+            if len(text) != 0:
+                if text.startswith(("0b", "0B")):
+                    value = int(text, 2)
+                elif text.startswith(("0x", "0X")):
+                    value = int(text, 16)
+                else:
+                    value = int(text, 10)
+            else:
+                raise ValueError("No text given")
+
+            return value
+
         # Rules sections
         # Clock counter rule
+        clock_counter_rule_tooltip = "The Clock Counter Rule runs the processor for a given number of clock cycles."
         clock_counter_enable_label = widgets.Label(
-            value="Clock Counter enable:",
-            tooltip="The Clock Count Rule is fulfilled after the overlay has run for a given number of clock cycles."
+            value="Clock Counter Enable :",
+            tooltip=clock_counter_rule_tooltip
         )
         clock_counter_enable = widgets.Checkbox(
-            tooltip="Run the overlay for number of clock cyxles specisied by the 'Clock Count Rule Value' field",
+            tooltip="Enables the Clock Counter Rule",
             value=False
         )
         clock_counter_value_label = widgets.Label(
-            value="Run for:",
-            tooltip="The Clock Count Rule is fulfilled after the overlay has run for a given number of clock cycles."
+            value="Run For :",
+            tooltip=clock_counter_rule_tooltip
         )
         clock_counter_value = widgets.Text(
-            placeholder="Enter an unsigned number in binary (prefixed 0b), decimal (no prefix), or hexadecimal (prefixed 0x)",
-            tooltip="The number of clock cyles the Clock Count Rule, if enabled by 'Clock Count Rule Enable' field, will be fulfilled after. The value can be any 32 bit unsigned number larger than 0, and can be entered in binary (prefixed 0b), decimal (no prefix), or hexadecimal (prefixed 0x)."
+            placeholder="Enter an unsigned number",
+            tooltip="The number of clock cyles for the Clock Counter Rule"
         )
 
         # Instr counter rule
+        instr_counter_rule_tooltip ="The Instruction Counter Rule runs the processer until it's PC updates a given number of times."
         instr_counter_enable_label =  widgets.Label(
-            value="instruction Count Enable:",
-            tooltip="The instruction Count Rule is fulfilled after the overlay has executed a given number of inctructions."
+            value="Instruction Counter Enable :",
+            tooltip=instr_counter_rule_tooltip
         )
         instr_counter_enable = widgets.Checkbox(
-            tooltip="Run the overlay for number of instructions specisied by the 'instr Count Rule Value' field",
+            tooltip="Enables the Instruction Counter Rule",
             value=False
         )
         instr_counter_value_label = widgets.Label(
-            value="Run For",
-            tooltip="The instruction Count Rule is fulfilled after the overlay has executed a given number of inctructions."
+            value="Run For :",
+            tooltip=instr_counter_rule_tooltip
         )
         instr_counter_value = widgets.Text(
-            placeholder="Enter an unsigned number in binary (prefixed 0b), decimal (no prefix), or hexadecimal (prefixed 0x)",
-            tooltip="The number of instructions the instr Count Rule, if enabled by 'instr Count Rule Enable' field, will be fulfilled after. The value can be any 32 bit unsigned number larger than 0, and can be entered in binary (prefixed 0b), decimal (no prefix), or hexadecimal (prefixed 0x)."
+            placeholder="Enter an unsigned number",
+            tooltip="The number of instructions for the Clock Counter Rule"
         )
 
         # PC target rule
+        PC_targett_rule_tooltip ="The PC Target Rule runs the processor until it's PC equals a given value"
         PC_targett_enable_label = widgets.Label(
-            value="PC Target Enable:",
-            tooltip="The PC Target Rule is fulfilled after the overlay reaches a given PC value."
+            value="PC Target Enable :",
+            tooltip=PC_targett_rule_tooltip
         )
         PC_target_enable = widgets.Checkbox(
-            tooltip="Run the overlay until the program counter matches the value specisied by the 'PC Target Rule Value' field",
-            value=False,
+            tooltip="Enables the PC Target Rule",
+            value=False
         )
         PC_targett_value_label = widgets.Label(
-            value="Target Value:",
-            tooltip="The PC Target Rule is fulfilled after the overlay reaches a given PC value."
+            value="Target Value :",
+            tooltip=PC_targett_rule_tooltip
         )
         PC_target_value = widgets.Text(
-            placeholder="Enter an unsigned number in binary (prefixed 0b), decimal (no prefix), or hexadecimal (prefixed 0x)",
-            tooltip="The PC value the PC Target Rule, if enabled by 'PC Target Rule Enable' field, will be fulfilled on reaching. The value can be any 32 bit unsigned number larger than 0, and can be entered in binary (prefixed 0b), decimal (no prefix), or hexadecimal (prefixed 0x)."
+            placeholder="Enter an unsigned number",
+            tooltip="The PC value for the PC Target Rule"
         )
 
         # Pack Rules together
@@ -238,18 +248,18 @@ class overlay():
         # GUI Buttons
         step_clock_button = widgets.Button(
             description="Step Clock",
-            tooltip="Run the overlay for one clock cycle"
+            tooltip="Run the processer for a single clock cycle"
         )
         def step_clock_button_click(_):
-            this._stepper_write_registor(_stepper_regmap["controls"], _stepper_controls["clock_tick"])
+            this.stepper_write_registor(_stepper_regmap["controls"], _stepper_controls["clock_tick"])
         step_clock_button.on_click(step_clock_button_click)
 
         step_instruction_button = widgets.Button(
             description="Step Instruction",
-            tooltip="Run the overlay until the next instruction"
+            tooltip="Run the processer until it's PC value updates"
         )
         def step_instruction_button_click(_):
-            this._stepper_write_registor(_stepper_regmap["controls"], _stepper_controls["instr_tick"])
+            this.stepper_write_registor(_stepper_regmap["controls"], _stepper_controls["instr_tick"])
         step_instruction_button.on_click(step_instruction_button_click)
 
         run_stop_button  = widgets.Button(
@@ -261,11 +271,12 @@ class overlay():
                 "or overwriten by running rules or one of the steps"
             ])
         )
+
         def run_stop_button_click(_):
             # IF any rule are enabled, run those rules
             if any([clock_counter_enable.value, instr_counter_enable.value, PC_target_enable.value]):
                 # Stop the overlay in order to write counters and target
-                this._stepper_write_registor(_stepper_regmap["controls"], 0)
+                this.stepper_write_registor(_stepper_regmap["controls"], 0)
 
                 # Build controls and write registors
                 controls = 0
@@ -273,44 +284,44 @@ class overlay():
                     reg_value = textboz_to_int(clock_counter_value.value)
                     if reg_value != 0:
                         controls |= _stepper_controls["clock_counter"]
-                        this._stepper_write_registor(_stepper_regmap["clock_counter"], reg_value)
+                        this.stepper_write_registor(_stepper_regmap["clock_counter"], reg_value)
                 if instr_counter_enable.value == True:
                     reg_value = textboz_to_int(instr_counter_value.value)
                     if reg_value != 0:
                         controls |= _stepper_controls["instr_counter"]
-                        this._stepper_write_registor(_stepper_regmap["instr_counter"], reg_value)
+                        this.stepper_write_registor(_stepper_regmap["instr_counter"], reg_value)
                 if PC_target_enable.value == True:
                     controls |= _stepper_controls["PC_target"]
                     reg_value = textboz_to_int(PC_target_value.value) + 0x40000000
-                    this._stepper_write_registor(_stepper_regmap["PC_target"], reg_value)
+                    this.stepper_write_registor(_stepper_regmap["PC_target"], reg_value)
 
                 # Write controls to the stepper
-                this._stepper_write_registor(_stepper_regmap["controls"], controls)
+                this.stepper_write_registor(_stepper_regmap["controls"], controls)
             # Else handle Run/Stop behavout
             else:
                 # Read stepper controls to stop is run or stop
-                stepper_state = this._stepper_read_registor(_stepper_regmap["controls"])
+                stepper_state = this.stepper_read_registor(_stepper_regmap["controls"])
 
                 # Run if stopped
                 if stepper_state & _stepper_controls["continous"] == 0:
-                    this._stepper_write_registor(_stepper_regmap["controls"], _stepper_controls["continous"])
+                    this.stepper_write_registor(_stepper_regmap["controls"], _stepper_controls["continous"])
                 # Stop if running
                 else:
-                    this._stepper_write_registor(_stepper_regmap["controls"], 0)
+                    this.stepper_write_registor(_stepper_regmap["controls"], 0)
         run_stop_button.on_click(run_stop_button_click)
 
-        reset_button  = widgets.Button(
-            description="Reset",
-            tooltip="Resets the program back to the start"
+        restart_button  = widgets.Button(
+            description="Restart Program",
+            tooltip="Restarts the program, by resetting the processor"
         )
-        def reset_button_click(_):
-            this._stepper_write_registor(_stepper_regmap["controls"], 0)
-            this._pulse_reset()
-        reset_button.on_click(reset_button_click)
+        def restart_button_click(_):
+            this.stepper_write_registor(_stepper_regmap["controls"], 0)
+            this.pulse_reset()
+        restart_button.on_click(restart_button_click)
 
         # Pack buttons and gui
-        gui_label = widgets.Label("Execution Control:")
-        gui_buttons = widgets.HBox([step_clock_button, step_instruction_button, run_stop_button, reset_button])
+        gui_label = widgets.Label("Execution Control :")
+        gui_buttons = widgets.HBox([step_clock_button, step_instruction_button, run_stop_button, restart_button])
         gui = widgets.VBox([gui_label, gui_rules, gui_buttons])
 
         return gui
@@ -377,20 +388,6 @@ class overlay():
             "a6",       "a7",   "s2",   "s3",   "s4",   "s5",   "s6",   "s7",
             "s8",       "s9",   "s10",  "s11",  "t3",   "t4",   "t5",   "t6",
         ]
-
-        # Reuse table generate functions
-        def textboz_to_int(text):
-            if len(text) != 0:
-                if text.startswith(("0b", "0B")):
-                    value = int(text, 2)
-                elif text.startswith(("0x", "0X")):
-                    value = int(text, 16)
-                else:
-                    value = int(text, 10)
-            else:
-                raise ValueError("No text given")
-
-            return value
 
         def generate_internal_bus_table(capture_data, bundle_offset, bus_words):
             read    = (capture_data[buses_bundle] >> (bundle_offset + 0)) & 0x00000001
@@ -1116,7 +1113,7 @@ class overlay():
         )
         def capture_button_click(_):
             captured_date = [
-                this._capharness_read_word(4*word)
+                this.capture_harness_read_word(4*word)
                 for word in range(60)
             ]
             update_internals(captured_date)

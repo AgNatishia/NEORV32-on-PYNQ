@@ -30,10 +30,10 @@
 __author__ = "Stephen Clarke"
 __copyright__ = "Copyright 2021, Xilinx"
 __email__ = "pynq_support@xilinx.com"
-__version__ = "0.8.11"
+__version__ = "0.8.19"
 
 def load_ipython_extension(ipython):
     from . import compilerMagic
     compilerMagic.load_ipython_extension(ipython)
 
-from .overlay import *
+from .NeoRV32 import *

@@ -24,7 +24,7 @@ class compilerMagic(Magics):
 
         # Make sure a folder in programs exists and is prepared for this program
         _ = run("mkdir -p programs/%s"%(program_name,))
-        _ = run("cp /usr/local/lib/python3.6/dist-packages/NEORV32_on_PYNQ/makefile programs/%s/makefile"%(program_name,))
+        _ = run("cp /usr/local/lib/python3.6/dist-packages/NeoRV32OnPynq/makefile programs/%s/makefile"%(program_name,))
 
         # Create C file
         with open("programs/%s/%s.c"%(program_name, program_name,), "w") as f:

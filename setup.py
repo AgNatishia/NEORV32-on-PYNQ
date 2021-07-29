@@ -89,7 +89,7 @@ setup(
     ],
     entry_points={
         "pynq.notebooks": [
-            "NEORV32_on_PYNQ = {}.notebooks".format(
+            "NeoRV32OnPynq = {}.notebooks".format(
                 module_name)
         ]
     },
