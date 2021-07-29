@@ -96,33 +96,19 @@ class NeoRV32():
     def capture_harness_read_word(this, word):
         return this.signal_capture.read(4*word)
 
-    # GUI functions
-    def load_program(this, program_folder=None, folder_per_program = True):
-        # Handle default program folder
-        if program_folder == None:
-            program_folder  = os.path.join(".", "programs")
-
-        # Check program_folder is a valid path
-        if not isinstance(program_folder, str):
-            raise ValueError("program_folder must be a string")
-        elif not os.path.isdir(program_folder):
-            raise ValueError("program_folder, %s, doesn't point to a folder"%(program_folder, ))
+    # GUI sections - Load program
+    def load_program(this):
+        program_foider = os.path.join(".", "programs")
 
         def scan_for_programs():
             # Find all programs within program folder
             programs = []
-            if folder_per_program:
-                for sub_name in os.listdir(program_folder):
-                    sub_path = os.path.join(program_folder, sub_name)
-                    program_name = sub_name + ".bin"
-                    program_path = os.path.join(sub_path, program_name)
-                    if os.path.isdir(sub_path) and program_name in os.listdir(sub_path) and os.path.isfile(program_path):
-                        programs.append(sub_name)
-            else:
-                for sub_name in os.listdir(program_folder):
-                    program_name = sub_name + ".bin"
-                    if os.path.isfile(program_name):
-                        programs.append(sub_name)
+            for sub_name in os.listdir(program_foider):
+                sub_path = os.path.join(program_foider, sub_name)
+                program_name = sub_name + ".bin"
+                program_path = os.path.join(sub_path, program_name)
+                if os.path.isdir(sub_path) and program_name in os.listdir(sub_path) and os.path.isfile(program_path):
+                    programs.append(sub_name)
             return programs
 
         # Build GUI
@@ -134,6 +120,24 @@ class NeoRV32():
             description="Load Program",
             tooltip="Loads the program selected in the dropdown into the overlay's BRAM"
         )
+        def write_button_click(_):
+            # Get selected program
+            program = gui_program_dropdown.value
+
+            if program != None:
+                # Load selected program
+                try:
+                    this.bram_load_program(os.path.join(program_foider, program, program))
+                except Exception as e:
+                    print("Can't load, exception while reading the selected program's .bin file")
+                    raise
+
+                # Update last Loaded
+                gui_loaded_label.value = "Last Loaded: %s.bin"%(program, )
+            else:
+                print("Can't load, no program selected")
+        gui_write_button.on_click(write_button_click)
+
         gui_loaded_label = widgets.Label(
             value="Last Loaded: ",
             tooltip="Shows the last program loaded, ie the program currenlly running on the overlay"
@@ -143,28 +147,11 @@ class NeoRV32():
         gui_lower_row = widgets.HBox([gui_program_dropdown, gui_write_button, gui_loaded_label])
         gui = widgets.VBox([gui_label, gui_lower_row])
 
-        # Functions to handle interacting with the widgets, to load a program into the overlay's BRAM
-        def gui_write_button_click(_):
-            # Get selected program
-            program = gui_program_dropdown.value
-
-            if program != None:
-                # Load selected program
-                if folder_per_program:
-                    this.bram_load_program(os.path.join(program_folder, program, program))
-                else:
-                    this.bram_load_program(os.path.join(program_folder, program))
-
-                # Update last Loaded
-                gui_loaded_label.value = "Last Loaded: %s.bin"%(program, )
-            else:
-                print("Can't Foad, no program selected")
-
         # Bind gui_write_button_click to button's on_click hook
-        gui_write_button.on_click(gui_write_button_click)
 
         return gui
 
+    # GUI sections - execution control
     def execution_control(this):
         # Reuse table generate functions
         def textboz_to_int(text):
@@ -245,6 +232,9 @@ class NeoRV32():
         rule_values = widgets.VBox([clock_counter_value, instr_counter_value, PC_target_value])
         gui_rules = widgets.HBox([rule_enable_labels, rule_enables, rule_value_labels, rule_values])
 
+        # GUI feedback panal
+        gui_feedback = widgets.Output()
+
         # GUI Buttons
         step_clock_button = widgets.Button(
             description="Step Clock",
@@ -252,6 +242,8 @@ class NeoRV32():
         )
         def step_clock_button_click(_):
             this.stepper_write_registor(_stepper_regmap["controls"], _stepper_controls["clock_tick"])
+            gui_feedback.clear_output()
+            with gui_feedback: print("Stepping single clock cycle")
         step_clock_button.on_click(step_clock_button_click)
 
         step_instruction_button = widgets.Button(
@@ -260,6 +252,8 @@ class NeoRV32():
         )
         def step_instruction_button_click(_):
             this.stepper_write_registor(_stepper_regmap["controls"], _stepper_controls["instr_tick"])
+            gui_feedback.clear_output()
+            with gui_feedback: print("Stepping single instruction")
         step_instruction_button.on_click(step_instruction_button_click)
 
         run_stop_button  = widgets.Button(
@@ -273,6 +267,8 @@ class NeoRV32():
         )
 
         def run_stop_button_click(_):
+            gui_feedback.clear_output()
+
             # IF any rule are enabled, run those rules
             if any([clock_counter_enable.value, instr_counter_enable.value, PC_target_enable.value]):
                 # Stop the overlay in order to write counters and target
@@ -285,15 +281,18 @@ class NeoRV32():
                     if reg_value != 0:
                         controls |= _stepper_controls["clock_counter"]
                         this.stepper_write_registor(_stepper_regmap["clock_counter"], reg_value)
+                        with gui_feedback: print("Runniung processer for %i clock cycles"%(reg_value))
                 if instr_counter_enable.value == True:
                     reg_value = textboz_to_int(instr_counter_value.value)
                     if reg_value != 0:
                         controls |= _stepper_controls["instr_counter"]
                         this.stepper_write_registor(_stepper_regmap["instr_counter"], reg_value)
+                        with gui_feedback: print("Runniung processer for %i instructions"%(reg_value))
                 if PC_target_enable.value == True:
                     controls |= _stepper_controls["PC_target"]
                     reg_value = textboz_to_int(PC_target_value.value) + 0x40000000
                     this.stepper_write_registor(_stepper_regmap["PC_target"], reg_value)
+                    with gui_feedback: print("Runniung processer until PC equals %i"%(reg_value))
 
                 # Write controls to the stepper
                 this.stepper_write_registor(_stepper_regmap["controls"], controls)
@@ -305,9 +304,11 @@ class NeoRV32():
                 # Run if stopped
                 if stepper_state & _stepper_controls["continous"] == 0:
                     this.stepper_write_registor(_stepper_regmap["controls"], _stepper_controls["continous"])
+                    with gui_feedback: print("Runniung processer continuosly")
                 # Stop if running
                 else:
                     this.stepper_write_registor(_stepper_regmap["controls"], 0)
+                    with gui_feedback: print("Continuos running stopped")
         run_stop_button.on_click(run_stop_button_click)
 
         restart_button  = widgets.Button(
@@ -317,15 +318,18 @@ class NeoRV32():
         def restart_button_click(_):
             this.stepper_write_registor(_stepper_regmap["controls"], 0)
             this.pulse_reset()
+            gui_feedback.clear_output()
+            with gui_feedback: print("Restarted program and reset controls")
         restart_button.on_click(restart_button_click)
 
         # Pack buttons and gui
         gui_label = widgets.Label("Execution Control :")
         gui_buttons = widgets.HBox([step_clock_button, step_instruction_button, run_stop_button, restart_button])
-        gui = widgets.VBox([gui_label, gui_rules, gui_buttons])
+        gui = widgets.VBox([gui_label, gui_rules, gui_buttons, gui_feedback])
 
         return gui
 
+    # GUI sections - show internals internals
     def show_internals(this):
         # Names of key capture words
         ALU_bundle      =  0
