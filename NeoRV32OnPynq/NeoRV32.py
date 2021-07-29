@@ -188,7 +188,7 @@ class NeoRV32():
         )
 
         # Instr counter rule
-        instr_counter_rule_tooltip ="The Instruction Counter Rule runs the processer until it's PC updates a given number of times."
+        instr_counter_rule_tooltip ="The Instruction Counter Rule runs the processor until it's PC updates a given number of times."
         instr_counter_enable_label =  widgets.Label(
             value="Instruction Counter Enable :",
             tooltip=instr_counter_rule_tooltip
@@ -238,7 +238,7 @@ class NeoRV32():
         # GUI Buttons
         step_clock_button = widgets.Button(
             description="Step Clock",
-            tooltip="Run the processer for a single clock cycle"
+            tooltip="Run the processor for a single clock cycle"
         )
         def step_clock_button_click(_):
             this.stepper_write_registor(_stepper_regmap["controls"], _stepper_controls["clock_tick"])
@@ -248,7 +248,7 @@ class NeoRV32():
 
         step_instruction_button = widgets.Button(
             description="Step Instruction",
-            tooltip="Run the processer until it's PC value updates"
+            tooltip="Run the processor until it's PC value updates"
         )
         def step_instruction_button_click(_):
             this.stepper_write_registor(_stepper_regmap["controls"], _stepper_controls["instr_tick"])
@@ -281,18 +281,18 @@ class NeoRV32():
                     if reg_value != 0:
                         controls |= _stepper_controls["clock_counter"]
                         this.stepper_write_registor(_stepper_regmap["clock_counter"], reg_value)
-                        with gui_feedback: print("Runniung processer for %i clock cycles"%(reg_value))
+                        with gui_feedback: print("Runniung processor for %i clock cycles"%(reg_value))
                 if instr_counter_enable.value == True:
                     reg_value = textboz_to_int(instr_counter_value.value)
                     if reg_value != 0:
                         controls |= _stepper_controls["instr_counter"]
                         this.stepper_write_registor(_stepper_regmap["instr_counter"], reg_value)
-                        with gui_feedback: print("Runniung processer for %i instructions"%(reg_value))
+                        with gui_feedback: print("Runniung processor for %i instructions"%(reg_value))
                 if PC_target_enable.value == True:
                     controls |= _stepper_controls["PC_target"]
                     reg_value = textboz_to_int(PC_target_value.value) + 0x40000000
                     this.stepper_write_registor(_stepper_regmap["PC_target"], reg_value)
-                    with gui_feedback: print("Runniung processer until PC equals %i"%(reg_value))
+                    with gui_feedback: print("Runniung processor until PC equals %i"%(reg_value))
 
                 # Write controls to the stepper
                 this.stepper_write_registor(_stepper_regmap["controls"], controls)
@@ -304,7 +304,7 @@ class NeoRV32():
                 # Run if stopped
                 if stepper_state & _stepper_controls["continous"] == 0:
                     this.stepper_write_registor(_stepper_regmap["controls"], _stepper_controls["continous"])
-                    with gui_feedback: print("Runniung processer continuosly")
+                    with gui_feedback: print("Runniung processor continuosly")
                 # Stop if running
                 else:
                     this.stepper_write_registor(_stepper_regmap["controls"], 0)
@@ -323,9 +323,8 @@ class NeoRV32():
         restart_button.on_click(restart_button_click)
 
         # Pack buttons and gui
-        gui_label = widgets.Label("Execution Control :")
         gui_buttons = widgets.HBox([step_clock_button, step_instruction_button, run_stop_button, restart_button])
-        gui = widgets.VBox([gui_label, gui_rules, gui_buttons, gui_feedback])
+        gui = widgets.VBox([gui_rules, gui_buttons, gui_feedback])
 
         return gui
 
@@ -1168,11 +1167,10 @@ class NeoRV32():
         capture_button.on_click(capture_button_click)
 
         # Collect all sections into GUI
-        gui_label = widgets.Label("Internals")
         tabs = {
             "Regfile"       : regfile_section,
             "ALU"           : ALU_section,
-            "CoProcessers"  : copro_section,
+            "Co-Processors" : copro_section,
             "Bus Control"   : bus_section,
             "Bus Switch"    : switch_section,
             "External Bus"  : external_bus_section,
@@ -1183,6 +1181,6 @@ class NeoRV32():
         section_tabs = widgets.Tab(tuple([i for i in tabs.values()]))
         [section_tabs.set_title(i, title) for i, title in enumerate(tabs.keys())]
 
-        capture_GUI = widgets.VBox([gui_label, section_tabs, capture_button ])
+        capture_GUI = widgets.VBox([section_tabs, capture_button ])
 
         return capture_GUI

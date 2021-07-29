@@ -1,111 +1,32 @@
 # NEORV32 on PYNQ
 
-This repo contains work done on getting the NEORV32 soft-processor to work with the Xilinx PYNQ boards.
+This repository contains a basic PYNQ overlay based on the NEORV32 soft-processor, https://github.com/stnolting/neorv32, intended for use in teaching  RISC-V, FPEAs, and processor design.
 
+Currently supported boards: Xilinx's PYNQ-Z2
 
 # Installing on a PYNQ board
 
 This repo supports pip installation on PYNQ boards using the following commands.
 
 ```
-pip3 install git+https://github.com/AgNatishia/NEORV32-on-PYNQ
+pip install git+https://github.com/AgNatishia/NEORV32-on-PYNQ
 pynq-get-notebooks --force --path /home/xilinx/jupyter_notebooks/
 ```
 
-This should install the NEORV32_on_PYNQ module on your PYNQ board, and deliver the notebooks contained within it to /home/xilinx/jupyter_notebooks/NEORV32_on_PYNQ/.
+This should install the NeoRV32OnPynq module on your PYNQ board, and deliver the notebooks contained within it to /home/xilinx/jupyter_notebooks/NeoRV32OnPynq/.
 
-However in order for many of the notebooks in this repo to run a C-to-RISCV compiler must be available on your board, one has been provided in the releases of this Repo, https://github.com/AgNatishia/NEORV32-on-PYNQ/releases/tag/toolchain.
-It should to copied to the board, unzipped, and it's location added to the path variable.
+However in order to develop programs for this overlay a C-to-RISCV compiler must be available on your board.
+One has been provided in the releases of this repository, https://github.com/AgNatishia/NEORV32-on-PYNQ/releases/tag/toolchain.
+It should be downloaded, copied to the board, unzipped, and it's location added to the path variables used by jupyter notebooks and your terminal.
 
-Once this had been done you can't only run the example programs, but can also develop your own using the jupyter magic riscvc.
-This magic handles the compilation of C code into a RISCV bin files targeting the NERORV32 core.
-Below is an example 0f a riscvc magic cell, it compiles a program called blink_all_LEDs.bin
+Due to the range of methods available in getting the zipped toolchain onto your board, I will only provide code for unzipping and setting up the path variables below.
+This code assumes the working directory is "/home/xilinx/" and the zipped toolchain has been copied to this directory.
 
-```c
-%%riscvc blink_all_LEDs
-
-#include <stdint.h>
-
-const int value = 0;
-const int tristate = 1;
-int32_t volatile * const buttons = (int32_t*) 0x40010000;
-int32_t volatile * const LEDs    = (int32_t*) 0x40020000;
-
-int main()
-{
-  // Set all LED pins as output
-  LEDs[tristate] = 0;
-
-  while(1)
-  {
-    LEDs[value] = 0x0;
-    LEDs[value] = 0xf;
-  }
-
-  return 0;
-}
+```
+unzip /home/xilinx/GNU-RISCV-toolchain-for-PYNQ.zip
+chmod 775 -R GNU-RISCV-toolchain-for-PYNQ
+echo 'export PATH="$PATH:home/xilinx/GNU-RISCV-toolchain-for-PYNQ/bin/"' >> /etc/bash.bashrc
+echo 'PATH="$PATH:home/xilinx/GNU-RISCV-toolchain-for-PYNQ/bin/"' >> /etc/environment
 ```
 
-
-
-
-
-
-
-
-
-# Old documentation for reworking
-There are 2 usage
-
-Current there are 2 sets of files, separated based on which system they are meant to run on.
-<ul>
-<li>Board-files, files meant to be run on the PYNQ board. Mostly program generation and runtime files</li>
-<li>Desktop-files, files meant to be run on a desktop/host computer. Mostly VIvado script files for generating/modifying the PYNQ overlays</li>
-</ul>
-
-# RISCV-NEORV32 on PYNQ - Board-files
-
-There are currently 3 groups of board files :
-<ul>
-<li>toolchain, this is the compiled RISCV toolchain for use on the PYNQ boards, this should be copied onto the boards in a location that can be found by the path environment variable</li>
-<li>Overlays, these are the PYNQ overlays supplied with this repo, they were generated using the tcl scripts found in the desktop-file section of this repo</li>
-<li>Notebooks, these are example programs for the PYNQ overlays, each program has its own folder, notebook, and support files (make and magic files)</li>
-</ul>
-
-# RISCV-NEORV32 on PYNQ - Desktop-files
-
-These files are meant to be run on a host computer, not the PYNQ board.
-
-There are 2 main reasons to use these files, generating an overlay, and simulating a program. Basic instructions for both are listed below.
-
-Additional there are instruction on regenerated the contents of block_parts, this only needs done if you are wish to update an overlay to be based on a more recent commit to the [NEORV32 repo](https://github.com/stnolting/neorv32) then 5db75c72b57b164d4a0c495fe8b69597bcc8563a. Please you update  block_parts on your own, as the new status the NEORV32 repo may introduce issues.
-
-## Generating Overlay
-<ol>
-<li>Open/create a Vivado project to add the overlay to</li>
-<li>Add the contents of block_parts to this project, use library neorv32</li>
-<li>Run rv32i_overlay.tcl using the source command in vivado</li>
-<li>Right click on the created block diagram, select "Create HDL wrapper" and follow the wizard</li>
-<li>Make sure this wrapper is set as your top level module and generate bitstream</il>
-<li>Once the bitstream is generated copy the .bit and .hwh files from your Vivado project to your PYNQ board, note its location for later.
-Make sure they share the same filename, you might need to remove something like "_wrapper" from one of them</li>
-</ol>
-
-## Simulating a program
-
-<ol>
-<li>Open/create a Vivado project to run the simulation in</li>
-<li>Add the contents of block_parts to this project, use library neorv32</li>
-<li>Run simulation_rv32i_overlay.tcl using the source command in vivado</li>
-<li>Right click on the created block diagram, select "Create HDL wrapper" and follow the wizard</li>
-<li>In the block diagram, double click on the cpu_BRAM_controller_bram block and go to the "other options" tab, check "Load init file" and use the "coe file" field to select to correct program's coe file (this should have been generated by the toolchain on the PYNQ board)</li>
-<li>Make sure this wrapper is set as your top level module and start simulation</il>
-<li>Once the simulation view has started run simulation_rv32i_overlay_start.tcl using source, this handles setting up the clock and reset signals</li>
-<li> Your program should start to run after after about 25000 ns have passed</li>
-</ol>
-
-## Regenerating block_parts
-<ol>
-<li>Clone/update the [NEORV32 repo](https://github.com/stnolting/neorv32) to get the latest RTL</li>
-<li>Run block_parts/repo_rtl_conversion.py to convert the NEORV32 rtl into block diagram friendly rtl, you may need to change the repo_path variable at the start of this script so it can find the NEORV32 rtl
-</ol>
+Once this is done I suggest starting with the notebook "Introduction_to_NeoRV32OnPynq" which should be in "/home/xilinx/jupyter_notebooks/NeoRV32OnPynq/".
