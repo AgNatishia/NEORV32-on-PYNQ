@@ -171,7 +171,7 @@ class NeoRV32():
         # Clock counter rule
         clock_counter_rule_tooltip = "The Clock Counter Rule runs the processor for a given number of clock cycles."
         clock_counter_enable_label = widgets.Label(
-            value="Clock Counter Enable :",
+            value="Clock Counter :",
             tooltip=clock_counter_rule_tooltip
         )
         clock_counter_enable = widgets.Checkbox(
@@ -190,7 +190,7 @@ class NeoRV32():
         # Instr counter rule
         instr_counter_rule_tooltip ="The Instruction Counter Rule runs the processor until it's PC updates a given number of times."
         instr_counter_enable_label =  widgets.Label(
-            value="Instruction Counter Enable :",
+            value="Instruction Counter :",
             tooltip=instr_counter_rule_tooltip
         )
         instr_counter_enable = widgets.Checkbox(
@@ -209,7 +209,7 @@ class NeoRV32():
         # PC target rule
         PC_targett_rule_tooltip ="The PC Target Rule runs the processor until it's PC equals a given value"
         PC_targett_enable_label = widgets.Label(
-            value="PC Target Enable :",
+            value="PC Target :",
             tooltip=PC_targett_rule_tooltip
         )
         PC_target_enable = widgets.Checkbox(
@@ -277,22 +277,56 @@ class NeoRV32():
                 # Build controls and write registors
                 controls = 0
                 if clock_counter_enable.value == True:
-                    reg_value = textboz_to_int(clock_counter_value.value)
-                    if reg_value != 0:
-                        controls |= _stepper_controls["clock_counter"]
-                        this.stepper_write_registor(_stepper_regmap["clock_counter"], reg_value)
-                        with gui_feedback: print("Runniung processor for %i clock cycles"%(reg_value))
+                    try:
+                        # Read in the counter value
+                        reg_value = textboz_to_int(clock_counter_value.value)
+
+                        # Check counter value is meaningful
+                        if reg_value > 0:
+                            with gui_feedback: print("Clock counter rule enabled with a negtive counter value; counter value must be postive")
+                        elif reg_value == 0:
+                            with gui_feedback: print("Clock counter rule enabled with a counter of 0, therefore being ignored")
+                        else:
+                            controls |= _stepper_controls["clock_counter"]
+                            this.stepper_write_registor(_stepper_regmap["clock_counter"], reg_value)
+                            with gui_feedback: print("running processor for %i clock cycles"%(reg_value))
+                    except ValueError as e:
+                        with gui_feedback: print("Clock counter rule enabled without a counter value; please enter a number of clock cycle to run for")
+
                 if instr_counter_enable.value == True:
-                    reg_value = textboz_to_int(instr_counter_value.value)
-                    if reg_value != 0:
-                        controls |= _stepper_controls["instr_counter"]
-                        this.stepper_write_registor(_stepper_regmap["instr_counter"], reg_value)
-                        with gui_feedback: print("Runniung processor for %i instructions"%(reg_value))
+                    try:
+                        # Read in the counter value
+                        reg_value = textboz_to_int(clock_counter_value.value)
+
+                        # Check counter value is meaningful
+                        if reg_value > 0:
+                            with gui_feedback: print("Instruction counter rule enabled with a negtive counter value; counter value must be postive")
+                        elif reg_value == 0:
+                            with gui_feedback: print("Instruction counter rule enabled with a counter of 0, therefore being ignored")
+                        else:
+                            controls |= _stepper_controls["instr_counter"]
+                            this.stepper_write_registor(_stepper_regmap["instr_counter"], reg_value)
+                            with gui_feedback: print("running processor for %i instructions"%(reg_value))
+
+                    except ValueError as e:
+                        with gui_feedback: print("Instruction counter rule enabled without a counter value; please enter a number of instructions to run for")
+
                 if PC_target_enable.value == True:
-                    controls |= _stepper_controls["PC_target"]
-                    reg_value = textboz_to_int(PC_target_value.value) + 0x40000000
-                    this.stepper_write_registor(_stepper_regmap["PC_target"], reg_value)
-                    with gui_feedback: print("Runniung processor until PC equals %i"%(reg_value))
+                    # Read in the counter value
+                    try:
+                        # Read in the counter value
+                        reg_value = textboz_to_int(clock_counter_value.value)
+
+                        # Check counter value is meaningful
+                        if reg_value > 0:
+                            with gui_feedback: print("PC target rule enabled with a negtive target value; target value must be postive")
+                        else:
+                            controls |= _stepper_controls["PC_target"]
+                            this.stepper_write_registor(_stepper_regmap["PC_target"], reg_value)
+                            with gui_feedback: print("running processor until PC equals %i"%(reg_value))
+                    except ValueError as e:
+                        with gui_feedback: print("PC target rule enabled without a target value; please enter a target for match against the PC")
+
 
                 # Write controls to the stepper
                 this.stepper_write_registor(_stepper_regmap["controls"], controls)
@@ -304,7 +338,7 @@ class NeoRV32():
                 # Run if stopped
                 if stepper_state & _stepper_controls["continous"] == 0:
                     this.stepper_write_registor(_stepper_regmap["controls"], _stepper_controls["continous"])
-                    with gui_feedback: print("Runniung processor continuosly")
+                    with gui_feedback: print("running processor continuosly")
                 # Stop if running
                 else:
                     this.stepper_write_registor(_stepper_regmap["controls"], 0)
