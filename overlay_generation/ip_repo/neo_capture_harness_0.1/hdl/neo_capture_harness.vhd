@@ -918,7 +918,7 @@ begin
 	    23	=>	'0',
 
 			-- Write responce channal signals bits 5 to 8
-	    22	=>	NEORV_axi_bresp(0),
+	    22	=>	NEORV_axi_bresp(1),
 	    21	=>	NEORV_axi_bresp(0),
 	    20	=>	NEORV_axi_bvalid,
 	    19	=>	NEORV_axi_bready,
@@ -968,7 +968,7 @@ begin
 	    23	=>	'0',
 
 			-- Write responce channal signals bits 5 to 8
-	    22	=>	BRAM_axi_bresp(0),
+	    22	=>	BRAM_axi_bresp(1),
 	    21	=>	BRAM_axi_bresp(0),
 	    20	=>	BRAM_axi_bvalid,
 	    19	=>	BRAM_axi_bready,
@@ -1005,7 +1005,7 @@ begin
 	slv_word_44	<= BRAM_axi_awaddr;
 	slv_word_45	<= BRAM_axi_wdata;
 
-	-- BAM port in words 46 to 49
+	-- BRAM port in words 46 to 49
 	slv_word_46	<= (
 	    31	=>	'0',
 	    30	=>	'0',
@@ -1035,9 +1035,9 @@ begin
 	    8		=>	'0',
 
 			-- BRAM Contorls
-			7		=>	BRAM_write_enable(0),
-			6		=>	BRAM_write_enable(0),
-	    5		=>	BRAM_write_enable(0),
+			7		=>	BRAM_write_enable(3),
+			6		=>	BRAM_write_enable(2),
+	    5		=>	BRAM_write_enable(1),
 	    4		=>	BRAM_write_enable(0),
 	    3		=>	'0',
 	    2		=>	'0',
@@ -1061,7 +1061,7 @@ begin
 	    23	=>	'0',
 
 			-- Write responce channal signals bits 5 to 8
-	    22	=>	LEDs_axi_bresp(0),
+	    22	=>	LEDs_axi_bresp(1),
 	    21	=>	LEDs_axi_bresp(0),
 	    20	=>	LEDs_axi_bvalid,
 	    19	=>	LEDs_axi_bready,
@@ -1111,7 +1111,7 @@ begin
 	    23	=>	'0',
 
 			-- Write responce channal signals bits 5 to 8
-	    22	=>	buttons_axi_bresp(0),
+	    22	=>	buttons_axi_bresp(1),
 	    21	=>	buttons_axi_bresp(0),
 	    20	=>	buttons_axi_bvalid,
 	    19	=>	buttons_axi_bready,

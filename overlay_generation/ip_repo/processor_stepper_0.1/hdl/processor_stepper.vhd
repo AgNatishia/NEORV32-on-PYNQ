@@ -286,7 +286,7 @@ begin
 	-- Handle counter_single
 	control_clock_counter_next <= control_clock_counter when clock_counter_to_axi /= "00000000000000000000000000000000" else '0';
 	clock_counter_from_rtl <= std_logic_vector(to_unsigned(to_integer(unsigned(clock_counter_to_axi)) - 1, 32))
-			when control_clock_counter = '1'
+			when control_clock_counter_next = '1'
 		else clock_counter_to_axi;
 
 	-- Handle PC_delta
@@ -298,7 +298,7 @@ begin
 	-- Handle PC_counter control_PC_counter
 	control_PC_counter_next <= control_PC_counter when PC_counter_to_axi /= "00000000000000000000000000000000" else '0';
 	PC_counter_from_rtl <= std_logic_vector(to_unsigned(to_integer(unsigned(PC_counter_to_axi)) - 1, 32))
-			when control_PC_counter = '1' and PC_delta = '1'
+			when control_PC_counter_next = '1' and PC_delta = '1'
 		else PC_counter_to_axi;
 
 	-- Handle PC_target control_PC_target

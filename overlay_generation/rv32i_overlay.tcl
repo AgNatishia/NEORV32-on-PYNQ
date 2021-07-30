@@ -37,13 +37,6 @@ if { [string first $scripts_vivado_version $current_vivado_version] == -1 } {
 # To test this script, run the following commands from Vivado Tcl console:
 # source rv32i_overlay_script.tcl
 
-
-# The design that will be created by this Tcl script contains the following 
-# module references:
-# BD_neorv32_cpu_alu, BD_neorv32_cpu_control, BD_neorv32_cpu_bus, BD_neorv32_cpu_regfile, BD_neorv32_bus_keeper, BD_neorv32_busswitch, BD_neorv32_wishbone, BD_wishbon_axi4lite_bridge
-
-# Please add the sources of those modules before sourcing this Tcl script.
-
 # If there is no project opened, this script will create a
 # project, but make sure you do not have an existing project
 # <./myproj/project_1.xpr> in the current working folder.
@@ -54,6 +47,13 @@ if { $list_projs eq "" } {
    set_property BOARD_PART tul.com.tw:pynq-z2:part0:1.0 [current_project]
 }
 
+# Add referenced RTL modules
+add_files {./block_parts/BD_neorv32_cpu_decompressor.vhd ./block_parts/BD_neorv32_bus_keeper.vhd ./block_parts/BD_neorv32_cpu_cp_fpu.vhd ./block_parts/BD_neorv32_busswitch.vhd ./block_parts/BD_neorv32_cpu_control.vhd ./block_parts/BD_neorv32_cpu_alu.vhd ./block_parts/BD_neorv32_cpu_bus.vhd ./block_parts/BD_neorv32_cpu_regfile.vhd ./block_parts/BD_neorv32_package.vhd ./block_parts/BD_neorv32_wishbone.vhd ./block_parts/BD_wishbon_axi4lite_bridge.vhd ./block_parts/BD_neorv32_cpu_cp_muldiv.vhd}
+set_property library neorv32 [get_files  {./block_parts/BD_neorv32_cpu_decompressor.vhd ./block_parts/BD_neorv32_bus_keeper.vhd ./block_parts/BD_neorv32_cpu_cp_fpu.vhd ./block_parts/BD_neorv32_busswitch.vhd ./block_parts/BD_neorv32_cpu_control.vhd ./block_parts/BD_neorv32_cpu_alu.vhd ./block_parts/BD_neorv32_cpu_bus.vhd ./block_parts/BD_neorv32_cpu_regfile.vhd ./block_parts/BD_neorv32_package.vhd ./block_parts/BD_neorv32_wishbone.vhd ./block_parts/BD_wishbon_axi4lite_bridge.vhd ./block_parts/BD_neorv32_cpu_cp_muldiv.vhd}]
+
+# Add referenced IPs
+set_property  ip_repo_paths  ./ip_repo [current_project]
+update_ip_catalog
 
 # CHANGE DESIGN NAME HERE
 variable design_name
@@ -96,7 +96,7 @@ if { ${design_name} eq "" } {
    set errMsg "Design <$design_name> already exists in your project, please set the variable <design_name> to another value."
    set nRet 1
 } elseif { [get_files -quiet ${design_name}.bd] ne "" } {
-   # USE CASES: 
+   # USE CASES:
    #    6) Current opened design, has components, but diff names, design_name exists in project.
    #    7) No opened design, design_name exists in project.
 
@@ -130,7 +130,7 @@ set bCheckIPsPassed 1
 ##################################################################
 set bCheckIPs 1
 if { $bCheckIPs == 1 } {
-   set list_check_ips "\ 
+   set list_check_ips "\
 xilinx.com:ip:axi_gpio:2.0\
 xilinx.com:ip:axi_bram_ctrl:4.1\
 xilinx.com:ip:blk_mem_gen:8.4\
@@ -167,7 +167,7 @@ xilinx.com:ip:proc_sys_reset:5.0\
 ##################################################################
 set bCheckModules 1
 if { $bCheckModules == 1 } {
-   set list_check_mods "\ 
+   set list_check_mods "\
 BD_neorv32_cpu_alu\
 BD_neorv32_cpu_control\
 BD_neorv32_cpu_bus\
@@ -435,7 +435,7 @@ proc create_root_design { parentCell } {
      catch {common::send_gid_msg -ssname BD::TCL -id 2096 -severity "ERROR" "Unable to referenced block <$block_name>. Please add the files for ${block_name}'s definition into the project."}
      return 1
    }
-  
+
   # Create instance: interface_bus_err_or, and set properties
   set interface_bus_err_or [ create_bd_cell -type ip -vlnv xilinx.com:ip:util_vector_logic:2.0 interface_bus_err_or ]
   set_property -dict [ list \
@@ -509,7 +509,7 @@ proc create_root_design { parentCell } {
      catch {common::send_gid_msg -ssname BD::TCL -id 2096 -severity "ERROR" "Unable to referenced block <$block_name>. Please add the files for ${block_name}'s definition into the project."}
      return 1
    }
-  
+
   # Create instance: neo_signal_capture, and set properties
   set neo_signal_capture [ create_bd_cell -type ip -vlnv xilinx.com:user:neo_capture_harness:1.1 neo_signal_capture ]
 
@@ -1580,4 +1580,9 @@ proc create_root_design { parentCell } {
 
 create_root_design ""
 
-
+# Create wrapped and set as top
+make_wrapper -files [get_files ./myproj/project_1.srcs/sources_1/bd/rv32i_overlay/rv32i_overlay.bd] -top
+add_files -norecurse ./myproj/project_1.srcs/sources_1/bd/rv32i_overlay/hdl/rv32i_overlay_wrapper.v
+update_compile_order -fileset sources_1
+set_property top rv32i_overlay_wrapper [current_fileset]
+update_compile_order -fileset sources_1
